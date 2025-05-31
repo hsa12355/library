@@ -23,28 +23,26 @@ function onScanFailure(error) {
 }
 
 // 啟動 QR 掃描器
-function startScanner(cameraId) {
-  if (html5QrCode) {
-    html5QrCode.stop().then(() => {
-      html5QrCode.start(
-        cameraId,
-        { fps: 10, qrbox: 250 },
-        onScanSuccess,
-        onScanFailure
-      );
-    }).catch(err => {
-      console.error('停止掃描器時發生錯誤:', err);
-    });
-  } else {
-    html5QrCode = new Html5Qrcode("qr-reader");
-    html5QrCode.start(
+async function startScanner(cameraId) {
+  try {
+    if (!html5QrCode) {
+      html5QrCode = new Html5Qrcode("qr-reader");
+    } else {
+      // 先停止掃描器（如果還在掃描）
+      await html5QrCode.stop();
+    }
+
+    await html5QrCode.start(
       cameraId,
       { fps: 10, qrbox: 250 },
       onScanSuccess,
       onScanFailure
     );
+
+    currentCameraId = cameraId;
+  } catch (err) {
+    console.error('啟動掃描器錯誤:', err);
   }
-  currentCameraId = cameraId;
 }
 
 // 初始化相機選擇器
@@ -65,24 +63,18 @@ function initCameraSelector() {
       select.appendChild(option);
     });
 
-    // 預設使用第一支相機
+    // 預設啟動第一支相機
     startScanner(devices[0].id);
 
-    // 改用 async 事件監聽器：切換前先停止掃描器
-    select.onchange = async (e) => {
+    // 切換鏡頭時的處理
+    select.onchange = (e) => {
       const newCameraId = e.target.value;
 
-      try {
-        if (html5QrCode) {
-          await html5QrCode.stop();
-        }
-      } catch (err) {
-        console.warn('停止掃描器時發生錯誤（可忽略）:', err);
+      // 若選擇的鏡頭不同才切換
+      if (newCameraId !== currentCameraId) {
+        startScanner(newCameraId);
       }
-
-      startScanner(newCameraId);
     };
-
   }).catch(err => {
     console.error('取得相機清單失敗:', err);
     alert('無法取得相機清單，請確認瀏覽器已開啟相機權限。');
