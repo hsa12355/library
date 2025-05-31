@@ -30,19 +30,20 @@ function initScanner() {
         device.label.toLowerCase().includes('rear')
       ) || devices[0]; // 找不到就用第一支
 
+      // 使用 camera.id 啟動掃描
       html5QrCode.start(
-        { facingMode: { exact: "environment" } },
+        camera.id,
         { fps: 10, qrbox: 250 },
         onScanSuccess,
         onScanFailure
       );
-
     }
   }).catch(err => {
     console.error("無法存取相機: ", err);
     alert("無法開啟相機，請確認瀏覽器權限已開啟。");
   });
 }
+
 
 
 window.onload = () => {
