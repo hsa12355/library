@@ -30,7 +30,10 @@ function initScanner() {
         device.label.toLowerCase().includes('rear')
       ) || devices[0]; // 找不到就用第一支
 
+<<<<<<< HEAD
       // 使用 camera.id 啟動掃描
+=======
+>>>>>>> f6f358a (Update scan.js and scan-en.js to use rear camera by default)
       html5QrCode.start(
         camera.id,
         { fps: 10, qrbox: 250 },
@@ -45,7 +48,10 @@ function initScanner() {
 }
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f6f358a (Update scan.js and scan-en.js to use rear camera by default)
 window.onload = () => {
   initScanner();
 
