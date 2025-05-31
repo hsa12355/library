@@ -7,17 +7,22 @@ let currentCameraId = null;
 
 function onScanSuccess(decodedText) {
   console.log(`掃描成功: ${decodedText}`);
+
   let target;
   if (decodedText.endsWith('.html')) {
     target = decodedText;
   } else {
     target = `free-station-${lang}/${decodedText}.html`;
   }
-  window.location.href = target;
+
+  // 防止重複跳轉
+  if (window.location.href !== target) {
+    window.location.href = target;
+  }
 }
 
 function onScanFailure(error) {
-  // 可選：略過掃描失敗的錯誤以保持 Console 清潔
+  // 可以不用每次失敗都印，避免 Console 太多雜訊
 }
 
 async function clearScanner() {
@@ -50,6 +55,7 @@ async function startScanner(cameraId) {
       qrbox: { width: 300, height: 300 },
       aspectRatio: 1.333,
       videoConstraints: {
+        deviceId: cameraId ? { exact: cameraId } : undefined,
         facingMode: "environment",
         width: { ideal: 1280 },
         height: { ideal: 720 }
@@ -92,7 +98,9 @@ function initCameraSelector() {
       const newCamId = e.target.value;
       const newUrlParams = new URLSearchParams(window.location.search);
       newUrlParams.set('cam', newCamId);
-      window.location.href = `${window.location.pathname}?${newUrlParams.toString()}`;
+      // 用 replaceState 避免歷史堆疊太多
+      window.history.replaceState(null, '', `${window.location.pathname}?${newUrlParams.toString()}`);
+      startScanner(newCamId);
     };
   }).catch(err => {
     console.error('取得相機清單失敗:', err);
