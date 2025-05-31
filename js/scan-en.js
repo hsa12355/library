@@ -30,7 +30,10 @@ function initScanner() {
         device.label.toLowerCase().includes('rear')
       ) || devices[0]; // fallback to first camera
 
+<<<<<<< HEAD
       // Start scanning with selected camera id
+=======
+>>>>>>> f6f358a (Update scan.js and scan-en.js to use rear camera by default)
       html5QrCode.start(
         camera.id,
         { fps: 10, qrbox: 250 },
