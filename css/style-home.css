@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;500;700&display=swap');
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans TC', sans-serif;
+  background: url('../images/未來書庫中的智慧指引.png') no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.container {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(15px);
+  border-radius: 24px;
+  padding: 4rem 3rem; /* 加大上下與左右間距 */
+  max-width: 880px;    /* 原本 680px，放大到 880px */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  color: #333;
+}
+
+
+.intro-line {
+  font-size: 1.2rem;
+  font-weight: 300;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  margin-bottom: 1rem;
+  color: rgba(0, 0, 0, 0.8);
+}
+.intro-line.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#choice-prompt {
+  margin-top: 2rem;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+#choice-prompt p {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+button {
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(10px);
+  opacity: 0;
+  transition: all 0.6s ease;
+}
+button.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+button:hover {
+  background: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+  color: #111;
+}
+
+/* 選項模式整體區塊 */
+#option-mode {
+  opacity: 0;
+  transition: opacity 1s ease;
+  display: none; /* 預設隱藏 */
+}
+
+#option-mode.show {
+  display: block;  /* 這是關鍵 */
+  opacity: 1;
+}
+
+
+/* 樓層選擇按鈕區 */
+.floor-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.floor-btn {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.5s ease;
+}
+
+.floor-btn.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.floor-btn:hover {
+  background: rgba(255, 255, 255, 0.5);
+  color: #111;
+}
+
+/* 區域按鈕容器 */
+#area-selector {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* 區域按鈕樣式（與其他按鈕風格一致） */
+.area-btn {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.5s ease;
+}
+
+.area-btn.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.area-btn:hover {
+  background: rgba(255, 255, 255, 0.5);
+  color: #111;
+}
+
+/* 結束導覽按鈕樣式 */
+#end-tour-btn {
+  background-color: #ff6b6b;
+  color: white;
+  padding: 0.7rem 1.4rem;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 1rem;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  cursor: pointer;
+}
+#end-tour-btn.show {
+  opacity: 1;
+}
+#end-tour-btn:hover {
+  background-color: #ff4b4b;
+}
+
+
+.hidden {
+  display: none;
+}
+
+
+/* 響應式設計：平板、手機支援 */
+@media (max-width: 1024px) {
+  .container {
+    max-width: 90vw;
+    padding: 3rem 2rem;
+  }
+
+  #choice-prompt p {
+    font-size: 1.15rem;
+  }
+
+  button {
+    font-size: 0.95rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  #end-tour-btn {
+    font-size: 0.95rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 95vw;
+    padding: 2rem 1.5rem;
+  }
+
+  .intro-line {
+    font-size: 1.1rem;
+  }
+
+  #choice-prompt p {
+    font-size: 1.05rem;
+  }
+
+  button, .area-btn, .floor-btn {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+
+  #end-tour-btn {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1.5rem 1rem;
+  }
+
+  .intro-line {
+    font-size: 1rem;
+  }
+
+  #choice-prompt p {
+    font-size: 1rem;
+  }
+
+  button, .area-btn, .floor-btn {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.9rem;
+  }
+
+  #end-tour-btn {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.9rem;
+    right: 10px;
+    bottom: 10px;
+  }
+}

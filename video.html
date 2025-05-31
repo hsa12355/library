@@ -1,0 +1,49 @@
+<!-- video.html -->
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>影音導覽</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="./images/floor_map_icon.png" alt="樓層地圖" id="floor-map-icon">
+    </div>
+    <h1>導覽影片</h1>
+    <video controls src="./video/sample_video.mp4" width="100%"></video>
+    <h2>選擇樓層</h2>
+    <div class="button-group">
+      <button onclick="filterContent('B1')">B1</button><button onclick="filterContent('1F')">1F</button><button onclick="filterContent('2F')">2F</button><button onclick="filterContent('3F')">3F</button>
+    </div>
+    <h2>選擇區域</h2>
+    <div class="button-group">
+      <button onclick="selectArea('B')">展區 B</button>
+    </div>
+    <button id="exit-btn" onclick="goHome()">結束導覽</button>
+  </div>
+  <div id="floor-map-modal" style="display:none">
+    <img src="./images/floor_map_all.jpg" alt="樓層地圖全圖" onclick="closeMap()">
+  </div>
+  <script>
+    const lang = new URLSearchParams(window.location.search).get('lang') || 'zh';
+    function selectArea(area) {
+      window.location.href = `video.html?lang=${lang}&area=${area}`;
+    }
+    function filterContent(floor) {
+      // Implement filtering logic by floor here (optional placeholder)
+    }
+    function goHome() {
+      window.location.href = `language.html`;
+    }
+    function closeMap() {
+      document.getElementById('floor-map-modal').style.display = 'none';
+    }
+    document.getElementById('floor-map-icon').onclick = () => {
+      document.getElementById('floor-map-modal').style.display = 'block';
+    };
+  </script>
+</body>
+</html>

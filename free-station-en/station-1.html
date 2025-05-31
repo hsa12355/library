@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Station 1: AI eBook Wall - Text Guide</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body id="option-mode-page">
+
+<div class="container">
+
+  <!-- Top-right Floor Map Button -->
+  <button id="floor-map-btn" class="floor-map-btn">Floor Map</button>
+
+  <!-- Floor Map Popup -->
+  <div id="floor-map-popup" class="floor-map-popup hidden">
+    <img src="/images/Floor-B1s_-_.jpg" alt="B1 Floor Map" />
+    <img src="/images/Floor-1Fs_-_.jpg" alt="1F Floor Map" />
+    <img src="/images/Floor-2Fs_-_.jpg" alt="2F Floor Map" />
+    <button id="close-map" class="close-map">Close Map</button>
+  </div>
+
+  <!-- Intro Photo -->
+  <div class="intro-photo">
+    <img src="book-wall.jpg" alt="Station 1: AI eBook Wall - Text Guide" />
+  </div>
+
+  <!-- Intro Text -->
+  <div class="intro-text">
+    <p class="intro-line">Launched in December 2018, this AI-powered eBook Wall is an innovative facility designed to promote eBook reading. More than just a wall, it acts as a passionate reading guide, integrating modern technology with three main functions: themed eBook promotion, QR code download, and fun AI-based book recommendations via facial recognition.</p>
+    <p class="intro-line">Visitors can explore eBook lists directly on the touchscreen or scan a QR code to instantly borrow and read on their own devices.</p>
+    <p class="intro-line">The most intriguing feature is the “photo-based recommendation” function. Using facial recognition technology, the wall suggests personalized books for readers. On launch day in 2018, then-President Chih-Yang Wu personally tried this function and chose *Life Is Like a Storybook* as his winter reading, inspiring the library’s “One Book for Winter” campaign.</p>
+    <p class="intro-line">This eBook Wall is not only a gateway to digital reading but also a favorite photo spot for students and visitors alike.</p>
+  </div>
+
+  <div id="choice-prompt">
+    <!-- Floor Selector -->
+    <div class="floor-selector">
+      <button class="floor-btn" data-floor="B1">B1</button>
+      <button class="floor-btn" data-floor="1F">1F</button>
+      <button class="floor-btn" data-floor="2F">2F</button>
+    </div>
+
+    <!-- Area Selector (Dynamically Generated) -->
+    <div class="area-selector" id="area-selector"></div>
+  </div>
+
+  <!-- End Tour Button -->
+  <button id="end-tour-btn" class="end-tour-btn">End Tour</button>
+
+</div>
+
+<script src="../js/text-en.js"></script>
+
+</body>
+</html>

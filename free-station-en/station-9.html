@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Station 9: Japanese Zen Garden - Karesansui</title>
+<link rel="stylesheet" href="../css/style.css" />
+</head>
+<body id="option-mode-page">
+
+<div class="container">
+
+  <!-- Top right floor map button -->
+  <button id="floor-map-btn" class="floor-map-btn">Floor Map</button>
+
+  <!-- Floor map popup -->
+  <div id="floor-map-popup" class="floor-map-popup hidden">
+    <img src="/images/Floor-B1s_-_.jpg" alt="Basement 1 Floor Map" />
+    <img src="/images/Floor-1Fs_-_.jpg" alt="1st Floor Map" />
+    <img src="/images/Floor-2Fs_-_.jpg" alt="2nd Floor Map" />
+    <button id="close-map" class="close-map">Close Map</button>
+  </div>
+
+  <!-- Introduction photo -->
+  <div class="intro-photo">
+    <img src="book-wall.jpg" alt="Station 9: Japanese Zen Garden - Karesansui" />
+  </div>
+
+  <!-- Introduction text -->
+  <div class="intro-text">
+    <p class="intro-line">A tranquil corner featuring a Japanese Karesansui Zen garden made of fine sand and rocks.</p>
+    <p class="intro-line">“Mountains” are symbolized by stones, while “water” is represented by sand and gravel, with patterns on the sand surface resembling flowing water.</p>
+    <p class="intro-line">This garden conveys a peaceful and calm atmosphere through its static elements. The design intention is for every visitor to the library to let go of worries, calm their minds, and focus on the sea of books.</p>
+  </div>
+
+  <div id="choice-prompt">
+  <!-- Floor selection buttons -->
+  <div class="floor-selector">
+    <button class="floor-btn" data-floor="B1">B1</button>
+    <button class="floor-btn" data-floor="1F">1F</button>
+    <button class="floor-btn" data-floor="2F">2F</button>
+  </div>
+
+  <!-- Area selection buttons (dynamically generated) -->
+  <div class="area-selector" id="area-selector"></div>
+  </div>
+
+  <!-- Bottom right end tour button -->
+  <button id="end-tour-btn" class="end-tour-btn">End Tour</button>
+
+</div>
+
+<script src="../js/text-en.js"></script>
+
+</body>
+</html>

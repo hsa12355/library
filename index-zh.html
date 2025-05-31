@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>元智大學圖書館導覽</title>
+  <link href="./css/style-home.css" rel="stylesheet" />
+  <script src="./js/home.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <h1 class="intro-line">你好，我是Ze-Ze，歡迎來到元智大學圖書館。</h1>
+    <p class="intro-line">
+      在這裡，每一處角落、每一本書籍，甚至每一台設備，背後都蘊含著一段故事。今天，就讓我們循著導覽動線，一站一站地探索這座結合科技、人文與自然的知識殿堂。
+    </p>
+
+    <div id="choice-prompt" style="opacity:0;">
+      <p>你希望我怎麼導覽呢？</p>
+      <div class="button-group">
+        <button data-show="free">自由探索</button>
+        <button data-show="fixed">固定路線</button>
+        <button data-show="option">選項模式</button>
+      </div>
+    </div>
+
+    <!-- 選項模式專用區塊（初始隱藏） -->
+    <div id="option-mode" class="hidden">
+      <h2>請選擇樓層</h2>
+      <div class="floor-buttons">
+        <button class="floor-btn" data-floor="B1">B1</button>
+        <button class="floor-btn" data-floor="1F">1F</button>
+        <button class="floor-btn" data-floor="2F">2F</button>
+      </div>
+
+      <h2>請選擇區域</h2>
+      <div id="area-selector">請先選擇樓層</div>
+
+      
+    </div>
+
+  </div>
+  <button id="end-tour-btn" class="hidden fixed-button">結束導覽</button>
+</body>
+</html>

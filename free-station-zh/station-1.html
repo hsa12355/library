@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>第一站：智書網．電子書牆 - 文字導覽</title>
+<link rel="stylesheet" href="../css/style.css" />
+</head>
+<body id="option-mode-page">
+
+<div class="container">
+
+  <!-- 右上角樓層地圖按鈕 -->
+  <button id="floor-map-btn" class="floor-map-btn">樓層地圖</button>
+
+  <!-- 樓層地圖彈出層 -->
+  <div id="floor-map-popup" class="floor-map-popup hidden">
+    <img src="/images/Floor-B1s_-_.jpg" alt="樓層地圖B1" />
+    <img src="/images/Floor-1Fs_-_.jpg" alt="樓層地圖1" />
+    <img src="/images/Floor-2Fs_-_.jpg" alt="樓層地圖2" />
+    <button id="close-map" class="close-map">關閉地圖</button>
+  </div>
+
+  <!-- 介紹照片 -->
+  <div class="intro-photo">
+    <img src="book-wall.jpg" alt="第一站：智書網．電子書牆 - 文字導覽" />
+  </div>
+
+  <!-- 介紹文字 -->
+  <div class="intro-text">
+    <p class="intro-line">這座於2018年12月啟用的AI電子書牆，是為了推廣電子書閱讀而誕生的創新設施。它不只是一面書牆，更像是一位熱情的閱讀嚮導，結合了新科技，具備三大功能：主題式電子書推廣、QR Code掃描下載，以及趣味互動的人臉辨識推書。</p>
+    <p class="intro-line">訪客可依照自己的閱讀興趣，點選觸碰式螢幕上的書單進行線上瀏覽，或掃描QR Code，即刻下載借閱電子書。</p>
+    <p class="intro-line">其中最吸引人的是「拍照推書」功能，透過人臉辨識技術，為讀者提供專屬的書籍推薦。2018年啟用當天，時任校長吳志揚親自體驗拍照推書，當場挑選了《生活就像一本故事書》作為他的寒假閱讀書單，圖書館也因此發起「一人一書過寒假」的閱讀活動。</p>
+    <p class="intro-line">這面電子書牆，不僅是數位閱讀的入口，更成為學生與訪客們喜愛拍照打卡的熱門景點。</p>
+  </div>
+
+  <div id="choice-prompt">
+  <!-- 樓層選擇按鈕 -->
+  <div class="floor-selector">
+    <button class="floor-btn" data-floor="B1">B1</button>
+    <button class="floor-btn" data-floor="1F">1F</button>
+    <button class="floor-btn" data-floor="2F">2F</button>
+  </div>
+
+  
+  <!-- 區域選擇按鈕（動態生成） -->
+  <div class="area-selector" id="area-selector"></div>
+    <!-- 動態加入 -->
+  </div>
+
+  <!-- 右下角結束按鈕 -->
+  <button id="end-tour-btn" class="end-tour-btn">結束導覽</button>
+
+</div>
+
+<script src="../js/text.js"></script>
+
+</body>
+</html>

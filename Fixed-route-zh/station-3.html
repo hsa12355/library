@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>第三站：新書展示區．24小時還書箱</title>
+  <link rel="stylesheet" href="../css/style-fixe.css" />
+</head>
+<body id="fixed-route">
+
+<div class="container">
+
+  <!-- 樓層地圖按鈕 -->
+  <button id="floor-map-btn" class="floor-map-btn">樓層地圖</button>
+
+  <!-- 樓層地圖彈窗 -->
+  <div id="floor-map-popup" class="floor-map-popup hidden">
+    <img src="../images/Floor-B1s_-_.jpg" alt="樓層地圖B1" />
+    <img src="../images/Floor-1Fs_-_.jpg" alt="樓層地圖1F" />
+    <img src="../images/Floor-2Fs_-_.jpg" alt="樓層地圖2F" />
+    <button id="close-map" class="close-map">關閉地圖</button>
+  </div>
+
+  <!-- 介紹圖片 -->
+  <div class="intro-photo">
+    <img src="../images/book-wall.jpg" alt="第三站：新書展示區．24小時還書箱" />
+  </div>
+
+  <!-- 介紹文字（動畫） -->
+  <div class="intro-text">
+    <p class="intro-line">這裡是書籍新鮮出爐的地方。新書展示架上，最新出版的書籍一經上架即可外借。</p>
+    <p class="intro-line">區內配有舒適沙發座椅，經常可見同學們坐在這裡沉浸書海，忘卻時間。</p>
+    <p class="intro-line">圖書借閱到期後，除了親自至櫃檯歸還，圖書館大門右側也設有24小時還書箱，即便在非開館時間，也能方便又即時地完成還書。</p>
+  </div>
+
+  <!-- 導覽按鈕（左：上一站、右：下一站） -->
+<nav class="station-nav">
+  <a href="station-2.html" class="next-station-btn">上一站</a>
+  <a href="station-4.html" class="next-station-btn" style="left: auto; right: 120px;">下一站</a>
+</nav>
+
+
+  <!-- 結束導覽按鈕 -->
+  <button id="end-tour-btn" class="end-tour-btn">結束導覽</button>
+
+</div>
+
+<script src="../js/fixed.js"></script>
+</body>
+</html>

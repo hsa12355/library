@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>定點導覽</title>
+
+  <!-- QR 掃描器 -->
+  <script src="https://unpkg.com/html5-qrcode" defer></script>
+
+  <!-- 樣式與腳本 -->
+  <link rel="stylesheet" href="./css/scan.css" />
+  <script src="./js/scan.js" defer></script>
+</head>
+<body>
+
+  <!-- QR 掃描器區 -->
+  <div id="qr-reader" style="width: 300px; margin: 0 auto;"></div>
+
+  <!-- 主要容器 -->
+  <div class="container">
+
+    <h1>請掃描 QR 碼</h1>
+    <img src="./images/qr_placeholder.png" alt="QR掃描" width="200" />
+    <p>掃描後進行介紹</p>
+  </div>
+
+  <!-- 固定功能按鈕 -->
+  <button id="floor-map-btn" class="floor-map-btn">樓層地圖</button>
+  <button id="end-tour-btn" class="end-tour-btn">結束導覽</button>
+
+  <!-- 樓層地圖彈窗 -->
+  <div id="floor-map-popup" class="floor-map-popup hidden">
+    <img src="/images/Floor-B1s_-_.jpg" alt="樓層地圖B1" />
+    <img src="/images/Floor-1Fs_-_.jpg" alt="樓層地圖1F" />
+    <img src="/images/Floor-2Fs_-_.jpg" alt="樓層地圖2F" />
+    <button id="close-map" class="close-map">關閉地圖</button>
+  </div>
+
+</body>
+</html>

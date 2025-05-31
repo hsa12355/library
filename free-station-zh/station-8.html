@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>第八站：密集書庫區</title>
+<link rel="stylesheet" href="../css/style.css" />
+</head>
+<body id="option-mode-page">
+
+<div class="container">
+
+  <!-- 右上角樓層地圖按鈕 -->
+  <button id="floor-map-btn" class="floor-map-btn">樓層地圖</button>
+
+  <!-- 樓層地圖彈出層 -->
+  <div id="floor-map-popup" class="floor-map-popup hidden">
+    <img src="/images/Floor-B1s_-_.jpg" alt="樓層地圖B1" />
+    <img src="/images/Floor-1Fs_-_.jpg" alt="樓層地圖1" />
+    <img src="/images/Floor-2Fs_-_.jpg" alt="樓層地圖2" />
+    <button id="close-map" class="close-map">關閉地圖</button>
+  </div>
+
+  <!-- 介紹照片 -->
+  <div class="intro-photo">
+    <img src="book-wall.jpg" alt="第八站：密集書庫區" />
+  </div>
+
+  <!-- 介紹文字 -->
+  <div class="intro-text">
+    <p class="intro-line">這裡是館藏背後的寶庫。</p>
+    <p class="intro-line">為解決書架空間不足、增加圖書收藏量，圖書館設有密集書庫，專門存放較少使用但極具價值的書籍。</p>
+    <p class="intro-line">不同於一般固定書架，這裡採用的是可移動式書架，只需轉動書架側邊的舵盤，書架便能移動開啟，讓讀者輕鬆找到想尋的書籍，體驗「轉動書架、開啟知識之門」的樂趣。</p>
+  </div>
+
+  <div id="choice-prompt">
+  <!-- 樓層選擇按鈕 -->
+  <div class="floor-selector">
+    <button class="floor-btn" data-floor="B1">B1</button>
+    <button class="floor-btn" data-floor="1F">1F</button>
+    <button class="floor-btn" data-floor="2F">2F</button>
+  </div>
+
+  
+  <!-- 區域選擇按鈕（動態生成） -->
+  <div class="area-selector" id="area-selector"></div>
+    <!-- 動態加入 -->
+  </div>
+
+  <!-- 右下角結束按鈕 -->
+  <button id="end-tour-btn" class="end-tour-btn">結束導覽</button>
+
+</div>
+
+<script src="../js/text.js"></script>
+
+</body>
+</html>

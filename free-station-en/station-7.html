@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Station 7: Picture Books & Comics Area · Sustainable Picture Books Area</title>
+<link rel="stylesheet" href="../css/style.css" />
+</head>
+<body id="option-mode-page">
+
+<div class="container">
+
+  <!-- Top right floor map button -->
+  <button id="floor-map-btn" class="floor-map-btn">Floor Map</button>
+
+  <!-- Floor map popup -->
+  <div id="floor-map-popup" class="floor-map-popup hidden">
+    <img src="/images/Floor-B1s_-_.jpg" alt="Basement 1 Floor Map" />
+    <img src="/images/Floor-1Fs_-_.jpg" alt="1st Floor Map" />
+    <img src="/images/Floor-2Fs_-_.jpg" alt="2nd Floor Map" />
+    <button id="close-map" class="close-map">Close Map</button>
+  </div>
+
+  <!-- Introduction photo -->
+  <div class="intro-photo">
+    <img src="book-wall.jpg" alt="Station 7: Picture Books & Comics Area · Sustainable Picture Books Area" />
+  </div>
+
+  <!-- Introduction text -->
+  <div class="intro-text">
+    <p class="intro-line">This is where dreams and stories meet. The collection features popular and classic picture books and comics, offering readers a comprehensive look at the masters of these genres.</p>
+    <p class="intro-line">The space also includes a foreign language picture books & comics section and an SDGs sustainable picture books area.</p>
+    <p class="intro-line">Through playful yet insightful picture books, readers are guided to think about environmental sustainability and the future of our planet — inspiring action through reading and conveying values through stories.</p>
+  </div>
+
+  <div id="choice-prompt">
+  <!-- Floor selection buttons -->
+  <div class="floor-selector">
+    <button class="floor-btn" data-floor="B1">B1</button>
+    <button class="floor-btn" data-floor="1F">1F</button>
+    <button class="floor-btn" data-floor="2F">2F</button>
+  </div>
+
+  <!-- Area selection buttons (dynamically generated) -->
+  <div class="area-selector" id="area-selector"></div>
+  </div>
+
+  <!-- Bottom right end tour button -->
+  <button id="end-tour-btn" class="end-tour-btn">End Tour</button>
+
+</div>
+
+<script src="../js/text-en.js"></script>
+
+</body>
+</html>

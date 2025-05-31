@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Station 4: Digital Learning Area · EasyCard Printing · Seminar Rooms and Study Pods</title>
+<link rel="stylesheet" href="../css/style.css" />
+</head>
+<body id="option-mode-page">
+
+<div class="container">
+
+  <!-- Top right floor map button -->
+  <button id="floor-map-btn" class="floor-map-btn">Floor Map</button>
+
+  <!-- Floor map popup -->
+  <div id="floor-map-popup" class="floor-map-popup hidden">
+    <img src="/images/Floor-B1s_-_.jpg" alt="Basement 1 Floor Map" />
+    <img src="/images/Floor-1Fs_-_.jpg" alt="1st Floor Map" />
+    <img src="/images/Floor-2Fs_-_.jpg" alt="2nd Floor Map" />
+    <button id="close-map" class="close-map">Close Map</button>
+  </div>
+
+  <!-- Introduction photo -->
+  <div class="intro-photo">
+    <img src="book-wall.jpg" alt="Station 4: Digital Learning Area · EasyCard Printing · Seminar Rooms and Study Pods" />
+  </div>
+
+  <!-- Introduction text -->
+  <div class="intro-text">
+    <p class="intro-line">This area is like a modern digital hub for learning. Dozens of computer seats provide faculty and students with access to the campus portal for research, watching videos, writing reports, and printing. There are also standing computers available for visitors, allowing usage without logging in.</p>
+    <p class="intro-line">The printing service uses EasyCard payment. Users can set a print password on the computer and then enter it at the printer to complete printing.</p>
+    <p class="intro-line">The library features 10 digital seminar rooms and 8 study pods, which can be reserved online or at the counter.</p>
+    <p class="intro-line">Seminar rooms accommodate 3 to 8 people, ideal for group discussions and video watching; study pods provide private space for 1 to 2 people, perfect for live streaming, video conferencing, language practice, and media viewing.</p>
+    <p class="intro-line">These flexible learning facilities are highly sought-after self-study spaces for many students.</p>
+  </div>
+
+  <div id="choice-prompt">
+  <!-- Floor selection buttons -->
+  <div class="floor-selector">
+    <button class="floor-btn" data-floor="B1">B1</button>
+    <button class="floor-btn" data-floor="1F">1F</button>
+    <button class="floor-btn" data-floor="2F">2F</button>
+  </div>
+
+  <!-- Area selection buttons (dynamically generated) -->
+  <div class="area-selector" id="area-selector"></div>
+  </div>
+
+  <!-- Bottom right end tour button -->
+  <button id="end-tour-btn" class="end-tour-btn">End Tour</button>
+
+</div>
+
+<script src="../js/text-en.js"></script>
+
+</body>
+</html>

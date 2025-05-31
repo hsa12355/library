@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>第四站：數位學習區．悠遊卡影列印．研討室與學習艙</title>
+<link rel="stylesheet" href="../css/style.css" />
+</head>
+<body id="option-mode-page">
+
+<div class="container">
+
+  <!-- 右上角樓層地圖按鈕 -->
+  <button id="floor-map-btn" class="floor-map-btn">樓層地圖</button>
+
+  <!-- 樓層地圖彈出層 -->
+  <div id="floor-map-popup" class="floor-map-popup hidden">
+    <img src="/images/Floor-B1s_-_.jpg" alt="樓層地圖B1" />
+    <img src="/images/Floor-1Fs_-_.jpg" alt="樓層地圖1" />
+    <img src="/images/Floor-2Fs_-_.jpg" alt="樓層地圖2" />
+    <button id="close-map" class="close-map">關閉地圖</button>
+  </div>
+
+  <!-- 介紹照片 -->
+  <div class="intro-photo">
+    <img src="book-wall.jpg" alt="第四站：數位學習區．悠遊卡影列印．研討室與學習艙" />
+  </div>
+
+  <!-- 介紹文字 -->
+  <div class="intro-text">
+    <p class="intro-line">這一區彷彿是現代學習的數位基地。數十個電腦座位提供校內師生輸入Portal帳密後，查找資料、觀看影片、撰寫報告與列印等功能。全館另設有站立式電腦，供校外人士使用，無需登入帳號密碼即可查詢。</p>
+    <p class="intro-line">影列印服務採用悠遊卡付費方式。使用者可在電腦端設定列印密碼，之後至影印機上輸入密碼即可完成列印輸出作業。</p>
+    <p class="intro-line">全館共設有10間數位研討室與8座學習艙，可線上預約或到櫃檯現場預約使用。</p>
+    <p class="intro-line">研討室可容納3至8人，適合團體討論與影片觀賞；學習艙則提供1至2人的獨立空間，非常適合進行直播錄音、視訊會議、語言練習與影音觀賞。</p>
+    <p class="intro-line">這些靈活多元的學習設施，是許多學生心目中搶手的自學天地。</p>
+  </div>
+
+  <div id="choice-prompt">
+  <!-- 樓層選擇按鈕 -->
+  <div class="floor-selector">
+    <button class="floor-btn" data-floor="B1">B1</button>
+    <button class="floor-btn" data-floor="1F">1F</button>
+    <button class="floor-btn" data-floor="2F">2F</button>
+  </div>
+
+  
+  <!-- 區域選擇按鈕（動態生成） -->
+  <div class="area-selector" id="area-selector"></div>
+    <!-- 動態加入 -->
+  </div>
+
+  <!-- 右下角結束按鈕 -->
+  <button id="end-tour-btn" class="end-tour-btn">結束導覽</button>
+
+</div>
+
+<script src="../js/text.js"></script>
+
+</body>
+</html>

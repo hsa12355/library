@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>第二站：入館門禁．圖書館介紹</title>
+<link rel="stylesheet" href="../css/style.css" />
+</head>
+<body id="option-mode-page">
+
+<div class="container">
+
+  <!-- 右上角樓層地圖按鈕 -->
+  <button id="floor-map-btn" class="floor-map-btn">樓層地圖</button>
+
+  <!-- 樓層地圖彈出層 -->
+  <div id="floor-map-popup" class="floor-map-popup hidden">
+    <img src="/images/Floor-B1s_-_.jpg" alt="樓層地圖B1" />
+    <img src="/images/Floor-1Fs_-_.jpg" alt="樓層地圖1" />
+    <img src="/images/Floor-2Fs_-_.jpg" alt="樓層地圖2" />
+    <button id="close-map" class="close-map">關閉地圖</button>
+  </div>
+
+  <!-- 介紹照片 -->
+  <div class="intro-photo">
+    <img src="book-wall.jpg" alt="第二站：入館門禁．圖書館介紹" />
+  </div>
+
+  <!-- 介紹文字 -->
+  <div class="intro-text">
+    <p class="intro-line">圖書館入館方式十分便捷，元智學生可刷學生證或使用元智APP的通行證進出與借書。</p>
+    <p class="intro-line">走進這道入口，您正式踏入一座歷史悠久、功能多元的智慧場域。圖書館自1989年成立，1997年遷入五館，並於2006年擴建新館，總面積約達10,000平方公尺，提供超過1,100席次的閱讀空間。</p>
+    <p class="intro-line">全館共分為三層樓：地下一樓設有中日西文書庫、密集書庫、研討室、中庭植栽區與枯山水禪園；一樓為借還書與參考諮詢櫃台所在，並有新書展示區、數位學習區、博碩士論文區、英文讀本專區、活力閱讀區等多功能空間；二樓則是中西文現刊與熱門雜誌的寶庫，還有繪本漫畫專區與美學展示空間。</p>
+  </div>
+
+  <div id="choice-prompt">
+  <!-- 樓層選擇按鈕 -->
+  <div class="floor-selector">
+    <button class="floor-btn" data-floor="B1">B1</button>
+    <button class="floor-btn" data-floor="1F">1F</button>
+    <button class="floor-btn" data-floor="2F">2F</button>
+  </div>
+
+  
+  <!-- 區域選擇按鈕（動態生成） -->
+  <div class="area-selector" id="area-selector"></div>
+    <!-- 動態加入 -->
+  </div>
+
+  <!-- 右下角結束按鈕 -->
+  <button id="end-tour-btn" class="end-tour-btn">結束導覽</button>
+
+</div>
+
+<script src="../js/text.js"></script>
+
+</body>
+</html>

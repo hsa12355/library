@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Station 2: Library Entrance & Introduction</title>
+<link rel="stylesheet" href="../css/style.css" />
+</head>
+<body id="option-mode-page">
+
+<div class="container">
+
+  <!-- Top-right Floor Map Button -->
+  <button id="floor-map-btn" class="floor-map-btn">Floor Map</button>
+
+  <!-- Floor Map Popup -->
+  <div id="floor-map-popup" class="floor-map-popup hidden">
+    <img src="/images/Floor-B1s_-_.jpg" alt="B1 Floor Map" />
+    <img src="/images/Floor-1Fs_-_.jpg" alt="1F Floor Map" />
+    <img src="/images/Floor-2Fs_-_.jpg" alt="2F Floor Map" />
+    <button id="close-map" class="close-map">Close Map</button>
+  </div>
+
+  <!-- Intro Photo -->
+  <div class="intro-photo">
+    <img src="book-wall.jpg" alt="Station 2: Library Entrance & Introduction" />
+  </div>
+
+  <!-- Intro Text -->
+  <div class="intro-text">
+    <p class="intro-line">Entering the library is very convenient; Yuan Ze University students can use their student ID card or the Yuan Ze app pass to access and borrow books.</p>
+    <p class="intro-line">Stepping through this entrance, you officially enter a historic and multifunctional smart space. The library was established in 1989, moved to Building 5 in 1997, and expanded with a new building in 2006. It covers approximately 10,000 square meters and offers over 1,100 seats for reading.</p>
+    <p class="intro-line">The library is divided into three floors: The basement (B1) houses Chinese, Japanese, and Western language book collections, a dense storage area, seminar rooms, an indoor garden, and a Japanese dry landscape Zen garden; the first floor hosts the borrowing and reference desks, new book displays, digital learning area, thesis collection, English reading section, and a vibrant reading zone; the second floor contains current Chinese and Western periodicals, popular magazines, picture book and comic sections, and an aesthetic exhibition space.</p>
+  </div>
+
+  <div id="choice-prompt">
+  <!-- Floor Selector Buttons -->
+  <div class="floor-selector">
+    <button class="floor-btn" data-floor="B1">B1</button>
+    <button class="floor-btn" data-floor="1F">1F</button>
+    <button class="floor-btn" data-floor="2F">2F</button>
+  </div>
+
+  <!-- Area Selector Buttons (Dynamically Generated) -->
+  <div class="area-selector" id="area-selector"></div>
+  </div>
+
+  <!-- Bottom-right End Tour Button -->
+  <button id="end-tour-btn" class="end-tour-btn">End Tour</button>
+
+</div>
+
+<script src="../js/text-en.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Station Guide</title>
+
+  <!-- QR Scanner -->
+  <script src="https://unpkg.com/html5-qrcode" defer></script>
+
+  <!-- Styles & Script -->
+  <link rel="stylesheet" href="./css/scan.css" />
+  <script src="./js/scan-en.js" defer></script>
+</head>
+<body>
+
+  <!-- QR Scanner Area -->
+  <div id="qr-reader" style="width: 300px; margin: 0 auto;"></div>
+
+  <!-- Main Container -->
+  <div class="container">
+    <h1>Please scan the QR code</h1>
+    <img src="./images/qr_placeholder.png" alt="QR Scan" width="200" />
+    <p>The introduction will begin after scanning</p>
+  </div>
+
+  <!-- Fixed Buttons -->
+  <button id="floor-map-btn" class="floor-map-btn">Floor Map</button>
+  <button id="end-tour-btn" class="end-tour-btn">End Tour</button>
+
+  <!-- Floor Map Popup -->
+  <div id="floor-map-popup" class="floor-map-popup hidden">
+    <img src="/images/Floor-B1s_-_.jpg" alt="Floor Map B1" />
+    <img src="/images/Floor-1Fs_-_.jpg" alt="Floor Map 1F" />
+    <img src="/images/Floor-2Fs_-_.jpg" alt="Floor Map 2F" />
+    <button id="close-map" class="close-map">Close Map</button>
+  </div>
+
+</body>
+</html>

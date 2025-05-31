@@ -1,0 +1,160 @@
+/* 背景與整體設定 */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans TC', sans-serif;
+  background: url('../images/未來書庫中的智慧指引.png') no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 主要容器 */
+.container {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(15px);
+  border-radius: 24px;
+  padding: 4rem 3rem; /* 加大上下與左右間距 */
+  max-width: 880px;    /* 原本 680px，放大到 880px */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  color: #333;
+}
+
+/* QR 掃描區 */
+#qr-reader {
+  margin: 1.5rem auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* 導覽選擇按鈕 */
+.button-group button {
+  margin: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #333;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button-group button:hover {
+  background: rgba(128, 181, 209, 0.45);
+  color: #111;
+}
+
+/* 結束導覽按鈕 */
+.end-tour-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #e53935;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+  transition: background-color 0.3s ease;
+}
+
+.end-tour-btn:hover {
+  background: #b71c1c;
+}
+
+/* 樓層地圖按鈕 */
+.floor-map-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #8e24aa;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+}
+
+/* 樓層地圖彈出區塊 */
+.floor-map-popup {
+  position: fixed;
+  top: 60px;
+  right: 20px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  padding: 1rem;
+  max-width: 300px;
+  max-height: 400px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.floor-map-popup img {
+  width: 100%;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+}
+
+.close-map {
+  display: block;
+  margin: 0 auto;
+  padding: 0.5rem 1.5rem;
+  background: #d32f2f;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* 隱藏用 */
+.hidden {
+  display: none !important;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+  .container {
+    padding: 2rem 1.5rem;
+  }
+
+  .button-group button {
+    font-size: 0.95rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  .end-tour-btn, .floor-map-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .close-map {
+    font-size: 0.9rem;
+    padding: 0.4rem 1.2rem;
+  }
+
+  .floor-map-popup {
+    max-width: 90vw;
+    max-height: 60vh;
+    right: 5%;
+  }
+}
+
+.floor-map-btn,
+.end-tour-btn,
+.close-map {
+  transition: all 0.3s ease;
+}
