@@ -25,9 +25,13 @@ function onScanFailure(error) {
 async function stopScanner() {
   if (html5QrCode && html5QrCode._isScanning) {
     try {
-      console.log('嘗試停止掃描器...');
       await html5QrCode.stop();
-      console.log('掃描器停止成功');
+      const videoElem = document.querySelector("#qr-reader video");
+      if (videoElem && videoElem.srcObject) {
+        videoElem.srcObject.getTracks().forEach(track => track.stop());
+        videoElem.srcObject = null;
+      }
+      console.log('掃描器與媒體流成功停止');
     } catch (err) {
       console.error('停止掃描器錯誤:', err);
     }
@@ -36,22 +40,18 @@ async function stopScanner() {
 
 async function startScanner(cameraId) {
   try {
-    // 先停止現有掃描器（確保沒在掃描）
     await stopScanner();
 
     if (html5QrCode) {
       try {
-        html5QrCode.clear(); // 清除畫面及資源（若支援）
+        html5QrCode.clear();
       } catch (err) {
         console.warn('clear() 方法不可用:', err);
       }
       html5QrCode = null;
     }
 
-    // 新建掃描器
     html5QrCode = new Html5Qrcode("qr-reader");
-
-    console.log(`啟動相機: ${cameraId}`);
     await html5QrCode.start(
       cameraId,
       { fps: 10, qrbox: 250 },
@@ -63,9 +63,9 @@ async function startScanner(cameraId) {
     console.log('掃描器啟動完成');
   } catch (err) {
     console.error('啟動掃描器錯誤:', err);
-    alert('啟動掃描器時發生錯誤，請檢查相機權限或重新整理頁面');
   }
 }
+
 
 function initCameraSelector() {
   Html5Qrcode.getCameras().then(devices => {
