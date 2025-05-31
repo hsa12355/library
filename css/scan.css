@@ -16,24 +16,41 @@ body, html {
   background: rgba(255, 255, 255, 0.65);
   backdrop-filter: blur(15px);
   border-radius: 24px;
-  padding: 4rem 3rem; /* 加大上下與左右間距 */
-  max-width: 880px;    /* 原本 680px，放大到 880px */
+  padding: 4rem 3rem;
+  width: 100%;                 /* ✅ 改大 */
+  max-width: none;          /* ✅ 原為 880px */
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
   text-align: center;
   color: #333;
+  box-sizing: border-box;
 }
+
+
 
 /* QR 掃描區 */
 #qr-reader {
+  width: 100%;
+  max-width: 320px;
   margin: 1.5rem auto;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
+
 /* 導覽選擇按鈕 */
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
 .button-group button {
-  margin: 0.5rem;
+  flex: 1 1 auto;
+  min-width: 120px;
+  max-width: 100%;
+  margin: 0.25rem;
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
   font-weight: 600;
@@ -65,6 +82,7 @@ body, html {
   cursor: pointer;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
   transition: background-color 0.3s ease;
+  z-index: 1000;
 }
 
 .end-tour-btn:hover {
@@ -100,6 +118,7 @@ body, html {
   max-height: 400px;
   overflow-y: auto;
   z-index: 1000;
+  box-sizing: border-box;
 }
 
 .floor-map-popup img {
@@ -125,10 +144,11 @@ body, html {
   display: none !important;
 }
 
-/* 響應式設計 */
+/* 響應式設計：平板與手機 */
 @media (max-width: 768px) {
   .container {
     padding: 2rem 1.5rem;
+    width: 95%;
   }
 
   .button-group button {
@@ -150,11 +170,54 @@ body, html {
     max-width: 90vw;
     max-height: 60vh;
     right: 5%;
+    top: 80px;
   }
 }
 
+/* 極小裝置（小於 480px，例如 iPhone SE） */
+@media (max-width: 480px) {
+  .container {
+    padding: 1.5rem 1rem;
+    width: 98%;                 /* ✅ 更寬一點 */
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    white-space: nowrap;        /* ✅ 保持在一行 */
+  }
+
+  .button-group button {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .end-tour-btn, .floor-map-btn {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .floor-map-popup {
+    max-height: 50vh;
+    padding: 0.75rem;
+  }
+
+  .close-map {
+    font-size: 0.85rem;
+  }
+}
+
+
+/* 統一動畫效果 */
 .floor-map-btn,
 .end-tour-btn,
 .close-map {
   transition: all 0.3s ease;
 }
+
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  white-space: nowrap; /* 關鍵：不換行 */
+  overflow: hidden;
+}
+
