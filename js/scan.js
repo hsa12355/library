@@ -82,6 +82,37 @@ function initCameraSelector() {
 window.onload = () => {
   initCameraSelector();
 
+  document.getElementById('choose-camera-btn').onclick = () => {
+  const select = document.getElementById('camera-select');
+  select.classList.remove('hidden');
+
+  Html5Qrcode.getCameras().then(devices => {
+    if (!devices || devices.length === 0) {
+      alert('No camera found');
+      return;
+    }
+
+    select.innerHTML = ''; // 清空舊項目
+    devices.forEach((device, index) => {
+      const option = document.createElement('option');
+      option.value = device.id;
+      option.text = device.label || `Camera ${index + 1}`;
+      select.appendChild(option);
+    });
+
+    // 若還沒啟動，啟動第一支
+    if (!currentCameraId) startScanner(devices[0].id);
+
+    select.onchange = (e) => {
+      const newCameraId = e.target.value;
+      if (newCameraId !== currentCameraId) {
+        startScanner(newCameraId);
+      }
+    };
+  });
+};
+
+
   // 樓層地圖開啟
   document.getElementById('floor-map-btn').onclick = () => {
     document.getElementById('floor-map-popup').classList.remove('hidden');
