@@ -252,29 +252,3 @@ button:hover {
     bottom: 10px;
   }
 }
-/* 超小螢幕修正：防止 container 撐出畫面 */
-@media (max-width: 360px) {
-  .container {
-    padding: 1.2rem 0.8rem;
-  }
-
-  button, .area-btn, .floor-btn {
-    font-size: 0.8rem;
-    padding: 0.45rem 0.8rem;
-    min-width: 120px;
-  }
-
-  #end-tour-btn {
-    padding: 0.45rem 0.8rem;
-    font-size: 0.8rem;
-  }
-
-  #choice-prompt p {
-    font-size: 0.95rem;
-  }
-
-  .intro-line {
-    font-size: 0.95rem;
-    line-height: 1.5;
-  }
-}
