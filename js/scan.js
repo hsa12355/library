@@ -1,6 +1,6 @@
 const lang = new URLSearchParams(window.location.search).get('lang') || 'zh';
 
-let html5QrCode;
+let html5QrCode = null;
 let currentCameraId = null;
 
 // 掃描成功時導向對應頁面
@@ -25,13 +25,17 @@ function onScanFailure(error) {
 // 啟動 QR 掃描器
 async function startScanner(cameraId) {
   try {
-    if (!html5QrCode) {
-      html5QrCode = new Html5Qrcode("qr-reader");
-    } else {
-      // 先停止掃描器（如果還在掃描）
+    // 如果有啟動中的掃描器，先停止並銷毀
+    if (html5QrCode) {
       await html5QrCode.stop();
+      html5QrCode.clear(); // 清除內部資源（視版本而定）
+      html5QrCode = null;
     }
 
+    // 新建掃描器實例
+    html5QrCode = new Html5Qrcode("qr-reader");
+
+    // 啟動掃描器
     await html5QrCode.start(
       cameraId,
       { fps: 10, qrbox: 250 },
@@ -40,8 +44,10 @@ async function startScanner(cameraId) {
     );
 
     currentCameraId = cameraId;
+
   } catch (err) {
     console.error('啟動掃描器錯誤:', err);
+    alert('啟動掃描器時發生錯誤，請確認權限或重新整理頁面');
   }
 }
 
@@ -66,13 +72,12 @@ function initCameraSelector() {
     // 預設啟動第一支相機
     startScanner(devices[0].id);
 
-    // 切換鏡頭時的處理
-    select.onchange = (e) => {
+    // 切換鏡頭時重新啟動掃描器
+    select.onchange = async (e) => {
       const newCameraId = e.target.value;
 
-      // 若選擇的鏡頭不同才切換
       if (newCameraId !== currentCameraId) {
-        startScanner(newCameraId);
+        await startScanner(newCameraId);
       }
     };
   }).catch(err => {
@@ -84,17 +89,14 @@ function initCameraSelector() {
 window.onload = () => {
   initCameraSelector();
 
-  // 顯示樓層地圖
   document.getElementById('floor-map-btn').onclick = () => {
     document.getElementById('floor-map-popup').classList.remove('hidden');
   };
 
-  // 隱藏樓層地圖
   document.getElementById('close-map').onclick = () => {
     document.getElementById('floor-map-popup').classList.add('hidden');
   };
 
-  // 結束導覽按鈕
   document.getElementById('end-tour-btn').onclick = () => {
     window.location.href = 'language.html';
   };
