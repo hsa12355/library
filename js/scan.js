@@ -35,11 +35,12 @@ function initScanner() {
 =======
 >>>>>>> f6f358a (Update scan.js and scan-en.js to use rear camera by default)
       html5QrCode.start(
-        camera.id,
+        { facingMode: { exact: "environment" } },
         { fps: 10, qrbox: 250 },
         onScanSuccess,
         onScanFailure
       );
+
     }
   }).catch(err => {
     console.error("無法存取相機: ", err);
