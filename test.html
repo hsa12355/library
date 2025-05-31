@@ -1,0 +1,35 @@
+<div id="qr-reader" style="width: 300px;"></div>
+<select id="camera-select"></select>
+
+<script src="https://unpkg.com/html5-qrcode" ></script>
+<script>
+let scanner;
+
+async function startScanner(cameraId) {
+  if(scanner){
+    await scanner.stop();
+    scanner.clear();
+    scanner = null;
+    document.getElementById('qr-reader').innerHTML = '';
+  }
+  scanner = new Html5Qrcode("qr-reader");
+  await scanner.start(cameraId, {fps: 10, qrbox: 250},
+    (decodedText) => console.log("成功掃描: ", decodedText),
+    (error) => {}
+  );
+}
+
+Html5Qrcode.getCameras().then(devices => {
+  const select = document.getElementById('camera-select');
+  devices.forEach(d => {
+    let option = document.createElement('option');
+    option.value = d.id;
+    option.text = d.label || d.id;
+    select.appendChild(option);
+  });
+  if(devices.length>0){
+    startScanner(devices[0].id);
+  }
+  select.onchange = e => startScanner(e.target.value);
+});
+</script>

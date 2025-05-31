@@ -40,7 +40,16 @@ async function stopScanner() {
 
 async function startScanner(cameraId) {
   try {
-    await resetScanner();
+    await stopScanner();
+
+    if (html5QrCode) {
+      try {
+        html5QrCode.clear();
+      } catch (err) {
+        console.warn('clear() 方法不可用:', err);
+      }
+      html5QrCode = null;
+    }
 
     html5QrCode = new Html5Qrcode("qr-reader");
     await html5QrCode.start(
@@ -56,26 +65,6 @@ async function startScanner(cameraId) {
     console.error('啟動掃描器錯誤:', err);
   }
 }
-
-
-async function resetScanner() {
-  if (html5QrCode) {
-    try {
-      if (html5QrCode._isScanning) {
-        await html5QrCode.stop();
-      }
-      html5QrCode.clear();
-    } catch (e) {
-      console.warn('resetScanner 發生錯誤:', e);
-    }
-    html5QrCode = null;
-
-    // 移除 #qr-reader 內部內容，強制刷新
-    const container = document.getElementById("qr-reader");
-    container.innerHTML = "";
-  }
-}
-
 
 
 function initCameraSelector() {
