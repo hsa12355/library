@@ -3,7 +3,6 @@ const lang = new URLSearchParams(window.location.search).get('lang') || 'zh';
 let html5QrCode = null;
 let currentCameraId = null;
 
-// 掃描成功時導向對應頁面
 function onScanSuccess(decodedText) {
   console.log(`掃描成功: ${decodedText}`);
 
@@ -17,21 +16,41 @@ function onScanSuccess(decodedText) {
   window.location.href = target;
 }
 
-// 掃描失敗時呼叫（可忽略錯誤）
 function onScanFailure(error) {
+  // 可以不用每次錯誤都印出，避免淩亂
   // console.warn(`掃描失敗: ${error}`);
+}
+
+async function clearScanner() {
+  if (html5QrCode) {
+    try {
+      console.log('停止掃描器...');
+      await html5QrCode.stop();
+      html5QrCode.clear();
+      const videoElem = document.querySelector("#qr-reader video");
+      if (videoElem && videoElem.srcObject) {
+        videoElem.srcObject.getTracks().forEach(track => track.stop());
+        videoElem.srcObject = null;
+        console.log('媒體流停止成功');
+      }
+    } catch (e) {
+      console.error('停止掃描器發生錯誤:', e);
+    }
+    html5QrCode = null;
+  }
 }
 
 async function startScanner(cameraId) {
   try {
-    if (html5QrCode) {
-      await html5QrCode.stop();
-      html5QrCode.clear();
-      html5QrCode = null;
-      document.getElementById('qr-reader').innerHTML = '';
+    if (cameraId === currentCameraId && html5QrCode) {
+      console.log('已是目前相機，無需重啟');
+      return;
     }
 
+    await clearScanner();
+
     html5QrCode = new Html5Qrcode("qr-reader");
+
     await html5QrCode.start(
       cameraId,
       { fps: 10, qrbox: 250 },
@@ -40,7 +59,7 @@ async function startScanner(cameraId) {
     );
 
     currentCameraId = cameraId;
-    console.log('掃描器啟動完成');
+    console.log('掃描器啟動完成，使用相機ID:', cameraId);
   } catch (err) {
     console.error('啟動掃描器錯誤:', err);
     alert('啟動掃描器失敗，請確認相機權限並重試。');
@@ -69,13 +88,7 @@ function initCameraSelector() {
 
     select.onchange = async (e) => {
       const newCameraId = e.target.value;
-
-      if (newCameraId === currentCameraId) {
-        console.log('已是目前相機，無需切換');
-        return;
-      }
-
-      console.log(`切換相機到: ${newCameraId}`);
+      console.log('切換相機到: ', newCameraId);
       await startScanner(newCameraId);
     };
   }).catch(err => {
@@ -84,7 +97,7 @@ function initCameraSelector() {
   });
 }
 
-window.onload = () => {
+window.addEventListener('load', () => {
   initCameraSelector();
 
   document.getElementById('floor-map-btn').onclick = () => {
@@ -98,4 +111,4 @@ window.onload = () => {
   document.getElementById('end-tour-btn').onclick = () => {
     window.location.href = 'language.html';
   };
-};
+});
