@@ -3,34 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fixed-point Tour</title>
+  <title>Station Tour</title>
 
-  <!-- QR Code Scanner -->
+  <!-- QR Scanner -->
   <script src="https://unpkg.com/html5-qrcode" defer></script>
 
-  <!-- Styles and Scripts -->
+  <!-- Style and Script -->
   <link rel="stylesheet" href="./css/scan.css" />
-  <script src="./js/scan.js" defer></script>
+  <script src="./js/scan-en.js" defer></script>
 </head>
 <body>
-  <!-- Main container (centered) -->
+  <!-- Main Container (Centered) -->
   <div class="container">
-    <h1>Please Scan the QR Code</h1>
+    <h1>Please scan the QR code</h1>
 
-    <!-- Scanner placed inside the container -->
+    <div>
+      <label for="camera-select">Select Camera:</label>
+      <select id="camera-select"></select>
+    </div>
+
+    <!-- QR Scanner Area -->
     <div id="qr-reader" style="width: 100%; max-width: 320px; margin: 0 auto;"></div>
 
-    <p>After scanning, proceed to the introduction</p>
+    <p>You'll be guided to the introduction after scanning</p>
   </div>
 
-  <!-- Fixed function buttons and floor map popup -->
+  <!-- Fixed Buttons & Floor Map Popup -->
   <button id="floor-map-btn" class="floor-map-btn">Floor Map</button>
   <button id="end-tour-btn" class="end-tour-btn">End Tour</button>
 
   <div id="floor-map-popup" class="floor-map-popup hidden">
-    <img src="./images/Floor-B1s_-_.jpg" alt="Floor Map B1" />
-    <img src="./images/Floor-1Fs_-_.jpg" alt="Floor Map 1F" />
-    <img src="./images/Floor-2Fs_-_.jpg" alt="Floor Map 2F" />
+    <img src="./images/Floor-B1s_-_.jpg" alt="Floor B1 Map" />
+    <img src="./images/Floor-1Fs_-_.jpg" alt="Floor 1F Map" />
+    <img src="./images/Floor-2Fs_-_.jpg" alt="Floor 2F Map" />
     <button id="close-map" class="close-map">Close Map</button>
   </div>
 </body>

@@ -1,6 +1,9 @@
 const lang = new URLSearchParams(window.location.search).get('lang') || 'zh';
 
-// Redirect to corresponding page upon successful scan
+let html5QrCode;
+let currentCameraId = null;
+
+// Redirect to the corresponding page upon successful scan
 function onScanSuccess(decodedText) {
   console.log(`Scan successful: ${decodedText}`);
 
@@ -14,45 +17,77 @@ function onScanSuccess(decodedText) {
   window.location.href = target;
 }
 
-// Handle scan failure
+// Called when scanning fails
 function onScanFailure(error) {
   console.warn(`Scan failed: ${error}`);
 }
 
-// Initialize QR scanner
-function initScanner() {
-  const html5QrCode = new Html5Qrcode("qr-reader");
-  Html5Qrcode.getCameras().then(devices => {
-    if (devices && devices.length) {
-      // Prefer rear/back camera if available
-      const camera = devices.find(device =>
-        device.label.toLowerCase().includes('back') ||
-        device.label.toLowerCase().includes('rear')
-      ) || devices[0]; // fallback to first camera
-
-      // Start scanning with selected camera id
+// Start the QR scanner
+function startScanner(cameraId) {
+  if (html5QrCode) {
+    html5QrCode.stop().then(() => {
       html5QrCode.start(
-        camera.id,
+        cameraId,
         { fps: 10, qrbox: 250 },
         onScanSuccess,
         onScanFailure
       );
+    }).catch(err => {
+      console.error('Error stopping scanner:', err);
+    });
+  } else {
+    html5QrCode = new Html5Qrcode("qr-reader");
+    html5QrCode.start(
+      cameraId,
+      { fps: 10, qrbox: 250 },
+      onScanSuccess,
+      onScanFailure
+    );
+  }
+  currentCameraId = cameraId;
+}
+
+// Initialize camera selector
+function initCameraSelector() {
+  Html5Qrcode.getCameras().then(devices => {
+    if (!devices || devices.length === 0) {
+      alert('No camera devices found');
+      return;
     }
+
+    const select = document.getElementById('camera-select');
+    devices.forEach(device => {
+      const option = document.createElement('option');
+      option.value = device.id;
+      option.text = device.label || `Camera ${select.length + 1}`;
+      select.appendChild(option);
+    });
+
+    // Default to first camera
+    startScanner(devices[0].id);
+
+    // Listen for camera selection change
+    select.onchange = (e) => {
+      const newCameraId = e.target.value;
+      if (newCameraId !== currentCameraId) {
+        startScanner(newCameraId);
+      }
+    };
   }).catch(err => {
-    console.error("Unable to access camera: ", err);
-    alert("Unable to open the camera. Please check your browser permissions.");
+    console.error('Failed to get camera list:', err);
+    alert('Unable to access camera list. Please check permissions.');
   });
 }
 
 window.onload = () => {
-  initScanner();
+  initCameraSelector();
 
-  // Open floor map
+  // Show floor map
   document.getElementById('floor-map-btn').onclick = () => {
     document.getElementById('floor-map-popup').classList.remove('hidden');
   };
 
-  // Close floor map
+  // Hide floor map
   document.getElementById('close-map').onclick = () => {
     document.getElementById('floor-map-popup').classList.add('hidden');
   };
