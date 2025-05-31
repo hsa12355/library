@@ -56,28 +56,34 @@ function initCameraSelector() {
     }
 
     const select = document.getElementById('camera-select');
-    devices.forEach(device => {
+    select.innerHTML = ''; // 清除選單內容（避免重複）
+
+    devices.forEach((device, index) => {
       const option = document.createElement('option');
       option.value = device.id;
-      option.text = device.label || `Camera ${select.length + 1}`;
+      option.text = device.label || `Camera ${index + 1}`;
       select.appendChild(option);
     });
 
-    // Default to first camera
+    // 預設使用第一支相機
     startScanner(devices[0].id);
 
-    // Listen for camera selection change
-    select.onchange = (e) => {
+    // ✅ 改用 async 監聽事件：切換前先停止相機
+    select.onchange = async (e) => {
       const newCameraId = e.target.value;
-      if (newCameraId !== currentCameraId) {
-        startScanner(newCameraId);
+
+      if (html5QrCode && html5QrCode._isScanning) {
+        await html5QrCode.stop();
       }
+
+      startScanner(newCameraId);
     };
   }).catch(err => {
     console.error('Failed to get camera list:', err);
-    alert('Unable to access camera list. Please check permissions.');
+    alert('Unable to access camera list. Please check browser permissions.');
   });
 }
+
 
 window.onload = () => {
   initCameraSelector();
