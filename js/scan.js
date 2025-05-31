@@ -1,8 +1,8 @@
 const lang = new URLSearchParams(window.location.search).get('lang') || 'zh';
 
-// 掃描成功時導向對應頁面
+// Redirect to corresponding page upon successful scan
 function onScanSuccess(decodedText) {
-  console.log(`掃描成功: ${decodedText}`);
+  console.log(`Scan successful: ${decodedText}`);
 
   let target;
   if (decodedText.endsWith('.html')) {
@@ -14,44 +14,50 @@ function onScanSuccess(decodedText) {
   window.location.href = target;
 }
 
-// 掃描失敗
+// Handle scan failure
 function onScanFailure(error) {
-  console.warn(`掃描失敗: ${error}`);
+  console.warn(`Scan failed: ${error}`);
 }
 
-// 初始化 QR 掃描器
+// Initialize QR scanner
 function initScanner() {
   const html5QrCode = new Html5Qrcode("qr-reader");
   Html5Qrcode.getCameras().then(devices => {
     if (devices && devices.length) {
-      const cameraId = devices[0].id;
+      // Prefer rear/back camera if available
+      const camera = devices.find(device =>
+        device.label.toLowerCase().includes('back') ||
+        device.label.toLowerCase().includes('rear')
+      ) || devices[0]; // fallback to first camera
+
       html5QrCode.start(
-        cameraId,
+        { facingMode: { exact: "environment" } },
         { fps: 10, qrbox: 250 },
         onScanSuccess,
         onScanFailure
       );
+
     }
   }).catch(err => {
-    console.error("無法存取相機: ", err);
-    alert("無法開啟相機，請確認瀏覽器權限已開啟。");
+    console.error("Unable to access camera: ", err);
+    alert("Unable to open the camera. Please check your browser permissions.");
   });
 }
 
 window.onload = () => {
   initScanner();
 
-  // 樓層地圖開啟
+  // Open floor map
   document.getElementById('floor-map-btn').onclick = () => {
     document.getElementById('floor-map-popup').classList.remove('hidden');
   };
 
-  // 樓層地圖關閉
+  // Close floor map
   document.getElementById('close-map').onclick = () => {
     document.getElementById('floor-map-popup').classList.add('hidden');
   };
 
-  // 結束導覽按鈕
+  // End tour button
   document.getElementById('end-tour-btn').onclick = () => {
     window.location.href = 'language.html';
   };
