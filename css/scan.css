@@ -29,12 +29,13 @@ body, html {
 
 /* QR 掃描區 */
 #qr-reader {
-  width: 100%;
-  max-width: 320px;
-  margin: 1.5rem auto;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 10;
+  background: black;
+}
+#qr-reader video {
+  width: 100% !important;
+  height: auto !important;
 }
 
 /* 下拉選單容器 */

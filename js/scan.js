@@ -17,7 +17,7 @@ function onScanSuccess(decodedText) {
 }
 
 function onScanFailure(error) {
-  // console.warn(`掃描失敗: ${error}`);
+  // 可選：略過掃描失敗的錯誤以保持 Console 清潔
 }
 
 async function clearScanner() {
@@ -26,6 +26,7 @@ async function clearScanner() {
       console.log('停止掃描器...');
       await html5QrCode.stop();
       html5QrCode.clear();
+
       const videoElem = document.querySelector("#qr-reader video");
       if (videoElem && videoElem.srcObject) {
         videoElem.srcObject.getTracks().forEach(track => track.stop());
@@ -41,13 +42,26 @@ async function clearScanner() {
 async function startScanner(cameraId) {
   try {
     await clearScanner();
+
     html5QrCode = new Html5Qrcode("qr-reader");
-    await html5QrCode.start(cameraId, { fps: 10, qrbox: 250 }, onScanSuccess, onScanFailure);
+
+    const config = {
+      fps: 10,
+      qrbox: { width: 300, height: 300 },
+      aspectRatio: 1.333,
+      videoConstraints: {
+        facingMode: "environment",
+        width: { ideal: 1280 },
+        height: { ideal: 720 }
+      }
+    };
+
+    await html5QrCode.start(cameraId, config, onScanSuccess, onScanFailure);
     currentCameraId = cameraId;
     console.log('掃描器啟動完成，使用相機ID:', cameraId);
   } catch (err) {
     console.error('啟動掃描器錯誤:', err);
-    alert('啟動掃描器失敗，請確認相機權限並重試。');
+    alert('啟動掃描器失敗，請確認相機權限已開啟，並重新載入。');
   }
 }
 
@@ -76,14 +90,13 @@ function initCameraSelector() {
 
     select.onchange = (e) => {
       const newCamId = e.target.value;
-      // 改為透過 URL 重新載入頁面
       const newUrlParams = new URLSearchParams(window.location.search);
       newUrlParams.set('cam', newCamId);
       window.location.href = `${window.location.pathname}?${newUrlParams.toString()}`;
     };
   }).catch(err => {
     console.error('取得相機清單失敗:', err);
-    alert('無法取得相機清單，請確認瀏覽器已開啟相機權限。');
+    alert('無法取得相機清單，請確認已允許使用相機。');
   });
 }
 
