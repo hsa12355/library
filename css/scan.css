@@ -32,7 +32,12 @@ body, html {
   position: relative;
   z-index: 10;
   background: black;
+  min-height: 240px;       /* ✅ 強制預留空間，讓 video 有地方顯示 */
+  margin: 1rem auto;
+  border-radius: 12px;
+  overflow: hidden;
 }
+
 #qr-reader video {
   width: 100% !important;
   height: auto !important;
