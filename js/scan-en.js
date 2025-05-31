@@ -24,13 +24,19 @@ function initScanner() {
   const html5QrCode = new Html5Qrcode("qr-reader");
   Html5Qrcode.getCameras().then(devices => {
     if (devices && devices.length) {
-      const cameraId = devices[0].id;
+      // Prefer rear/back camera if available
+      const camera = devices.find(device =>
+        device.label.toLowerCase().includes('back') ||
+        device.label.toLowerCase().includes('rear')
+      ) || devices[0]; // fallback to first camera
+
       html5QrCode.start(
-        cameraId,
+        { facingMode: { exact: "environment" } },
         { fps: 10, qrbox: 250 },
         onScanSuccess,
         onScanFailure
       );
+
     }
   }).catch(err => {
     console.error("Unable to access camera: ", err);
