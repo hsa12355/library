@@ -1,23 +1,22 @@
-const lang = new URLSearchParams(window.location.search).get('lang') || 'zh';
+const urlParams = new URLSearchParams(window.location.search);
+const lang = urlParams.get('lang') || 'zh';
+const camParam = urlParams.get('cam');
 
 let html5QrCode = null;
 let currentCameraId = null;
 
 function onScanSuccess(decodedText) {
   console.log(`掃描成功: ${decodedText}`);
-
   let target;
   if (decodedText.endsWith('.html')) {
     target = decodedText;
   } else {
     target = `free-station-${lang}/${decodedText}.html`;
   }
-
   window.location.href = target;
 }
 
 function onScanFailure(error) {
-  // 可以不用每次錯誤都印出，避免淩亂
   // console.warn(`掃描失敗: ${error}`);
 }
 
@@ -31,7 +30,6 @@ async function clearScanner() {
       if (videoElem && videoElem.srcObject) {
         videoElem.srcObject.getTracks().forEach(track => track.stop());
         videoElem.srcObject = null;
-        console.log('媒體流停止成功');
       }
     } catch (e) {
       console.error('停止掃描器發生錯誤:', e);
@@ -42,22 +40,9 @@ async function clearScanner() {
 
 async function startScanner(cameraId) {
   try {
-    if (cameraId === currentCameraId && html5QrCode) {
-      console.log('已是目前相機，無需重啟');
-      return;
-    }
-
     await clearScanner();
-
     html5QrCode = new Html5Qrcode("qr-reader");
-
-    await html5QrCode.start(
-      cameraId,
-      { fps: 10, qrbox: 250 },
-      onScanSuccess,
-      onScanFailure
-    );
-
+    await html5QrCode.start(cameraId, { fps: 10, qrbox: 250 }, onScanSuccess, onScanFailure);
     currentCameraId = cameraId;
     console.log('掃描器啟動完成，使用相機ID:', cameraId);
   } catch (err) {
@@ -80,16 +65,21 @@ function initCameraSelector() {
       const option = document.createElement('option');
       option.value = device.id;
       option.text = device.label || `Camera ${index + 1}`;
+      if (device.id === camParam) {
+        option.selected = true;
+      }
       select.appendChild(option);
     });
 
-    // 預設啟動第一支相機
-    startScanner(devices[0].id);
+    const defaultCamId = camParam || devices[0].id;
+    startScanner(defaultCamId);
 
-    select.onchange = async (e) => {
-      const newCameraId = e.target.value;
-      console.log('切換相機到: ', newCameraId);
-      await startScanner(newCameraId);
+    select.onchange = (e) => {
+      const newCamId = e.target.value;
+      // 改為透過 URL 重新載入頁面
+      const newUrlParams = new URLSearchParams(window.location.search);
+      newUrlParams.set('cam', newCamId);
+      window.location.href = `${window.location.pathname}?${newUrlParams.toString()}`;
     };
   }).catch(err => {
     console.error('取得相機清單失敗:', err);
