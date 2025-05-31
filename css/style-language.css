@@ -25,6 +25,7 @@ body, html {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 1s ease, transform 1s ease;
+  will-change: transform, opacity;
 }
 
 .container.show {
@@ -60,6 +61,9 @@ button {
   transition: all 0.4s ease;
   opacity: 0;
   transform: translateY(10px);
+  min-width: 140px;
+  text-align: center;
+  will-change: transform, opacity;
 }
 
 button.show {
@@ -89,3 +93,20 @@ button:hover {
     padding: 0.6rem 1.2rem;
   }
 }
+@media (max-width: 360px) {
+  .container {
+    padding: 1.5rem 1rem;
+    width: 95vw;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  button {
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
+    min-width: 120px;
+  }
+}
+

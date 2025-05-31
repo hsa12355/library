@@ -200,53 +200,74 @@ body#fixed-route .floor-map-popup {
 }
 
 @media (max-width: 768px) {
+  .end-tour-btn,
+  .next-station-btn,
+  .floor-map-btn {
+    font-size: 0.85rem;
+    padding: 0.6rem 1rem;
+    border-radius: 16px;
+  }
+
+  .end-tour-btn {
+    right: 15px;
+    bottom: 15px;
+  }
+
+  .next-station-btn {
+    left: 15px;
+    bottom: 15px;
+  }
+
+  .floor-map-btn {
+    top: 15px;
+    right: 15px;
+  }
+
+  .floor-map-popup {
+    max-width: 90vw;
+    max-height: 60vh;
+    right: 5%;
+    top: 60px;
+  }
+
   .container {
-    max-width: 95vw;
-    padding: 2rem 1.5rem;
-  }
-
-  .intro-line {
-    font-size: 1.1rem;
-  }
-
-  #choice-prompt p {
-    font-size: 1.05rem;
-  }
-
-  button, .area-btn, .floor-btn {
-    font-size: 0.9rem;
-    padding: 0.6rem 1rem;
-  }
-
-  #end-tour-btn {
-    font-size: 0.9rem;
-    padding: 0.6rem 1rem;
+    padding: 2rem 1.2rem;
   }
 }
 
 @media (max-width: 480px) {
+  .end-tour-btn,
+  .next-station-btn,
+  .floor-map-btn {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.9rem;
+  }
+
+  .end-tour-btn {
+    right: 10px;
+    bottom: 10px;
+  }
+
+  .next-station-btn {
+    left: 10px;
+    bottom: 10px;
+  }
+
+  .floor-map-btn {
+    top: 10px;
+    right: 10px;
+  }
+
   .container {
     padding: 1.5rem 1rem;
   }
 
   .intro-line {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 
   #choice-prompt p {
-    font-size: 1rem;
-  }
-
-  button, .area-btn, .floor-btn {
-    font-size: 0.85rem;
-    padding: 0.5rem 0.9rem;
-  }
-
-  #end-tour-btn {
-    font-size: 0.85rem;
-    padding: 0.5rem 0.9rem;
-    right: 10px;
-    bottom: 10px;
+    font-size: 0.95rem;
   }
 }
 
