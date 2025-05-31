@@ -72,12 +72,17 @@ function initCameraSelector() {
     select.onchange = async (e) => {
       const newCameraId = e.target.value;
 
-      if (html5QrCode && html5QrCode._isScanning) {
-        await html5QrCode.stop();
+      try {
+        if (html5QrCode) {
+          await html5QrCode.stop();
+        }
+      } catch (err) {
+        console.warn('停止掃描器時發生錯誤（可忽略）:', err);
       }
 
       startScanner(newCameraId);
     };
+
   }).catch(err => {
     console.error('取得相機清單失敗:', err);
     alert('無法取得相機清單，請確認瀏覽器已開啟相機權限。');
