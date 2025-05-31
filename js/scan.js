@@ -32,6 +32,7 @@ function startScanner(cameraId) {
         onScanSuccess,
         onScanFailure
       );
+      currentCameraId = cameraId;
     }).catch(err => {
       console.error('停止掃描器錯誤:', err);
     });
@@ -42,9 +43,12 @@ function startScanner(cameraId) {
       { fps: 10, qrbox: 250 },
       onScanSuccess,
       onScanFailure
-    );
+    ).then(() => {
+      currentCameraId = cameraId;
+    }).catch(err => {
+      console.error('啟動掃描器錯誤:', err);
+    });
   }
-  currentCameraId = cameraId;
 }
 
 // 初始化相機選擇器
@@ -56,21 +60,28 @@ function initCameraSelector() {
     }
 
     const select = document.getElementById('camera-select');
-    devices.forEach(device => {
+    select.innerHTML = ''; // 清空選單
+
+    devices.forEach((device, index) => {
       const option = document.createElement('option');
       option.value = device.id;
-      option.text = device.label || `Camera ${select.length + 1}`;
+      option.text = device.label || `Camera ${index + 1}`;
       select.appendChild(option);
     });
 
-    // 預設選擇第一個相機
+    // 預設選第一支相機
     startScanner(devices[0].id);
 
-    // 監聽使用者選擇改變
-    select.onchange = (e) => {
+    // 切換選單（加 async/await）
+    select.onchange = async (e) => {
       const newCameraId = e.target.value;
-      if (newCameraId !== currentCameraId) {
-        startScanner(newCameraId);
+      if (newCameraId !== currentCameraId && html5QrCode && html5QrCode._isScanning) {
+        try {
+          await html5QrCode.stop();
+          startScanner(newCameraId);
+        } catch (err) {
+          console.error('切換相機時錯誤:', err);
+        }
       }
     };
   }).catch(err => {
@@ -81,37 +92,6 @@ function initCameraSelector() {
 
 window.onload = () => {
   initCameraSelector();
-
-  document.getElementById('choose-camera-btn').onclick = () => {
-  const select = document.getElementById('camera-select');
-  select.classList.remove('hidden');
-
-  Html5Qrcode.getCameras().then(devices => {
-    if (!devices || devices.length === 0) {
-      alert('No camera found');
-      return;
-    }
-
-    select.innerHTML = ''; // 清空舊項目
-    devices.forEach((device, index) => {
-      const option = document.createElement('option');
-      option.value = device.id;
-      option.text = device.label || `Camera ${index + 1}`;
-      select.appendChild(option);
-    });
-
-    // 若還沒啟動，啟動第一支
-    if (!currentCameraId) startScanner(devices[0].id);
-
-    select.onchange = (e) => {
-      const newCameraId = e.target.value;
-      if (newCameraId !== currentCameraId) {
-        startScanner(newCameraId);
-      }
-    };
-  });
-};
-
 
   // 樓層地圖開啟
   document.getElementById('floor-map-btn').onclick = () => {
