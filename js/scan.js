@@ -1,8 +1,8 @@
 const lang = new URLSearchParams(window.location.search).get('lang') || 'zh';
 
-// Redirect to corresponding page upon successful scan
+// 掃描成功時導向對應頁面
 function onScanSuccess(decodedText) {
-  console.log(`Scan successful: ${decodedText}`);
+  console.log(`掃描成功: ${decodedText}`);
 
   let target;
   if (decodedText.endsWith('.html')) {
@@ -14,21 +14,21 @@ function onScanSuccess(decodedText) {
   window.location.href = target;
 }
 
-// Handle scan failure
+// 掃描失敗
 function onScanFailure(error) {
-  console.warn(`Scan failed: ${error}`);
+  console.warn(`掃描失敗: ${error}`);
 }
 
-// Initialize QR scanner
+// 初始化 QR 掃描器
 function initScanner() {
   const html5QrCode = new Html5Qrcode("qr-reader");
   Html5Qrcode.getCameras().then(devices => {
     if (devices && devices.length) {
-      // Prefer rear/back camera if available
+      // 優先找標籤裡含 back 或 rear 的相機（通常是後鏡頭）
       const camera = devices.find(device =>
         device.label.toLowerCase().includes('back') ||
         device.label.toLowerCase().includes('rear')
-      ) || devices[0]; // fallback to first camera
+      ) || devices[0]; // 找不到就用第一支
 
       html5QrCode.start(
         { facingMode: { exact: "environment" } },
@@ -39,25 +39,26 @@ function initScanner() {
 
     }
   }).catch(err => {
-    console.error("Unable to access camera: ", err);
-    alert("Unable to open the camera. Please check your browser permissions.");
+    console.error("無法存取相機: ", err);
+    alert("無法開啟相機，請確認瀏覽器權限已開啟。");
   });
 }
+
 
 window.onload = () => {
   initScanner();
 
-  // Open floor map
+  // 樓層地圖開啟
   document.getElementById('floor-map-btn').onclick = () => {
     document.getElementById('floor-map-popup').classList.remove('hidden');
   };
 
-  // Close floor map
+  // 樓層地圖關閉
   document.getElementById('close-map').onclick = () => {
     document.getElementById('floor-map-popup').classList.add('hidden');
   };
 
-  // End tour button
+  // 結束導覽按鈕
   document.getElementById('end-tour-btn').onclick = () => {
     window.location.href = 'language.html';
   };
