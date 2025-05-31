@@ -30,13 +30,13 @@ function initScanner() {
         device.label.toLowerCase().includes('rear')
       ) || devices[0]; // fallback to first camera
 
+      // Start scanning with selected camera id
       html5QrCode.start(
-        { facingMode: { exact: "environment" } },
+        camera.id,
         { fps: 10, qrbox: 250 },
         onScanSuccess,
         onScanFailure
       );
-
     }
   }).catch(err => {
     console.error("Unable to access camera: ", err);
