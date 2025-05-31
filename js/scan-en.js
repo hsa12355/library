@@ -68,7 +68,7 @@ function initCameraSelector() {
     // 預設使用第一支相機
     startScanner(devices[0].id);
 
-    // ✅ 改用 async 監聽事件：切換前先停止相機
+    //  改用 async 監聽事件：切換前先停止相機
     select.onchange = async (e) => {
       const newCameraId = e.target.value;
 

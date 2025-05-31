@@ -17,12 +17,12 @@ function onScanSuccess(decodedText) {
   window.location.href = target;
 }
 
-// 掃描失敗
+// 掃描失敗時呼叫
 function onScanFailure(error) {
   console.warn(`掃描失敗: ${error}`);
 }
 
-// 啟動掃描器
+// 啟動 QR 掃描器
 function startScanner(cameraId) {
   if (html5QrCode) {
     html5QrCode.stop().then(() => {
@@ -32,9 +32,8 @@ function startScanner(cameraId) {
         onScanSuccess,
         onScanFailure
       );
-      currentCameraId = cameraId;
     }).catch(err => {
-      console.error('停止掃描器錯誤:', err);
+      console.error('停止掃描器時發生錯誤:', err);
     });
   } else {
     html5QrCode = new Html5Qrcode("qr-reader");
@@ -43,24 +42,21 @@ function startScanner(cameraId) {
       { fps: 10, qrbox: 250 },
       onScanSuccess,
       onScanFailure
-    ).then(() => {
-      currentCameraId = cameraId;
-    }).catch(err => {
-      console.error('啟動掃描器錯誤:', err);
-    });
+    );
   }
+  currentCameraId = cameraId;
 }
 
 // 初始化相機選擇器
 function initCameraSelector() {
   Html5Qrcode.getCameras().then(devices => {
     if (!devices || devices.length === 0) {
-      alert('找不到相機設備');
+      alert('找不到任何相機裝置');
       return;
     }
 
     const select = document.getElementById('camera-select');
-    select.innerHTML = ''; // 清空選單
+    select.innerHTML = ''; // 清除選單內容（避免重複）
 
     devices.forEach((device, index) => {
       const option = document.createElement('option');
@@ -69,36 +65,34 @@ function initCameraSelector() {
       select.appendChild(option);
     });
 
-    // 預設選第一支相機
+    // 預設使用第一支相機
     startScanner(devices[0].id);
 
-    // 切換選單（加 async/await）
+    // 改用 async 事件監聽器：切換前先停止掃描器
     select.onchange = async (e) => {
       const newCameraId = e.target.value;
-      if (newCameraId !== currentCameraId && html5QrCode && html5QrCode._isScanning) {
-        try {
-          await html5QrCode.stop();
-          startScanner(newCameraId);
-        } catch (err) {
-          console.error('切換相機時錯誤:', err);
-        }
+
+      if (html5QrCode && html5QrCode._isScanning) {
+        await html5QrCode.stop();
       }
+
+      startScanner(newCameraId);
     };
   }).catch(err => {
-    console.error('無法取得相機清單:', err);
-    alert('無法取得相機清單，請確認權限是否開啟');
+    console.error('取得相機清單失敗:', err);
+    alert('無法取得相機清單，請確認瀏覽器已開啟相機權限。');
   });
 }
 
 window.onload = () => {
   initCameraSelector();
 
-  // 樓層地圖開啟
+  // 顯示樓層地圖
   document.getElementById('floor-map-btn').onclick = () => {
     document.getElementById('floor-map-popup').classList.remove('hidden');
   };
 
-  // 樓層地圖關閉
+  // 隱藏樓層地圖
   document.getElementById('close-map').onclick = () => {
     document.getElementById('floor-map-popup').classList.add('hidden');
   };
