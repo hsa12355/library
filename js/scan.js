@@ -17,38 +17,18 @@ function onScanSuccess(decodedText) {
   window.location.href = target;
 }
 
-// 掃描失敗時呼叫
+// 掃描失敗時呼叫（可忽略錯誤）
 function onScanFailure(error) {
-  console.warn(`掃描失敗: ${error}`);
-}
-
-async function stopScanner() {
-  if (html5QrCode && html5QrCode._isScanning) {
-    try {
-      await html5QrCode.stop();
-      const videoElem = document.querySelector("#qr-reader video");
-      if (videoElem && videoElem.srcObject) {
-        videoElem.srcObject.getTracks().forEach(track => track.stop());
-        videoElem.srcObject = null;
-      }
-      console.log('掃描器與媒體流成功停止');
-    } catch (err) {
-      console.error('停止掃描器錯誤:', err);
-    }
-  }
+  // console.warn(`掃描失敗: ${error}`);
 }
 
 async function startScanner(cameraId) {
   try {
-    await stopScanner();
-
     if (html5QrCode) {
-      try {
-        html5QrCode.clear();
-      } catch (err) {
-        console.warn('clear() 方法不可用:', err);
-      }
+      await html5QrCode.stop();
+      html5QrCode.clear();
       html5QrCode = null;
+      document.getElementById('qr-reader').innerHTML = '';
     }
 
     html5QrCode = new Html5Qrcode("qr-reader");
@@ -63,9 +43,9 @@ async function startScanner(cameraId) {
     console.log('掃描器啟動完成');
   } catch (err) {
     console.error('啟動掃描器錯誤:', err);
+    alert('啟動掃描器失敗，請確認相機權限並重試。');
   }
 }
-
 
 function initCameraSelector() {
   Html5Qrcode.getCameras().then(devices => {
