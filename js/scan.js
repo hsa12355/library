@@ -22,20 +22,36 @@ function onScanFailure(error) {
   console.warn(`掃描失敗: ${error}`);
 }
 
-// 啟動 QR 掃描器
+async function stopScanner() {
+  if (html5QrCode && html5QrCode._isScanning) {
+    try {
+      console.log('嘗試停止掃描器...');
+      await html5QrCode.stop();
+      console.log('掃描器停止成功');
+    } catch (err) {
+      console.error('停止掃描器錯誤:', err);
+    }
+  }
+}
+
 async function startScanner(cameraId) {
   try {
-    // 如果有啟動中的掃描器，先停止並銷毀
+    // 先停止現有掃描器（確保沒在掃描）
+    await stopScanner();
+
     if (html5QrCode) {
-      await html5QrCode.stop();
-      html5QrCode.clear(); // 清除內部資源（視版本而定）
+      try {
+        html5QrCode.clear(); // 清除畫面及資源（若支援）
+      } catch (err) {
+        console.warn('clear() 方法不可用:', err);
+      }
       html5QrCode = null;
     }
 
-    // 新建掃描器實例
+    // 新建掃描器
     html5QrCode = new Html5Qrcode("qr-reader");
 
-    // 啟動掃描器
+    console.log(`啟動相機: ${cameraId}`);
     await html5QrCode.start(
       cameraId,
       { fps: 10, qrbox: 250 },
@@ -44,14 +60,13 @@ async function startScanner(cameraId) {
     );
 
     currentCameraId = cameraId;
-
+    console.log('掃描器啟動完成');
   } catch (err) {
     console.error('啟動掃描器錯誤:', err);
-    alert('啟動掃描器時發生錯誤，請確認權限或重新整理頁面');
+    alert('啟動掃描器時發生錯誤，請檢查相機權限或重新整理頁面');
   }
 }
 
-// 初始化相機選擇器
 function initCameraSelector() {
   Html5Qrcode.getCameras().then(devices => {
     if (!devices || devices.length === 0) {
@@ -60,7 +75,7 @@ function initCameraSelector() {
     }
 
     const select = document.getElementById('camera-select');
-    select.innerHTML = ''; // 清除選單內容（避免重複）
+    select.innerHTML = '';
 
     devices.forEach((device, index) => {
       const option = document.createElement('option');
@@ -72,13 +87,16 @@ function initCameraSelector() {
     // 預設啟動第一支相機
     startScanner(devices[0].id);
 
-    // 切換鏡頭時重新啟動掃描器
     select.onchange = async (e) => {
       const newCameraId = e.target.value;
 
-      if (newCameraId !== currentCameraId) {
-        await startScanner(newCameraId);
+      if (newCameraId === currentCameraId) {
+        console.log('已是目前相機，無需切換');
+        return;
       }
+
+      console.log(`切換相機到: ${newCameraId}`);
+      await startScanner(newCameraId);
     };
   }).catch(err => {
     console.error('取得相機清單失敗:', err);
