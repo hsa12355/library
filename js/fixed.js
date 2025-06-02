@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const endTourBtn = document.getElementById('end-tour-btn');
   if (endTourBtn) {
     endTourBtn.addEventListener('click', () => {
-      window.location.href = '../language.html'; // 可換成你的首頁路徑
+      window.location.href = '../language.html'; 
     });
   }
 });

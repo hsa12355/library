@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Station 3: New Arrivals & 24-Hour Book Drop</title>
+<link rel="stylesheet" href="../css/style-fixed-vedio.css" />
+</head>
+<body id="fixed-route">
+
+<div class="container">
+
+  <!-- 右上角樓層地圖按鈕 -->
+  <button id="floor-map-btn" class="floor-map-btn show">Floor Map</button>
+
+  <!-- 樓層地圖彈出層 -->
+  <div id="floor-map-popup" class="floor-map-popup hidden">
+    <img src="../images/Floor-B1s_-_.jpg" alt="Floor Map - B1" />
+    <img src="../images/Floor-1Fs_-_.jpg" alt="Floor Map - 1F" />
+    <img src="../images/Floor-2Fs_-_.jpg" alt="Floor Map - 2F" />
+    <button id="close-map" class="close-map">Close Map</button>
+  </div>
+
+  <!-- 介紹影片 -->
+  <div class="intro-video">
+    <video controls width="100%" poster="video-thumbnail.jpg">
+      <source src="../video-for-input/" type="video/mp4">
+      Your browser does not support HTML5 video playback.
+    </video>
+  </div>
+
+  <!-- 保留標題（可加在上方或影片下方） -->
+  <div class="intro-text">
+    <h2>Station 3: New Arrivals & 24-Hour Book Drop</h2>
+  </div>
+
+<nav class="station-nav">
+  <a href="video-station2.html" class="next-station-btn show">Previous Station</a>
+  <a href="video-station4.html" class="next-station-btn show" style="left: auto; right: 120px;">Next Station</a>
+</nav>
+
+
+  <!-- 結束導覽按鈕 -->
+  <button id="end-tour-btn" class="end-tour-btn show">End Tour</button>
+
+</div>
+
+<script src="../js/fixed.js"></script>
+
+</body>
+</html>

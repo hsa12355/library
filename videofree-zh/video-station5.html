@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>第五站：活力閱讀區</title>
+<link rel="stylesheet" href="../css/video.css" />
+</head>
+<body id="option-mode-page">
+
+<div class="container">
+
+  <!-- 右上角樓層地圖按鈕 -->
+  <button id="floor-map-btn" class="floor-map-btn">樓層地圖</button>
+
+  <!-- 樓層地圖彈出層 -->
+  <div id="floor-map-popup" class="floor-map-popup hidden">
+    <img src="../images/Floor-B1s_-_.jpg" alt="樓層地圖B1" />
+    <img src="../images/Floor-1Fs_-_.jpg" alt="樓層地圖1" />
+    <img src="../images/Floor-2Fs_-_.jpg" alt="樓層地圖2" />
+    <button id="close-map" class="close-map">關閉地圖</button>
+  </div>
+
+  <!-- 介紹影片 -->
+  <div class="intro-video">
+    <video controls width="100%" poster="video-thumbnail.jpg">
+      <source src="../video-for-input/" type="video/mp4">
+      您的瀏覽器不支援 HTML5 影片播放。
+    </video>
+  </div>
+
+  <!-- 保留標題（可加在上方或影片下方） -->
+  <div class="intro-text">
+    <h2>第五站：活力閱讀區</h2>
+  </div>
+
+  <!-- 選擇功能區 -->
+  <div id="choice-prompt">
+
+    <!-- 樓層選擇按鈕 -->
+    <div class="floor-selector">
+      <button class="floor-btn" data-floor="B1">B1</button>
+      <button class="floor-btn" data-floor="1F">1F</button>
+      <button class="floor-btn" data-floor="2F">2F</button>
+    </div>
+
+    <!-- 區域選擇按鈕（動態生成） -->
+    <div class="area-selector" id="area-selector"></div>
+
+  </div>
+
+  <!-- 右下角結束按鈕 -->
+  <button id="end-tour-btn" class="end-tour-btn">結束導覽</button>
+
+</div>
+
+<script src="../js/videofree-zh.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YZU Library Tour</title>
+  <link href="./css/style-home.css" rel="stylesheet" />
+  <script src="./js/video-home-en.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <h1 class="intro-line">Hello, I’m Ze-Ze. Welcome to Yuan Ze University Library.</h1>
+    <p class="intro-line">
+      Here, every corner, every book, and every piece of equipment holds a story. Today, let’s follow the tour route and explore this temple of knowledge that blends technology, humanity, and nature—step by step.
+    </p>
+
+    <div id="choice-prompt" style="opacity:0;">
+      <p>How would you like me to guide you?</p>
+      <div class="button-group">
+        <button data-show="free">Free Exploration</button>
+        <button data-show="fixed">Fixed Route</button>
+        <button data-show="option">Option Mode</button>
+      </div>
+    </div>
+
+    <!-- Option Mode Section (initially hidden) -->
+    <div id="option-mode" class="hidden">
+      <h2>Please select a floor</h2>
+      <div class="floor-buttons">
+        <button class="floor-btn" data-floor="B1">B1</button>
+        <button class="floor-btn" data-floor="1F">1F</button>
+        <button class="floor-btn" data-floor="2F">2F</button>
+      </div>
+
+      <h2>Please select an area</h2>
+      <div id="area-selector">Please select a floor first</div>
+    </div>
+  </div>
+
+  <button id="end-tour-btn" class="hidden fixed-button">End Tour</button>
+</body>
+</html>

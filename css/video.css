@@ -1,0 +1,227 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans TC', sans-serif;
+  background: url('../images/未來書庫中的智慧指引.png') no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  position: relative;
+  max-width: 960px;
+  width: 90vw;
+  background: rgba(255, 255, 255, 0.75);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.video-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+video {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 1rem auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.floor-selector, .area-selector {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.floor-btn, .area-btn {
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(10px);
+  opacity: 0;
+  transition: all 0.6s ease;
+  min-width: 120px;
+  text-align: center;  
+}
+button.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.floor-btn:hover, .area-btn:hover {
+  background: rgba(128, 181, 209, 0.45);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+  color: #111;
+}
+
+.end-tour-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #e53935;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+  transition: background-color 0.3s ease;
+}
+
+.end-tour-btn:hover {
+  background: #b71c1c;
+}
+
+.floor-map-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #8e24aa;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+}
+
+.floor-map-popup {
+  position: fixed;
+  top: 60px;
+  right: 20px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  padding: 1rem;
+  max-width: 300px;
+  max-height: 400px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.floor-map-popup img {
+  width: 100%;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+}
+
+.close-map {
+  display: block;
+  margin: 0 auto;
+  padding: 0.5rem 1.5rem;
+  background: #d32f2f;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* 動畫浮現效果（可選） */
+.fade-in {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.next-station-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #43a047;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 20px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+  transition: background-color 0.3s ease;
+}
+
+.next-station-btn:hover {
+  background: #2e7d32;
+}
+
+
+.hidden {
+  display: none !important;
+}
+
+/* --- 首頁動畫風格：intro-line 文字淡入 --- */
+.intro-line {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.intro-line.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- 按鈕區出現 --- */
+#choice-prompt {
+  margin-top: 2rem;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+/* --- 導覽按鈕浮現動畫 --- */
+.floor-btn, .area-btn, .end-tour-btn, .next-station-btn {
+  transform: translateY(10px);
+  opacity: 0;
+}
+.floor-btn.show, .area-btn.show, .end-tour-btn.show, .next-station-btn.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+  .container {
+    padding: 1.5rem 1rem;
+  }
+  .video-title {
+    font-size: 1.25rem;
+  }
+  .end-tour-btn {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-title {
+    font-size: 1.1rem;
+  }
+  .end-tour-btn {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+  }
+}
