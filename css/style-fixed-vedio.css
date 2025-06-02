@@ -1,0 +1,211 @@
+/* 固定路線導覽影片版 - 基本樣式 */
+body#fixed-route, html#fixed-route {
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans TC', sans-serif;
+  background: url('../images/未來書庫中的智慧指引.png') no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 容器樣式：影片為主，搭配標題與按鈕 */
+#fixed-route .container {
+  position: relative;
+  width: 90vw;
+  max-width: 800px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* 標題樣式 */
+.intro-text h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #333;
+  margin: 1.5rem 0 1rem;
+}
+
+/* 影片播放器樣式 */
+.intro-video video {
+  width: 100%;
+  max-height: 60vh;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  background: black;
+}
+
+/* 結束導覽按鈕 */
+.end-tour-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #e53935;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+  transition: background-color 0.3s ease;
+}
+
+.end-tour-btn:hover {
+  background: #b71c1c;
+}
+
+/* 下一站按鈕 */
+.next-station-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #43a047;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 20px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+  transition: background-color 0.3s ease;
+}
+
+.next-station-btn:hover {
+  background: #2e7d32;
+}
+
+/* 樓層地圖按鈕 */
+.floor-map-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #8e24aa;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+}
+
+/* 樓層地圖彈出視窗 */
+.floor-map-popup {
+  position: fixed;
+  top: 60px;
+  right: 20px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  padding: 1rem;
+  max-width: 300px;
+  max-height: 400px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.floor-map-popup img {
+  width: 100%;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+}
+
+/* 關閉地圖按鈕 */
+.close-map {
+  display: block;
+  margin: 0 auto;
+  padding: 0.5rem 1.5rem;
+  background: #d32f2f;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* 顯示/隱藏控制 */
+.hidden {
+  display: none !important;
+}
+
+/* 浮現動畫 */
+.end-tour-btn, .next-station-btn, .floor-map-btn {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.6s ease;
+}
+.end-tour-btn.show, .next-station-btn.show, .floor-map-btn.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- 按鈕區出現 --- */
+#choice-prompt {
+  margin-top: 2rem;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+/* --- 導覽按鈕浮現動畫 --- */
+.floor-btn,  .end-tour-btn, .next-station-btn {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.6s ease;
+}
+.floor-btn.show, .end-tour-btn.show, .next-station-btn.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+  .container {
+    padding: 1.5rem 1rem;
+  }
+
+  .intro-text h2 {
+    font-size: 1.25rem;
+  }
+
+  .end-tour-btn,
+  .next-station-btn,
+  .floor-map-btn {
+    font-size: 0.85rem;
+    padding: 0.6rem 1rem;
+    border-radius: 16px;
+  }
+
+  .end-tour-btn { right: 15px; bottom: 15px; }
+  .next-station-btn { left: 15px; bottom: 15px; }
+  .floor-map-btn { top: 15px; right: 15px; }
+
+  .floor-map-popup {
+    max-width: 90vw;
+    max-height: 60vh;
+    right: 5%;
+    top: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro-text h2 {
+    font-size: 1.1rem;
+  }
+
+  .end-tour-btn,
+  .next-station-btn,
+  .floor-map-btn {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.9rem;
+  }
+
+  .end-tour-btn { right: 10px; bottom: 10px; }
+  .next-station-btn { left: 10px; bottom: 10px; }
+  .floor-map-btn { top: 10px; right: 10px; }
+}

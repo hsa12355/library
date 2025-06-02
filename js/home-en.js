@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
         endTourBtn.classList.remove('hidden');
         endTourBtn.classList.add('show');
 
-         // 👇 補上這段：顯示樓層按鈕
+         
         document.querySelectorAll('.floor-btn').forEach((btn, i) => {
           setTimeout(() => btn.classList.add('show'), i * 150);
         });

@@ -22,7 +22,7 @@ function onScanSuccess(decodedText) {
 }
 
 function onScanFailure(error) {
-  // 可以不用每次失敗都印，避免 Console 太多雜訊
+  
 }
 
 async function clearScanner() {
