@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>第1ステーション：スマートブックネット・電子書籍ウォール - 動画ガイド</title>
+<link rel="stylesheet" href="../css/video.css" />
+</head>
+<body id="option-mode-page">
+
+<div class="container">
+
+  <!-- 右上のフロアマップボタン -->
+  <button id="floor-map-btn" class="floor-map-btn">フロアマップ</button>
+
+  <!-- フロアマップのポップアップ -->
+  <div id="floor-map-popup" class="floor-map-popup hidden">
+    <img src="../images/Floor-B1s_-_.jpg" alt="地下1階フロアマップ" />
+    <img src="../images/Floor-1Fs_-_.jpg" alt="1階フロアマップ" />
+    <img src="../images/Floor-2Fs_-_.jpg" alt="2階フロアマップ" />
+    <button id="close-map" class="close-map">マップを閉じる</button>
+  </div>
+
+  <!-- 紹介ビデオ -->
+  <div class="intro-video">
+    <video controls width="100%" poster="video-thumbnail.jpg">
+      <source src="../video-for-input/" type="video/mp4">
+      お使いのブラウザは HTML5 ビデオの再生に対応していません。
+    </video>
+  </div>
+
+  <!-- タイトル（上またはビデオ下に配置可能） -->
+  <div class="intro-text">
+    <h2>第1ステーション：スマートブックネット・電子書籍ウォール - 動画ガイド</h2>
+  </div>
+
+  <!-- 選択機能エリア -->
+  <!-- 選擇功能區 -->
+  <div id="choice-prompt">
+
+    <!-- 樓層選擇按鈕 -->
+    <div class="floor-selector">
+      <button class="floor-btn" data-floor="B1">地下1階</button>
+      <button class="floor-btn" data-floor="1F">1階</button>
+      <button class="floor-btn" data-floor="2F">2階</button>
+    </div>
+
+    <!-- エリア選択ボタン（動的生成） -->
+    <div class="area-selector" id="area-selector"></div>
+
+  </div>
+
+  <!-- 右下の終了ボタン -->
+  <button id="end-tour-btn" class="end-tour-btn">ガイド終了</button>
+
+</div>
+
+<script src="../js/videofree-jn.js"></script>
+
+</body>
+</html>

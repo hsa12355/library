@@ -15,8 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   // Floor and area definitions
   const floorAreas = {
-    'B1': ['Compact Stacks'],
-    '1F': ['E-Book Wall Entrance', 'Digital Learning Zone', 'New Book Display', 'Magic Forest', 'Entrance Gate', 'Energetic Reading Area', 'Zen Garden'],
+    'B1': ['Compact Stacks', 'Magic Forest', 'Zen Garden'],
+    '1F': ['E-Book Wall Entrance', 'Digital Learning Zone', 'New Book Display', 'Entrance Gate', 'Energetic Reading Area'],
     '2F': ['Picture Books & Comics Area', 'Periodicals Area'],
   };
 
@@ -24,12 +24,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const areaToStationPage = {
     'E-Book Wall Entrance': 'free-station-en/station-1.html',
     'Entrance Gate': 'free-station-en/station-2.html',
-    'New Book Display': 'free-station-en/station-3.html',
-    'Digital Learning Zone': 'free-station-en/station-4.html',
-    'Energetic Reading Area': 'free-station-en/station-5.html',
-    'Periodicals Area': 'free-station-en/station-6.html',
-    'Picture Books & Comics Area': 'free-station-en/station-7.html',
-    'Compact Stacks': 'free-station-en/station-8.html',
+    'New Titles': 'free-station-en/station-3.html',
+    'Digital Universe': 'free-station-en/station-4.html',
+    'Read and Ride': 'free-station-en/station-5.html',
+    'Periodicals': 'free-station-en/station-6.html',
+    'Illustrated and Comic Books': 'free-station-en/station-7.html',
+    'Compact Shelves': 'free-station-en/station-8.html',
     'Zen Garden': 'free-station-en/station-9.html',
     'Magic Forest': 'free-station-en/station-10.html',
   };

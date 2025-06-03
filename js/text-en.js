@@ -1,18 +1,18 @@
 const floorAreas = {
-  'B1': ['Compact Stacks'],
-  '1F': ['E-Book Wall Entrance', 'Digital Learning Area', 'New Books Display', 'Magic Forest', 'Entrance Access', 'Vibrant Reading Area', 'Zen Garden'],
+  'B1': ['Compact Shelves', 'Zen Garden', 'Magic Forest'],
+  '1F': ['E-Book Wall Entrance', 'Digital Learning Area', 'New Books Display', 'Entrance Access', 'Vibrant Reading Area'],
   '2F': ['Picture Books & Comics', 'Periodicals'],
 };
 
 const areaToStationPage = {
   'E-Book Wall Entrance': 'station-1.html',
   'Entrance Access': 'station-2.html',
-  'New Books Display': 'station-3.html',
-  'Digital Learning Area': 'station-4.html',
-  'Vibrant Reading Area': 'station-5.html',
+  'New Titles': 'station-3.html',
+  'Digital Universe': 'station-4.html',
+  'Read and Ride': 'station-5.html',
   'Periodicals': 'station-6.html',
-  'Picture Books & Comics': 'station-7.html',
-  'Compact Stacks': 'station-8.html',
+  'Illustrated and Comic Books': 'station-7.html',
+  'Compact Shelves': 'station-8.html',
   'Zen Garden': 'station-9.html',
   'Magic Forest': 'station-10.html',
 };
@@ -58,6 +58,7 @@ function showAreasForFloor(floor) {
   });
 }
 
+
 floorButtons.forEach(btn => {
   btn.addEventListener('click', () => {
     const floor = btn.getAttribute('data-floor');
@@ -65,19 +66,45 @@ floorButtons.forEach(btn => {
   });
 });
 
-floorMapBtn.addEventListener('click', () => {
-  floorMapPopup.classList.toggle('hidden');
-});
+if (floorMapBtn && floorMapPopup && closeMapBtn) {
+    floorMapBtn.addEventListener('click', () => {
+      floorMapPopup.classList.remove('hidden');
+    });
 
-closeMapBtn.addEventListener('click', () => {
-  floorMapPopup.classList.add('hidden');
-});
+    closeMapBtn.addEventListener('click', () => {
+      floorMapPopup.classList.add('hidden');
+    });
+  }
 
 endTourBtn.addEventListener('click', () => {
   window.location.href = '../language.html';
 });
 
-// Text animation logic, can keep as is or refactor into functions
+  // 🔄 加入樓層地圖切換邏輯
+  const tabButtons = document.querySelectorAll('.map-tab-btn');
+  const mapImages = document.querySelectorAll('.floor-map-img');
+
+  tabButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // 移除所有按鈕的 active 樣式
+      tabButtons.forEach(b => b.classList.remove('active'));
+
+      // 加上當前按鈕的 active 樣式
+      btn.classList.add('active');
+
+      // 隱藏所有圖片
+      mapImages.forEach(img => img.classList.add('hidden'));
+
+      // 顯示目標圖片
+      const targetId = btn.getAttribute('data-target');
+      const targetMap = document.getElementById(targetId);
+      if (targetMap) {
+        targetMap.classList.remove('hidden');
+      }
+    });
+  });
+
+// 文字動畫可以保持不動，或改寫為函式分離
 document.addEventListener('DOMContentLoaded', () => {
   const introLines = document.querySelectorAll('.intro-line');
 
@@ -94,11 +121,11 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => btn.classList.add('show'), 200 * index);
           });
 
-          // Show the bottom-right end tour button
-          const endTourBtn = document.getElementById('end-tour-btn');
-          if (endTourBtn) {
-            setTimeout(() => endTourBtn.classList.add('show'), 800);
-          }
+        // 顯示右下角的結束導覽按鈕
+        const endTourBtn = document.getElementById('end-tour-btn');
+        if (endTourBtn) {
+          setTimeout(() => endTourBtn.classList.add('show'), 800);
+        }
         }
       }
     }, i * 700);

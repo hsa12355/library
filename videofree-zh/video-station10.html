@@ -13,13 +13,28 @@
   <!-- 右上角樓層地圖按鈕 -->
   <button id="floor-map-btn" class="floor-map-btn">樓層地圖</button>
 
-  <!-- 樓層地圖彈出層 -->
-  <div id="floor-map-popup" class="floor-map-popup hidden">
+   <!-- 樓層地圖彈出層 -->
+ <div id="floor-map-popup" class="floor-map-popup hidden">
+  <!-- 新增樓層切換按鈕 -->
+  <div class="floor-map-tabs">
+    <button class="map-tab-btn" data-target="map-b1">B1</button>
+    <button class="map-tab-btn" data-target="map-1f">1F</button>
+    <button class="map-tab-btn" data-target="map-2f">2F</button>
+  </div>
+
+  <!-- 各樓層地圖 -->
+  <div id="map-b1" class="floor-map-img">
     <img src="../images/Floor-B1s_-_.jpg" alt="樓層地圖B1" />
-    <img src="../images/Floor-1Fs_-_.jpg" alt="樓層地圖1" />
-    <img src="../images/Floor-2Fs_-_.jpg" alt="樓層地圖2" />
+  </div>
+  <div id="map-1f" class="floor-map-img hidden">
+    <img src="../images/Floor-1Fs_-_.jpg" alt="樓層地圖1F" />
+  </div>
+  <div id="map-2f" class="floor-map-img hidden">
+    <img src="../images/Floor-2Fs_-_.jpg" alt="樓層地圖2F" />
+  </div>
     <button id="close-map" class="close-map">關閉地圖</button>
   </div>
+
 
   <!-- 介紹影片 -->
   <div class="intro-video">

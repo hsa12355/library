@@ -1,0 +1,58 @@
+<!DOCTYPE html> 
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>定点案内</title>
+
+  <!-- QRコードスキャナー -->
+  <script src="https://unpkg.com/html5-qrcode" defer></script>
+  <script src="./js/scan-jn.js" defer></script>
+  <!-- スタイルとスクリプト -->
+  <link rel="stylesheet" href="./css/scan.css" />
+  
+</head>
+<body>
+  <!-- メインコンテナ（中央揃え） -->
+  <div class="container">
+    <h1>QRコードをスキャンしてください</h1>
+
+    <div>
+      <label for="camera-select">カメラを選択：</label>
+      <select id="camera-select"></select>
+    </div>
+
+    <!-- スキャナーをコンテナ内に設置 -->
+    <div id="qr-reader" style="width: 100%; max-width: 320px; margin: 0 auto;"></div>
+
+    <p>スキャン後に案内が始まります</p>
+  </div>
+
+  <!-- 固定機能ボタンと階層マップのポップアップ -->
+  <button id="floor-map-btn" class="floor-map-btn">階層マップ</button>
+  <button id="end-tour-btn" class="end-tour-btn">案内を終了</button>
+
+  <div id="floor-map-popup" class="floor-map-popup hidden">
+
+    <!-- 新增樓層切換按鈕 -->
+  <div class="floor-map-tabs">
+    <button class="map-tab-btn" data-target="map-b1">B1階</button>
+    <button class="map-tab-btn" data-target="map-1f">1階</button>
+    <button class="map-tab-btn" data-target="map-2f">2階</button>
+  </div>
+
+  <!-- 各樓層地圖 -->
+  <div id="map-b1" class="floor-map-img">
+    <img src="./images/Floor-B1s_-_.jpg" alt="B1階の階層マップ" />
+  </div>
+  <div id="map-1f" class="floor-map-img hidden">
+    <img src="./images/Floor-1Fs_-_.jpg" alt="1階の階層マップ" />
+  </div>
+  <div id="map-2f" class="floor-map-img hidden">
+    <img src="./images/Floor-2Fs_-_.jpg" alt="2階の階層マップ" />
+  </div>
+  
+    <button id="close-map" class="close-map">マップを閉じる</button>
+  </div>
+</body>
+</html>

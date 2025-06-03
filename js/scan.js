@@ -15,15 +15,12 @@ function onScanSuccess(decodedText) {
     target = `free-station-${lang}/${decodedText}.html`;
   }
 
-  // 防止重複跳轉
   if (window.location.href !== target) {
     window.location.href = target;
   }
 }
 
-function onScanFailure(error) {
-  
-}
+function onScanFailure(error) {}
 
 async function clearScanner() {
   if (html5QrCode) {
@@ -98,7 +95,6 @@ function initCameraSelector() {
       const newCamId = e.target.value;
       const newUrlParams = new URLSearchParams(window.location.search);
       newUrlParams.set('cam', newCamId);
-      // 用 replaceState 避免歷史堆疊太多
       window.history.replaceState(null, '', `${window.location.pathname}?${newUrlParams.toString()}`);
       startScanner(newCamId);
     };
@@ -111,6 +107,7 @@ function initCameraSelector() {
 window.addEventListener('load', () => {
   initCameraSelector();
 
+  // 樓層地圖開啟/關閉
   document.getElementById('floor-map-btn').onclick = () => {
     document.getElementById('floor-map-popup').classList.remove('hidden');
   };
@@ -119,7 +116,26 @@ window.addEventListener('load', () => {
     document.getElementById('floor-map-popup').classList.add('hidden');
   };
 
+  // 結束導覽
   document.getElementById('end-tour-btn').onclick = () => {
     window.location.href = 'language.html';
   };
+
+  // 加入樓層地圖切換功能（若存在）
+  const tabButtons = document.querySelectorAll('.map-tab-btn');
+  const mapSections = document.querySelectorAll('.floor-map-img');
+
+  tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      tabButtons.forEach(btn => btn.classList.remove('active'));
+      mapSections.forEach(section => section.classList.add('hidden'));
+
+      button.classList.add('active');
+      const targetId = button.dataset.target;
+      const targetMap = document.getElementById(targetId);
+      if (targetMap) {
+        targetMap.classList.remove('hidden');
+      }
+    });
+  });
 });

@@ -13,13 +13,28 @@
   <!-- Top right floor map button -->
   <button id="floor-map-btn" class="floor-map-btn">Floor Map</button>
 
-  <!-- Floor map popup -->
-  <div id="floor-map-popup" class="floor-map-popup hidden">
-    <img src="../images/Floor-B1s_-_.jpg" alt="Basement 1 Floor Map" />
-    <img src="../images/Floor-1Fs_-_.jpg" alt="1st Floor Map" />
-    <img src="../images/Floor-2Fs_-_.jpg" alt="2nd Floor Map" />
+   <!-- 樓層地圖彈出層 -->
+ <div id="floor-map-popup" class="floor-map-popup hidden">
+  <!-- 新增樓層切換按鈕 -->
+  <div class="floor-map-tabs">
+    <button class="map-tab-btn" data-target="map-b1">B1</button>
+    <button class="map-tab-btn" data-target="map-1f">1F</button>
+    <button class="map-tab-btn" data-target="map-2f">2F</button>
+  </div>
+
+  <!-- 各樓層地圖 -->
+  <div id="map-b1" class="floor-map-img">
+    <img src="../images/Floor-B1s_-_.jpg" alt="B1 Floor Map" />
+  </div>
+  <div id="map-1f" class="floor-map-img hidden">
+    <img src="../images/Floor-1Fs_-_.jpg" alt="1F Floor Map" />
+  </div>
+  <div id="map-2f" class="floor-map-img hidden">
+    <img src="../images/Floor-2Fs_-_.jpg" alt="2F Floor Map" />
+  </div>
     <button id="close-map" class="close-map">Close Map</button>
   </div>
+
 
   <!-- Introduction photo -->
   <div class="intro-photo">

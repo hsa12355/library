@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>第2ステーション：入館ゲート・図書館紹介</title>
+  <link rel="stylesheet" href="../css/style-fixe.css" />
+</head>
+<body id="fixed-route">
+
+<div class="container">
+
+  <!-- フロアマップボタン -->
+  <button id="floor-map-btn" class="floor-map-btn">フロアマップ</button>
+
+  <!-- フロアマップポップアップ -->
+  <div id="floor-map-popup" class="floor-map-popup hidden">
+    <img src="../images/Floor-B1s_-_.jpg" alt="地下1階のフロアマップ" />
+    <img src="../images/Floor-1Fs_-_.jpg" alt="1階のフロアマップ" />
+    <img src="../images/Floor-2Fs_-_.jpg" alt="2階のフロアマップ" />
+    <button id="close-map" class="close-map">マップを閉じる</button>
+  </div>
+
+  <!-- 紹介画像 -->
+  <div class="intro-photo">
+    <img src="../images/IMG_1848.jpg" alt="第2ステーション：入館ゲート・図書館紹介" />
+  </div>
+
+  <!-- 紹介文（アニメーション） -->
+  <div class="intro-text">
+    <p class="intro-line">図書館への入館は非常に簡単で、元智大学の学生は学生証または元智アプリの通行証で入退館や貸出が可能です。</p>
+    <p class="intro-line">この入口をくぐると、歴史と多機能性を備えたスマートスペースへ正式に足を踏み入れることになります。図書館は1989年に設立され、1997年に第5館へ移転し、2006年には新館が増築されました。総面積は約10,000平方メートルに及び、1,100席以上の閲覧スペースを提供しています。</p>
+    <p class="intro-line">図書館は全体で3フロアに分かれており、地下1階には中国語・日本語・西洋書の書庫、密集書庫、討論室、中庭の植栽エリア、枯山水の禅ガーデンがあります。1階は貸出・返却と参考カウンターのエリアで、新刊展示、デジタル学習ゾーン、修士・博士論文エリア、英語読本エリア、アクティブラーニングエリアなど多機能スペースが設けられています。2階は中・西洋の最新刊や人気雑誌、絵本や漫画のコーナー、美学展示スペースが充実しています。</p>
+  </div>
+
+  <!-- ナビゲーションボタン（左：前、右：次） -->
+  <nav class="station-nav">
+    <a href="station-1.html" class="next-station-btn">前のステーション</a>
+    <a href="station-3.html" class="next-station-btn" style="left: auto; right: 120px;">次のステーション</a>
+  </nav>
+
+  <!-- ガイド終了ボタン -->
+  <button id="end-tour-btn" class="end-tour-btn">ガイド終了</button>
+
+</div>
+
+<script src="../js/fixed.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>第7ステーション：絵本・漫画コーナー・持続可能な絵本コーナー</title>
+<link rel="stylesheet" href="../css/style.css" />
+</head>
+<body id="option-mode-page">
+
+<div class="container">
+
+  <!-- 右上のフロアマップボタン -->
+  <button id="floor-map-btn" class="floor-map-btn">フロアマップ</button>
+
+    <!-- フロアマップのポップアップ -->
+    <div id="floor-map-popup" class="floor-map-popup hidden">
+      <!-- フロア切替ボタン -->
+      <div class="floor-map-tabs">
+        <button class="map-tab-btn" data-target="map-b1">B1</button>
+        <button class="map-tab-btn" data-target="map-1f">1階</button>
+        <button class="map-tab-btn" data-target="map-2f">2階</button>
+      </div>
+
+      <!-- 各フロアのマップ画像 -->
+      <div id="map-b1" class="floor-map-img">
+        <img src="../images/Floor-B1s_-_.jpg" alt="地下1階フロアマップ" />
+      </div>
+      <div id="map-1f" class="floor-map-img hidden">
+        <img src="../images/Floor-1Fs_-_.jpg" alt="1階フロアマップ" />
+      </div>
+      <div id="map-2f" class="floor-map-img hidden">
+        <img src="../images/Floor-2Fs_-_.jpg" alt="2階フロアマップ" />
+      </div>
+      <button id="close-map" class="close-map">マップを閉じる</button>
+  </div>
+
+  <!-- 紹介写真 -->
+  <div class="intro-photo">
+    <img src="book-wall.jpg" alt="第7ステーション：絵本・漫画コーナー・持続可能な絵本コーナー" />
+  </div>
+
+  <!-- 紹介テキスト -->
+  <div class="intro-text">
+    <p class="intro-line">ここは夢と物語が交差する場所です。蔵書には人気の絵本や漫画の名作が揃っており、一度に絵本と漫画の巨匠たちの作品を楽しめます。</p>
+    <p class="intro-line">スペース内には外国語の絵本・漫画コーナーやSDGs持続可能な絵本コーナーも設けられています。</p>
+    <p class="intro-line">童話のように親しみやすい絵本の内容を通じて、環境の持続可能性や地球の未来について考えるきっかけを読者に提供し、読書を通じて行動を促し、物語で価値を伝えます。</p>
+  </div>
+
+  <div id="choice-prompt">
+  <!-- フロア選択ボタン -->
+  <div class="floor-selector">
+    <button class="floor-btn" data-floor="B1">B1</button>
+    <button class="floor-btn" data-floor="1F">1F</button>
+    <button class="floor-btn" data-floor="2F">2F</button>
+  </div>
+
+  <!-- エリア選択ボタン（動的生成） -->
+  <div class="area-selector" id="area-selector"></div>
+    <!-- 動的に追加 -->
+  </div>
+
+  <!-- 右下の終了ボタン -->
+  <button id="end-tour-btn" class="end-tour-btn">案内を終了する</button>
+
+</div>
+
+<script src="../js/text-jn.js"></script>
+
+</body>
+</html>

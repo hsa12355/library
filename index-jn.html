@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>元智大学図書館ガイド</title>
+  <link href="./css/style-home.css" rel="stylesheet" />
+  <script src="./js/home-jn.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <h1 class="intro-line">こんにちは、私はゼゼです。元智大学図書館へようこそ。</h1>
+    <p class="intro-line">
+      ここでは、すべての場所、すべての本、そしてすべての設備には、それぞれに物語があります。<br>
+      今日は、案内ルートに沿って、一つ一つのスポットを巡りながら、テクノロジー、人文、自然が融合した知の殿堂を探検しましょう。
+    </p>
+
+    <div id="choice-prompt" style="opacity:0;">
+      <p>どのように案内しましょうか？</p>
+      <div class="button-group">
+        <button data-show="free">自由探索</button>
+        <button data-show="fixed">固定ルート</button>
+        <button data-show="option">オプションモード</button>
+      </div>
+    </div>
+
+    <!-- オプションモード専用エリア（初期は非表示） -->
+    <div id="option-mode" class="hidden">
+      <h2>階を選んでください</h2>
+      <div class="floor-buttons">
+        <button class="floor-btn" data-floor="B1">B1</button>
+        <button class="floor-btn" data-floor="1F">1F</button>
+        <button class="floor-btn" data-floor="2F">2F</button>
+      </div>
+
+      <h2>エリアを選んでください</h2>
+      <div id="area-selector">まず階を選んでください</div>
+
+    </div>
+
+  </div>
+  <button id="end-tour-btn" class="hidden fixed-button">案内を終了</button>
+</body>
+</html>
