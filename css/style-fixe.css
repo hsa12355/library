@@ -3,7 +3,7 @@ body#fixed-route, html#fixed-route {
   margin: 0;
   padding: 0;
   font-family: 'Noto Sans TC', sans-serif;
-  background: url('../images/未來書庫中的智慧指引.png') no-repeat center center fixed;
+  background: url('../images/Background-1.jpg') no-repeat center center fixed;
   background-size: cover;
   height: 100vh;
   display: flex;
@@ -85,8 +85,8 @@ body#fixed-route .intro-photo img {
   border-radius: 15px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
   padding: 1rem;
-  max-width: 300px;
-  max-height: 400px;
+  max-width: 400px;
+  max-height: 500px;
   overflow-y: auto;
   z-index: 1000;
 }
@@ -96,6 +96,41 @@ body#fixed-route .intro-photo img {
   margin-bottom: 1rem;
   border-radius: 12px;
 }
+
+.floor-map-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 16px 0;
+  flex-wrap: wrap;
+}
+
+.map-tab-btn {
+  padding: 10px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  background: linear-gradient(to bottom right, #fefefe, #e0e0e0);
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 2px 4px 8px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.map-tab-btn:hover {
+  background: linear-gradient(to bottom right, #ffffff, #d0d0d0);
+  box-shadow: 2px 6px 12px rgba(0,0,0,0.2);
+  color: #000;
+}
+
+.map-tab-btn.active {
+  background: #4e9dfb;
+  color: #fff;
+  border-color: #4e9dfb;
+  box-shadow: 0 0 0 3px rgba(78,157,251,0.3);
+}
+
 
 .close-map {
   display: block;

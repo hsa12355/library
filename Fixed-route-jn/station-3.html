@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>第3ステーション：新刊展示エリア・24時間返却ボックス</title>
+  <link rel="stylesheet" href="../css/style-fixe.css" />
+</head>
+<body id="fixed-route">
+
+<div class="container">
+
+  <!-- フロアマップボタン -->
+  <button id="floor-map-btn" class="floor-map-btn">フロアマップ</button>
+
+  <!-- フロアマップポップアップ -->
+  <div id="floor-map-popup" class="floor-map-popup hidden">
+    <img src="../images/Floor-B1s_-_.jpg" alt="地下1階フロアマップ" />
+    <img src="../images/Floor-1Fs_-_.jpg" alt="1階フロアマップ" />
+    <img src="../images/Floor-2Fs_-_.jpg" alt="2階フロアマップ" />
+    <button id="close-map" class="close-map">マップを閉じる</button>
+  </div>
+
+  <!-- 紹介画像 -->
+  <div class="intro-photo">
+    <img src="../images/book-wall.jpg" alt="第3ステーション：新刊展示エリア・24時間返却ボックス" />
+  </div>
+
+  <!-- 紹介文（アニメーション） -->
+  <div class="intro-text">
+    <p class="intro-line">ここは最新の書籍が並ぶ新刊展示エリアです。新しく出版された書籍は、展示されるとすぐに貸出可能となります。</p>
+    <p class="intro-line">エリア内には快適なソファ席が設置されており、多くの学生がここで読書に没頭し、時間を忘れてしまうこともあります。</p>
+    <p class="intro-line">貸出期限が来た本は、カウンターで返却する以外に、図書館入口右側の「24時間返却ボックス」でも返却できます。開館時間外でも便利に返却可能です。</p>
+  </div>
+
+  <!-- ナビゲーションボタン（左：前、右：次） -->
+  <nav class="station-nav">
+    <a href="station-2.html" class="next-station-btn">前のステーション</a>
+    <a href="station-4.html" class="next-station-btn" style="left: auto; right: 120px;">次のステーション</a>
+  </nav>
+
+  <!-- ガイド終了ボタン -->
+  <button id="end-tour-btn" class="end-tour-btn">ガイド終了</button>
+
+</div>
+
+<script src="../js/fixed.js"></script>
+</body>
+</html>

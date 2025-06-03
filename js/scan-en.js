@@ -85,21 +85,38 @@ function initCameraSelector() {
 }
 
 
-window.onload = () => {
+window.addEventListener('load', () => {
   initCameraSelector();
 
-  // Show floor map
+  // 樓層地圖開啟/關閉
   document.getElementById('floor-map-btn').onclick = () => {
     document.getElementById('floor-map-popup').classList.remove('hidden');
   };
 
-  // Hide floor map
   document.getElementById('close-map').onclick = () => {
     document.getElementById('floor-map-popup').classList.add('hidden');
   };
 
-  // End tour button
+  // 結束導覽
   document.getElementById('end-tour-btn').onclick = () => {
     window.location.href = 'language.html';
   };
-};
+
+  // 加入樓層地圖切換功能（若存在）
+  const tabButtons = document.querySelectorAll('.map-tab-btn');
+  const mapSections = document.querySelectorAll('.floor-map-img');
+
+  tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      tabButtons.forEach(btn => btn.classList.remove('active'));
+      mapSections.forEach(section => section.classList.add('hidden'));
+
+      button.classList.add('active');
+      const targetId = button.dataset.target;
+      const targetMap = document.getElementById(targetId);
+      if (targetMap) {
+        targetMap.classList.remove('hidden');
+      }
+    });
+  });
+});

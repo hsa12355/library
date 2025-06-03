@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>第10ステーション：魔法の森・知恵の養分</title>
+<link rel="stylesheet" href="../css/style.css" />
+</head>
+<body id="option-mode-page">
+
+<div class="container">
+
+  <!-- 右上のフロアマップボタン -->
+  <button id="floor-map-btn" class="floor-map-btn">フロアマップ</button>
+
+    <!-- フロアマップのポップアップ -->
+    <div id="floor-map-popup" class="floor-map-popup hidden">
+      <!-- フロア切替ボタン -->
+      <div class="floor-map-tabs">
+        <button class="map-tab-btn" data-target="map-b1">B1</button>
+        <button class="map-tab-btn" data-target="map-1f">1階</button>
+        <button class="map-tab-btn" data-target="map-2f">2階</button>
+      </div>
+
+      <!-- 各フロアのマップ画像 -->
+      <div id="map-b1" class="floor-map-img">
+        <img src="../images/Floor-B1s_-_.jpg" alt="地下1階フロアマップ" />
+      </div>
+      <div id="map-1f" class="floor-map-img hidden">
+        <img src="../images/Floor-1Fs_-_.jpg" alt="1階フロアマップ" />
+      </div>
+      <div id="map-2f" class="floor-map-img hidden">
+        <img src="../images/Floor-2Fs_-_.jpg" alt="2階フロアマップ" />
+      </div>
+      <button id="close-map" class="close-map">マップを閉じる</button>
+  </div>
+
+  <!-- 紹介写真 -->
+  <div class="intro-photo">
+    <img src="book-wall.jpg" alt="第10ステーション：魔法の森・知恵の養分" />
+  </div>
+
+  <!-- 紹介テキスト -->
+  <div class="intro-text">
+    <p class="intro-line">図書館の中庭には、夢のような「魔法の森」があります。これは知恵の源と知識の継続を象徴しています。</p>
+    <p class="intro-line">木材は紙の原料であり、この森は「水を飲むときは源を思え」という教えを思い起こさせ、一冊一冊の本の誕生を大切にすることを教えています。</p>
+    <p class="intro-line">さらに深い意味として、ここは元智大学の学生の2つの卒業基準、TOEICコーナーとクラシック50コーナーをつなぐ場所です。学生の人文教養、独立思考力、外国語能力を育成するため、関連書籍がこのエリアに集められています。</p>
+    <p class="intro-line">また、ここは学生が美的創造力を発揮する舞台でもあり、芸術と書籍が融合することで、読書が知識の吸収だけでなく、生活の中の美的体験となる場所です。</p>
+  </div>
+
+  <div id="choice-prompt">
+  <!-- フロア選択ボタン -->
+  <div class="floor-selector">
+    <button class="floor-btn" data-floor="B1">B1</button>
+    <button class="floor-btn" data-floor="1F">1F</button>
+    <button class="floor-btn" data-floor="2F">2F</button>
+  </div>
+
+  <!-- エリア選択ボタン（動的生成） -->
+  <div class="area-selector" id="area-selector"></div>
+    <!-- 動的に追加 -->
+  </div>
+
+  <!-- 右下の終了ボタン -->
+  <button id="end-tour-btn" class="end-tour-btn">案内を終了する</button>
+
+</div>
+
+<script src="../js/text-jn.js"></script>
+
+</body>
+</html>

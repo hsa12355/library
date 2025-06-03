@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>第4ステーション：デジタル学習エリア・悠遊カード印刷・グループルームと学習ポッド</title>
+<link rel="stylesheet" href="../css/style-fixed-vedio.css" />
+</head>
+<body id="fixed-route">
+
+<div class="container">
+
+  <!-- 右上のフロアマップボタン -->
+  <button id="floor-map-btn" class="floor-map-btn show">フロアマップ</button>
+
+  <!-- フロアマップのポップアップ -->
+  <div id="floor-map-popup" class="floor-map-popup hidden">
+    <img src="../images/Floor-B1s_-_.jpg" alt="地下1階フロアマップ" />
+    <img src="../images/Floor-1Fs_-_.jpg" alt="1階フロアマップ" />
+    <img src="../images/Floor-2Fs_-_.jpg" alt="2階フロアマップ" />
+    <button id="close-map" class="close-map">マップを閉じる</button>
+  </div>
+
+  <!-- 紹介ビデオ -->
+  <div class="intro-video">
+    <video controls width="100%" poster="video-thumbnail.jpg">
+      <source src="../video-for-input/" type="video/mp4">
+      お使いのブラウザは HTML5 ビデオの再生に対応していません。
+    </video>
+  </div>
+
+  <!-- タイトル（上またはビデオ下に配置可能） -->
+  <div class="intro-text">
+    <h2>第4ステーション：デジタル学習エリア・悠遊カード印刷・グループルームと学習ポッド</h2>
+  </div>
+
+<nav class="station-nav">
+  <a href="video-station3.html" class="next-station-btn show">前のステーションへ</a>
+  <a href="video-station5.html" class="next-station-btn show" style="left: auto; right: 120px;">次のステーションへ</a>
+</nav>
+
+  <!-- ガイド終了ボタン -->
+  <button id="end-tour-btn" class="end-tour-btn show">ガイド終了</button>
+
+</div>
+
+<script src="../js/fixed.js"></script>
+
+</body>
+</html>

@@ -1,6 +1,6 @@
 const floorAreas = {
-  'B1': ['密集書庫'],
-  '1F': ['電子書牆入口', '數位學習區', '新書展示區', '魔法森林', '入口門禁', '活力閱讀區', '禪園'],
+  'B1': ['密集書庫', '魔法森林', '禪園'],
+  '1F': ['電子書牆入口', '數位學習區', '新書展示區', '入口門禁', '活力閱讀區'],
   '2F': ['繪本漫畫區', '期刊區'],
 };
 
@@ -67,17 +67,43 @@ floorButtons.forEach(btn => {
   });
 });
 
-floorMapBtn.addEventListener('click', () => {
-  floorMapPopup.classList.toggle('hidden');
-});
+if (floorMapBtn && floorMapPopup && closeMapBtn) {
+    floorMapBtn.addEventListener('click', () => {
+      floorMapPopup.classList.remove('hidden');
+    });
 
-closeMapBtn.addEventListener('click', () => {
-  floorMapPopup.classList.add('hidden');
-});
+    closeMapBtn.addEventListener('click', () => {
+      floorMapPopup.classList.add('hidden');
+    });
+  }
 
 endTourBtn.addEventListener('click', () => {
   window.location.href = '../language.html';
 });
+
+  // 🔄 加入樓層地圖切換邏輯
+  const tabButtons = document.querySelectorAll('.map-tab-btn');
+  const mapImages = document.querySelectorAll('.floor-map-img');
+
+  tabButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // 移除所有按鈕的 active 樣式
+      tabButtons.forEach(b => b.classList.remove('active'));
+
+      // 加上當前按鈕的 active 樣式
+      btn.classList.add('active');
+
+      // 隱藏所有圖片
+      mapImages.forEach(img => img.classList.add('hidden'));
+
+      // 顯示目標圖片
+      const targetId = btn.getAttribute('data-target');
+      const targetMap = document.getElementById(targetId);
+      if (targetMap) {
+        targetMap.classList.remove('hidden');
+      }
+    });
+  });
 
 // 文字動畫可以保持不動，或改寫為函式分離
 document.addEventListener('DOMContentLoaded', () => {

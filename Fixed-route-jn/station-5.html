@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>第5ステーション：アクティブリーディングエリア</title>
+  <link rel="stylesheet" href="../css/style-fixe.css" />
+</head>
+<body id="fixed-route">
+
+<div class="container">
+
+  <!-- フロアマップボタン -->
+  <button id="floor-map-btn" class="floor-map-btn">フロアマップ</button>
+
+  <!-- フロアマップポップアップ -->
+  <div id="floor-map-popup" class="floor-map-popup hidden">
+    <img src="../images/Floor-B1s_-_.jpg" alt="地下1階フロアマップ" />
+    <img src="../images/Floor-1Fs_-_.jpg" alt="1階フロアマップ" />
+    <img src="../images/Floor-2Fs_-_.jpg" alt="2階フロアマップ" />
+    <button id="close-map" class="close-map">マップを閉じる</button>
+  </div>
+
+  <!-- 紹介画像 -->
+  <div class="intro-photo">
+    <img src="../images/book-wall.jpg" alt="第5ステーション：アクティブリーディングエリア" />
+  </div>
+
+  <!-- 紹介文（アニメーション） -->
+  <div class="intro-text">
+    <p class="intro-line">読書スタイルがますます多様化する今日、読書は動きと楽しさに満ちたものにもなります。ここには静音フィットネスバイクが設置されており、運動しながら読書が楽しめます。</p>
+    <p class="intro-line">ユニークな形のジャイロチェアは、アート作品であると同時に心を解きほぐす大型おもちゃでもあります。カラフルなラウンジチェアは、学生たちに快適で自由な休憩スペースを提供します。</p>
+    <p class="intro-line">このエリアはまた、映像上映やオープン形式のディスカッション活動の主要なスペースでもあり、読書と生活が巧みに融合した場所です。</p>
+  </div>
+
+  <!-- ナビゲーションボタン（左：前、右：次） -->
+  <nav class="station-nav">
+    <a href="station-4.html" class="next-station-btn">前のステーション</a>
+    <a href="station-6.html" class="next-station-btn" style="left: auto; right: 120px;">次のステーション</a>
+  </nav>
+
+  <!-- ガイド終了ボタン -->
+  <button id="end-tour-btn" class="end-tour-btn">ガイド終了</button>
+
+</div>
+
+<script src="../js/fixed.js"></script>
+</body>
+</html>

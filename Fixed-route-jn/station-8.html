@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>第8ステーション：集密書庫エリア</title>
+  <link rel="stylesheet" href="../css/style-fixe.css" />
+</head>
+<body id="fixed-route">
+
+<div class="container">
+
+  <!-- フロアマップボタン -->
+  <button id="floor-map-btn" class="floor-map-btn">フロアマップ</button>
+
+  <!-- フロアマップポップアップ -->
+  <div id="floor-map-popup" class="floor-map-popup hidden">
+    <img src="../images/Floor-B1s_-_.jpg" alt="地下1階フロアマップ" />
+    <img src="../images/Floor-1Fs_-_.jpg" alt="1階フロアマップ" />
+    <img src="../images/Floor-2Fs_-_.jpg" alt="2階フロアマップ" />
+    <button id="close-map" class="close-map">マップを閉じる</button>
+  </div>
+
+  <!-- 紹介画像 -->
+  <div class="intro-photo">
+    <img src="../images/book-wall.jpg" alt="第8ステーション：集密書庫エリア" />
+  </div>
+
+  <!-- 紹介文 -->
+  <div class="intro-text">
+    <p class="intro-line">ここは蔵書の奥深くに眠る宝の宝庫です。</p>
+    <p class="intro-line">書架スペースの不足を解消し、より多くの図書を収蔵するために、図書館では集密書庫を設置しています。ここには使用頻度は低いものの、非常に貴重な書籍が保管されています。</p>
+    <p class="intro-line">一般的な固定棚と異なり、このエリアでは移動式書架を採用しており、側面のハンドルを回すことで棚が動き、簡単に本を探し出すことができます。「棚を回し、知識の扉を開く」体験を楽しめます。</p>
+  </div>
+
+  <!-- ナビゲーションボタン（左：前、右：次） -->
+  <nav class="station-nav">
+    <a href="station-7.html" class="next-station-btn">前のステーション</a>
+    <a href="station-9.html" class="next-station-btn" style="left: auto; right: 120px;">次のステーション</a>
+  </nav>
+
+  <!-- ガイド終了ボタン -->
+  <button id="end-tour-btn" class="end-tour-btn">ガイド終了</button>
+
+</div>
+
+<script src="../js/fixed.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>第2ステーション：入館ゲート・図書館紹介</title>
+<link rel="stylesheet" href="../css/style.css" />
+</head>
+<body id="option-mode-page">
+
+<div class="container">
+
+  <!-- 右上のフロアマップボタン -->
+  <button id="floor-map-btn" class="floor-map-btn">フロアマップ</button>
+
+    <!-- フロアマップのポップアップ -->
+    <div id="floor-map-popup" class="floor-map-popup hidden">
+      <!-- フロア切替ボタン -->
+      <div class="floor-map-tabs">
+        <button class="map-tab-btn" data-target="map-b1">B1</button>
+        <button class="map-tab-btn" data-target="map-1f">1階</button>
+        <button class="map-tab-btn" data-target="map-2f">2階</button>
+      </div>
+
+      <!-- 各フロアのマップ画像 -->
+      <div id="map-b1" class="floor-map-img">
+        <img src="../images/Floor-B1s_-_.jpg" alt="地下1階フロアマップ" />
+      </div>
+      <div id="map-1f" class="floor-map-img hidden">
+        <img src="../images/Floor-1Fs_-_.jpg" alt="1階フロアマップ" />
+      </div>
+      <div id="map-2f" class="floor-map-img hidden">
+        <img src="../images/Floor-2Fs_-_.jpg" alt="2階フロアマップ" />
+      </div>
+      <button id="close-map" class="close-map">マップを閉じる</button>
+  </div>
+
+  <!-- 紹介写真 -->
+  <div class="intro-photo">
+    <img src="book-wall.jpg" alt="第2ステーション：入館ゲート・図書館紹介" />
+  </div>
+
+  <!-- 紹介テキスト -->
+  <div class="intro-text">
+    <p class="intro-line">図書館への入館方法はとても便利で、元智大学の学生は学生証や元智アプリの通行証で入館および貸出ができます。</p>
+    <p class="intro-line">この入口をくぐると、歴史ある多機能なスマートスペースへ正式に足を踏み入れたことになります。図書館は1989年に設立され、1997年に五館へ移転し、2006年に新館を増設しました。総面積は約10,000平方メートルで、1,100席以上の閲覧スペースを提供しています。</p>
+    <p class="intro-line">館内は地下1階、1階、2階の三層に分かれています。地下1階には中国語、日本語、西洋語の書庫、密集書庫、研修室、中庭の植栽エリアと枯山水の禅庭があります。1階は貸出返却と参考相談カウンターがあり、新刊展示エリア、デジタル学習エリア、修士・博士論文エリア、英語リーディングコーナー、活力読書エリアなど多目的スペースがあります。2階は中国語・西洋語の現刊書籍と人気雑誌の宝庫で、絵本・漫画エリアや美学展示スペースも設置されています。</p>
+  </div>
+
+  <div id="choice-prompt">
+  <!-- フロア選択ボタン -->
+  <div class="floor-selector">
+    <button class="floor-btn" data-floor="B1">B1</button>
+    <button class="floor-btn" data-floor="1F">1F</button>
+    <button class="floor-btn" data-floor="2F">2F</button>
+  </div>
+
+  <!-- エリア選択ボタン（動的生成） -->
+  <div class="area-selector" id="area-selector"></div>
+    <!-- 動的に追加されます -->
+  </div>
+
+  <!-- 右下の終了ボタン -->
+  <button id="end-tour-btn" class="end-tour-btn">案内を終了する</button>
+
+</div>
+
+<script src="../js/text-jn.js"></script>
+
+</body>
+</html>

@@ -14,21 +14,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }, i * 900);
   });
 
-  const floorAreas = {
-    'B1': ['Compact Storage'],
-    '1F': ['E-book Wall Entrance', 'Digital Learning Zone', 'New Arrival Zone', 'Magic Forest', 'Entrance Gate', 'Energetic Reading Zone', 'Zen Garden'],
-    '2F': ['Picture Books & Comics', 'Periodicals Zone'],
-  };
+const floorAreas = {
+  'B1': ['Compact Shelves', 'Zen Garden', 'Magic Forest'],
+  '1F': ['E-Book Wall Entrance', 'Digital Learning Area', 'New Books Display', 'Entrance Access', 'Vibrant Reading Area'],
+  '2F': ['Picture Books & Comics', 'Periodicals'],
+};
 
   const areaToStationPage = {
     'E-book Wall Entrance': 'videofree-en/video-station1.html',
     'Entrance Gate': 'videofree-en/video-station2.html',
-    'New Arrival Zone': 'videofree-en/video-station3.html',
-    'Digital Learning Zone': 'videofree-en/video-station4.html',
-    'Energetic Reading Zone': 'videofree-en/video-station5.html',
-    'Periodicals Zone': 'videofree-en/video-station6.html',
-    'Picture Books & Comics': 'videofree-en/video-station7.html',
-    'Compact Storage': 'videofree-en/video-station8.html',
+    'New Titles': 'videofree-en/video-station3.html',
+    'Digital Universe': 'videofree-en/video-station4.html',
+    'Read and Ride': 'videofree-en/video-station5.html',
+    'Periodicals': 'videofree-en/video-station6.html',
+    'Illustrated and Comic Books': 'videofree-en/video-station7.html',
+    'Compact Shelves': 'videofree-en/video-station8.html',
     'Zen Garden': 'videofree-en/video-station9.html',
     'Magic Forest': 'videofree-en/video-station10.html',
   };

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>第9ステーション：日本式禅園・枯山水</title>
+<link rel="stylesheet" href="../css/style.css" />
+</head>
+<body id="option-mode-page">
+
+<div class="container">
+
+  <!-- 右上のフロアマップボタン -->
+  <button id="floor-map-btn" class="floor-map-btn">フロアマップ</button>
+    <!-- フロアマップのポップアップ -->
+    <div id="floor-map-popup" class="floor-map-popup hidden">
+      <!-- フロア切替ボタン -->
+      <div class="floor-map-tabs">
+        <button class="map-tab-btn" data-target="map-b1">B1</button>
+        <button class="map-tab-btn" data-target="map-1f">1階</button>
+        <button class="map-tab-btn" data-target="map-2f">2階</button>
+      </div>
+
+      <!-- 各フロアのマップ画像 -->
+      <div id="map-b1" class="floor-map-img">
+        <img src="../images/Floor-B1s_-_.jpg" alt="地下1階フロアマップ" />
+      </div>
+      <div id="map-1f" class="floor-map-img hidden">
+        <img src="../images/Floor-1Fs_-_.jpg" alt="1階フロアマップ" />
+      </div>
+      <div id="map-2f" class="floor-map-img hidden">
+        <img src="../images/Floor-2Fs_-_.jpg" alt="2階フロアマップ" />
+      </div>
+      <button id="close-map" class="close-map">マップを閉じる</button>
+  </div>
+
+  <!-- 紹介写真 -->
+  <div class="intro-photo">
+    <img src="book-wall.jpg" alt="第9ステーション：日本式禅園・枯山水" />
+  </div>
+
+  <!-- 紹介テキスト -->
+  <div class="intro-text">
+    <p class="intro-line">静かな一角は、細かい砂と岩で作られた日本式の枯山水禅園です。</p>
+    <p class="intro-line">「山」は石で象徴され、「水」は砂の模様で表現されており、砂面の模様は水の流れを思わせます。</p>
+    <p class="intro-line">この禅園は変わらない要素によって、静けさと落ち着いた雰囲気を伝えています。設計の意図は、図書館を訪れるすべての読者が煩わしさを忘れ、心を落ち着けて読書に集中できるようにすることです。</p>
+  </div>
+
+  <div id="choice-prompt">
+  <!-- フロア選択ボタン -->
+  <div class="floor-selector">
+    <button class="floor-btn" data-floor="B1">B1</button>
+    <button class="floor-btn" data-floor="1F">1F</button>
+    <button class="floor-btn" data-floor="2F">2F</button>
+  </div>
+
+  <!-- エリア選択ボタン（動的生成） -->
+  <div class="area-selector" id="area-selector"></div>
+    <!-- 動的に追加 -->
+  </div>
+
+  <!-- 右下の終了ボタン -->
+  <button id="end-tour-btn" class="end-tour-btn">案内を終了する</button>
+
+</div>
+
+<script src="../js/text-jn.js"></script>
+
+</body>
+</html>
