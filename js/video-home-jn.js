@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
       } else if (mode === 'free') {
         window.location.href = 'scan-jp.html'; // 自由探索モードの日本語版ページ
       } else if (mode === 'fixed') {
-        window.location.href = 'video-fixed-jp/video-station1.html'; // 固定ルートモード日本語版
+        window.location.href = 'video-fixed-jn/video-station1.html'; // 固定ルートモード日本語版
       }
     });
   });
