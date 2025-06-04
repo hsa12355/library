@@ -16,23 +16,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   const floorAreas = {
-    'B1': ['密集書庫（書庫）', '魔法の森', '禅園（禅の庭）'],
-    '1F': ['電子書の壁入口', 'デジタル学習エリア', '新刊展示エリア', '入口ゲート', '活気ある読書エリア'],
-    '2F': ['絵本・漫画エリア', '定期刊行物エリア'],
-  };
+  'B1': ['密集書庫', '魔法の森', '禅ガーデン'],
+  '1F': ['電子書棚入口', 'デジタル学習エリア', '新刊展示エリア', '入口ゲート', 'アクティブ読書エリア', 'スペースと中庭の植栽'],
+  '2F': ['絵本・マンガエリア', '雑誌エリア'],
+};
 
   const areaToStationPage = {
-    '電子書の壁入口': 'free-station-jn/station-1.html',
+    '電子書棚入口': 'free-station-jn/station-1.html',
     '入口ゲート': 'free-station-jn/station-2.html',
     '新刊展示エリア': 'free-station-jn/station-3.html',
     'デジタル学習エリア': 'free-station-jn/station-4.html',
-    '活気ある読書エリア': 'free-station-jn/station-5.html',
-    '定期刊行物エリア': 'free-station-jn/station-6.html',
-    '絵本・漫画エリア': 'free-station-jn/station-7.html',
-    '密集書庫（書庫）': 'free-station-jn/station-8.html',
-    '禅園（禅の庭）': 'free-station-jn/station-9.html',
-    '魔法の森': 'free-station-jn/station-10.html',
+    'スペースと中庭の植栽': 'free-station-jn/station-5.html',
+    'アクティブ読書エリア': 'free-station-jn/station-6.html',
+    '雑誌エリア': 'free-station-jn/station-7.html',
+    '絵本・マンガエリア': 'free-station-jn/station-8.html',
+    '密集書庫': 'free-station-jn/station-9.html',
+    '禅ガーデン': 'free-station-jn/station-10.html',
+    '魔法の森': 'free-station-jn/station-11.html',
   };
+
 
 
   const optionMode = document.getElementById('option-mode');

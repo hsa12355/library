@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Floor and area definitions
 const floorAreas = {
   'B1': ['Compact Shelves', 'Zen Garden', 'Magic Forest'],
-  '1F': ['E-Book Wall Entrance', 'Digital Universe', 'New Titles', 'Entrance Access', 'Read and Ride'],
+  '1F': ['E-Book Wall Entrance', 'Digital Universe', 'New Titles', 'Entrance Access', 'Read and Ride','Space and Courtyard Plants'],
   '2F': ['Illustrated and Comic Books', 'Periodicals'],
 };
 
@@ -26,12 +26,13 @@ const floorAreas = {
     'Entrance Gate': 'free-station-en/station-2.html',
     'New Titles': 'free-station-en/station-3.html',
     'Digital Universe': 'free-station-en/station-4.html',
-    'Read and Ride': 'free-station-en/station-5.html',
-    'Periodicals': 'free-station-en/station-6.html',
-    'Illustrated and Comic Books': 'free-station-en/station-7.html',
-    'Compact Shelves': 'free-station-en/station-8.html',
-    'Zen Garden': 'free-station-en/station-9.html',
-    'Magic Forest': 'free-station-en/station-10.html',
+    'Space and Courtyard Plants': 'free-station-en/station-5.html',
+    'Read and Ride': 'free-station-en/station-6.html',
+    'Periodicals': 'free-station-en/station-7.html',
+    'Illustrated and Comic Books': 'free-station-en/station-8.html',
+    'Compact Shelves': 'free-station-en/station-9.html',
+    'Zen Garden': 'free-station-en/station-10.html',
+    'Magic Forest': 'free-station-en/station-11.html',
   };
 
 

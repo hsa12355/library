@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const floorAreas = {
   'B1': ['Compact Shelves', 'Zen Garden', 'Magic Forest'],
-  '1F': ['E-Book Wall Entrance', 'Digital Universe', 'New Titles', 'Entrance Access', 'Read and Ride'],
+  '1F': ['E-Book Wall Entrance', 'Digital Universe', 'New Titles', 'Entrance Access', 'Read and Ride','Space and Courtyard Plants'],
   '2F': ['Illustrated and Comic Books', 'Periodicals'],
 };
 
@@ -25,12 +25,13 @@ const floorAreas = {
     'Entrance Gate': 'videofree-en/video-station2.html',
     'New Titles': 'videofree-en/video-station3.html',
     'Digital Universe': 'videofree-en/video-station4.html',
-    'Read and Ride': 'videofree-en/video-station5.html',
-    'Periodicals': 'videofree-en/video-station6.html',
-    'Illustrated and Comic Books': 'videofree-en/video-station7.html',
-    'Compact Shelves': 'videofree-en/video-station8.html',
-    'Zen Garden': 'videofree-en/video-station9.html',
-    'Magic Forest': 'videofree-en/video-station10.html',
+    'Space and Courtyard Plants':'videofree-en/video-station5.html',
+    'Read and Ride': 'videofree-en/video-station6.html',
+    'Periodicals': 'videofree-en/video-station7.html',
+    'Illustrated and Comic Books': 'videofree-en/video-station8.html',
+    'Compact Shelves': 'videofree-en/video-station9.html',
+    'Zen Garden': 'videofree-en/video-station10.html',
+    'Magic Forest': 'videofree-en/video-station11.html',
   };
 
   const optionMode = document.getElementById('option-mode');

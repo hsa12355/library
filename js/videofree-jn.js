@@ -1,20 +1,21 @@
-const floorAreas = {
-  'B1': ['密集書庫', '魔法の森', '禅園'],
-  '1F': ['電子書き込み入口', 'デジタル学習エリア', '新刊展示エリア', '入口ゲート', '活気ある読書エリア'],
-  '2F': ['絵本・漫画エリア', '定期刊行物エリア'],
-};
+  const floorAreas = {
+    'B1': ['密集書庫', '魔法の森', '禅園'],
+    '1F': ['電子書き込み入口', 'デジタル学習エリア', '新刊展示エリア', '入口ゲート', '活気ある読書エリア','スペースと中庭の植栽'],
+    '2F': ['絵本・漫画エリア', '定期刊行物エリア'],
+  };
 
 const areaToStationPage = {
   '電子書き込み入口': 'video-station1.html',
   '入口ゲート': 'video-station2.html',
   '新刊展示エリア': 'video-station3.html',
   'デジタル学習エリア': 'video-station4.html',
-  '活気ある読書エリア': 'video-station5.html',
-  '定期刊行物エリア': 'video-station6.html',
-  '絵本・漫画エリア': 'video-station7.html',
-  '密集書庫': 'video-station8.html',
-  '禅園': 'video-station9.html',
-  '魔法の森': 'video-station10.html',
+  'スペースと中庭の植栽':'video-station5.html',
+  '活気ある読書エリア': 'video-station6.html',
+  '定期刊行物エリア': 'video-station7.html',
+  '絵本・漫画エリア': 'video-station8.html',
+  '密集書庫': 'video-station9.html',
+  '禅園': 'video-station10.html',
+  '魔法の森': 'video-station11.html',
 };
 
 // DOM 要素

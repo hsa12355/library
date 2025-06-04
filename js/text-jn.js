@@ -1,21 +1,22 @@
-const floorAreas = {
-  'B1': ['書庫（密集）', '魔法の森', '禅園'],
-  '1F': ['電子書壁入口', 'デジタル学習エリア', '新刊展示コーナー', '入館ゲート', 'アクティブリーディングエリア'],
+  const floorAreas = {
+  'B1': ['密集書庫', '魔法の森', '禅ガーデン'],
+  '1F': ['電子書棚入口', 'デジタル学習エリア', '新刊展示エリア', '入口ゲート', 'アクティブ読書エリア', 'スペースと中庭の植栽'],
   '2F': ['絵本・マンガエリア', '雑誌エリア'],
 };
 
-const areaToStationPage = {
-  '電子書壁入口': 'station-1.html',
-  '入館ゲート': 'station-2.html',
-  '新刊展示コーナー': 'station-3.html',
-  'デジタル学習エリア': 'station-4.html',
-  'アクティブリーディングエリア': 'station-5.html',
-  '雑誌エリア': 'station-6.html',
-  '絵本・マンガエリア': 'station-7.html',
-  '書庫（密集）': 'station-8.html',
-  '禅園': 'station-9.html',
-  '魔法の森': 'station-10.html',
-};
+  const areaToStationPage = {
+    '電子書棚入口': 'station-1.html',
+    '入口ゲート': 'station-2.html',
+    '新刊展示エリア': 'station-3.html',
+    'デジタル学習エリア': 'station-4.html',
+    'スペースと中庭の植栽': 'station-5.html',
+    'アクティブ読書エリア': 'station-6.html',
+    '雑誌エリア': 'station-7.html',
+    '絵本・マンガエリア': 'station-8.html',
+    '密集書庫': 'station-9.html',
+    '禅ガーデン': 'station-10.html',
+    '魔法の森': 'station-11.html',
+  };
 
 const areaSelector = document.getElementById('area-selector');
 const floorButtons = document.querySelectorAll('.floor-btn');
@@ -125,15 +126,22 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+
 document.addEventListener("DOMContentLoaded", function () {
   const imgEl = document.getElementById("slideshow-image");
-  const imgList = window.slideshowImages;  // 從每頁取圖片清單
+  const imgList = window.slideshowImages;
 
   if (imgEl && Array.isArray(imgList) && imgList.length > 1) {
     let index = 0;
+
     setInterval(() => {
-      index = (index + 1) % imgList.length;
-      imgEl.src = imgList[index];
+      imgEl.classList.add("fade-out");
+
+      setTimeout(() => {
+        index = (index + 1) % imgList.length;
+        imgEl.src = imgList[index];
+        imgEl.classList.remove("fade-out");
+      }, 600); // 換圖 timing 要跟 CSS transition 時間對齊
     }, 3000);
   }
 });

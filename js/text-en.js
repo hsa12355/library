@@ -1,21 +1,23 @@
 const floorAreas = {
   'B1': ['Compact Shelves', 'Zen Garden', 'Magic Forest'],
-  '1F': ['E-Book Wall Entrance', 'Digital Universe', 'New Titles', 'Entrance Access', 'Read and Ride'],
+  '1F': ['E-Book Wall Entrance', 'Digital Universe', 'New Titles', 'Entrance Access', 'Read and Ride','Space and Courtyard Plants'],
   '2F': ['Illustrated and Comic Books', 'Periodicals'],
 };
 
-const areaToStationPage = {
-  'E-Book Wall Entrance': 'station-1.html',
-  'Entrance Access': 'station-2.html',
-  'New Titles': 'station-3.html',
-  'Digital Universe': 'station-4.html',
-  'Read and Ride': 'station-5.html',
-  'Periodicals': 'station-6.html',
-  'Illustrated and Comic Books': 'station-7.html',
-  'Compact Shelves': 'station-8.html',
-  'Zen Garden': 'station-9.html',
-  'Magic Forest': 'station-10.html',
-};
+  // Area to station page mapping
+  const areaToStationPage = {
+    'E-Book Wall Entrance': 'station-1.html',
+    'Entrance Gate': 'station-2.html',
+    'New Titles': 'station-3.html',
+    'Digital Universe': 'station-4.html',
+    'Space and Courtyard Plants': 'station-5.html',
+    'Read and Ride': 'station-6.html',
+    'Periodicals': 'station-7.html',
+    'Illustrated and Comic Books': 'station-8.html',
+    'Compact Shelves': 'station-9.html',
+    'Zen Garden': 'station-10.html',
+    'Magic Forest': 'station-11.html',
+  };
 
 const areaSelector = document.getElementById('area-selector');
 const floorButtons = document.querySelectorAll('.floor-btn');
@@ -132,15 +134,22 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+
 document.addEventListener("DOMContentLoaded", function () {
   const imgEl = document.getElementById("slideshow-image");
-  const imgList = window.slideshowImages;  // 從每頁取圖片清單
+  const imgList = window.slideshowImages;
 
   if (imgEl && Array.isArray(imgList) && imgList.length > 1) {
     let index = 0;
+
     setInterval(() => {
-      index = (index + 1) % imgList.length;
-      imgEl.src = imgList[index];
+      imgEl.classList.add("fade-out");
+
+      setTimeout(() => {
+        index = (index + 1) % imgList.length;
+        imgEl.src = imgList[index];
+        imgEl.classList.remove("fade-out");
+      }, 600); // 換圖 timing 要跟 CSS transition 時間對齊
     }, 3000);
   }
 });
