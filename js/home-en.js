@@ -14,11 +14,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }, i * 900);
   });
   // Floor and area definitions
-  const floorAreas = {
-    'B1': ['Compact Stacks', 'Magic Forest', 'Zen Garden'],
-    '1F': ['E-Book Wall Entrance', 'Digital Learning Zone', 'New Book Display', 'Entrance Gate', 'Energetic Reading Area'],
-    '2F': ['Picture Books & Comics Area', 'Periodicals Area'],
-  };
+const floorAreas = {
+  'B1': ['Compact Shelves', 'Zen Garden', 'Magic Forest'],
+  '1F': ['E-Book Wall Entrance', 'Digital Universe', 'New Titles', 'Entrance Access', 'Read and Ride'],
+  '2F': ['Illustrated and Comic Books', 'Periodicals'],
+};
 
   // Area to station page mapping
   const areaToStationPage = {

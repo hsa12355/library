@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const floorAreas = {
   'B1': ['Compact Shelves', 'Zen Garden', 'Magic Forest'],
-  '1F': ['E-Book Wall Entrance', 'Digital Learning Area', 'New Books Display', 'Entrance Access', 'Vibrant Reading Area'],
-  '2F': ['Picture Books & Comics', 'Periodicals'],
+  '1F': ['E-Book Wall Entrance', 'Digital Universe', 'New Titles', 'Entrance Access', 'Read and Ride'],
+  '2F': ['Illustrated and Comic Books', 'Periodicals'],
 };
 
   const areaToStationPage = {
