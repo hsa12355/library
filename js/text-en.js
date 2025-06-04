@@ -131,3 +131,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }, i * 700);
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const imgEl = document.getElementById("slideshow-image");
+  const imgList = window.slideshowImages;  // 從每頁取圖片清單
+
+  if (imgEl && Array.isArray(imgList) && imgList.length > 1) {
+    let index = 0;
+    setInterval(() => {
+      index = (index + 1) % imgList.length;
+      imgEl.src = imgList[index];
+    }, 3000);
+  }
+});

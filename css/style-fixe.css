@@ -212,6 +212,30 @@ body#fixed-route .floor-map-popup {
   transform: translateY(0);
 }
 
+#slideshow-container {
+  width: 100%;
+  max-width: 800px;     /* 或你要的寬度 */
+  height: 450px;        /* 固定高度 */
+  margin: 150px auto 0;  /* ← 上方空 40px，可以調整這個數值 */
+  overflow: hidden;
+  position: relative;
+}
+
+#slideshow-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;  /* 或 cover，視你需求決定 */
+  transition: opacity 0.5s ease;
+}
+
+.intro-text {
+  margin-top: 10px;  /* 文字區塊上方距離圖片10px，讓距離緊湊 */
+}
+
+.intro-text p {
+  margin-bottom: 1rem;  /* 保持文字段落底部距離 */
+}
+
 /* 響應式設計：平板、手機支援 */
 @media (max-width: 1024px) {
   .container {

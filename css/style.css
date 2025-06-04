@@ -45,10 +45,12 @@ body, html {
 }
 
 
+.intro-text {
+  margin-top: 10px;  /* 文字區塊上方距離圖片10px，讓距離緊湊 */
+}
+
 .intro-text p {
-  color: #333;
-  line-height: 1.5;
-  margin-bottom: 1rem;
+  margin-bottom: 1rem;  /* 保持文字段落底部距離 */
 }
 
 .fade-in {

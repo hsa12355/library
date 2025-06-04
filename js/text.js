@@ -133,22 +133,15 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-const imagePaths = [
-  '../images/1電子書牆/1-電子書牆01_吳志揚校長.png',
-  '../images/1電子書牆/1-電子書牆03.jpg',
-  '../images/1電子書牆/1-電子書牆09.jpg',
-  '../images/1電子書牆/1-電子書牆10.jpg'
-];
+document.addEventListener("DOMContentLoaded", function () {
+  const imgEl = document.getElementById("slideshow-image");
+  const imgList = window.slideshowImages;  // 從每頁取圖片清單
 
-let currentIndex = 0;
-const imgElement = document.getElementById('slideshow-image');
-
-setInterval(() => {
-  currentIndex = (currentIndex + 1) % imagePaths.length;
-  imgElement.style.opacity = 0;
-
-  setTimeout(() => {
-    imgElement.src = imagePaths[currentIndex];
-    imgElement.style.opacity = 1;
-  }, 300); // 配合 CSS 過渡
-}, 3000); // 每 3 秒切換
+  if (imgEl && Array.isArray(imgList) && imgList.length > 1) {
+    let index = 0;
+    setInterval(() => {
+      index = (index + 1) % imgList.length;
+      imgEl.src = imgList[index];
+    }, 3000);
+  }
+});
