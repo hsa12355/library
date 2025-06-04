@@ -1,6 +1,6 @@
 const floorAreas = {
   'B1': ['Compact Shelves', 'Zen Garden', 'Magic Forest'],
-  '1F': ['E-Book Wall Entrance', 'Digital Universe', 'New Titles', 'Entrance Access', 'Read and Ride'],
+  '1F': ['E-Book Wall Entrance', 'Digital Universe', 'New Titles', 'Entrance Access', 'Read and Ride','Space and Courtyard Plants'],
   '2F': ['Illustrated and Comic Books', 'Periodicals'],
 };
 
@@ -9,12 +9,13 @@ const floorAreas = {
     'Entrance Gate': 'video-station2.html',
     'New Titles': 'video-station3.html',
     'Digital Universe': 'video-station4.html',
-    'Read and Ride': 'video-station5.html',
-    'Periodicals': 'video-station6.html',
-    'Illustrated and Comic Books': 'video-station7.html',
-    'Compact Shelves': 'video-station8.html',
-    'Zen Garden': 'video-station9.html',
-    'Magic Forest': 'video-station10.html',
+    'Space and Courtyard Plants':'video-station5.html',
+    'Read and Ride': 'video-station6.html',
+    'Periodicals': 'video-station7.html',
+    'Illustrated and Comic Books': 'video-station8.html',
+    'Compact Shelves': 'video-station9.html',
+    'Zen Garden': 'video-station10.html',
+    'Magic Forest': 'video-station11.html',
   };
 
 // DOM elements

@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const floorAreas = {
     'B1': ['密集書庫', '魔法の森', '禅園'],
-    '1F': ['電子書き込み入口', 'デジタル学習エリア', '新刊展示エリア', '入口ゲート', '活気ある読書エリア'],
+    '1F': ['電子書き込み入口', 'デジタル学習エリア', '新刊展示エリア', '入口ゲート', '活気ある読書エリア','スペースと中庭の植栽'],
     '2F': ['絵本・漫画エリア', '定期刊行物エリア'],
   };
 
@@ -25,12 +25,13 @@ document.addEventListener('DOMContentLoaded', () => {
     '入口ゲート': 'videofree-jn/video-station2.html',
     '新刊展示エリア': 'videofree-jn/video-station3.html',
     'デジタル学習エリア': 'videofree-jn/video-station4.html',
-    '活気ある読書エリア': 'videofree-jn/video-station5.html',
-    '定期刊行物エリア': 'videofree-jn/video-station6.html',
-    '絵本・漫画エリア': 'videofree-jn/video-station7.html',
-    '密集書庫': 'videofree-jn/video-station8.html',
-    '禅園': 'videofree-jn/video-station9.html',
-    '魔法の森': 'videofree-jn/video-station10.html',
+    'スペースと中庭の植栽':'videofree-jn/video-station5.html',
+    '活気ある読書エリア': 'videofree-jn/video-station6.html',
+    '定期刊行物エリア': 'videofree-jn/video-station7.html',
+    '絵本・漫画エリア': 'videofree-jn/video-station8.html',
+    '密集書庫': 'videofree-jn/video-station9.html',
+    '禅園': 'videofree-jn/video-station10.html',
+    '魔法の森': 'videofree-jn/video-station11.html',
   };
 
   const optionMode = document.getElementById('option-mode');

@@ -1,6 +1,6 @@
 const floorAreas = {
   'B1': ['密集書庫', '魔法森林', '禪園'],
-  '1F': ['電子書牆入口', '數位學習區', '新書展示區', '入口門禁', '活力閱讀區'],
+  '1F': ['電子書牆入口', '數位學習區', '新書展示區', '入口門禁', '活力閱讀區','空間與中庭植栽'],
   '2F': ['繪本漫畫區', '期刊區'],
 };
 
@@ -9,12 +9,13 @@ const areaToStationPage = {
     '入口門禁': 'station-2.html',
     '新書展示區': 'station-3.html',
     '數位學習區': 'station-4.html',
-    '活力閱讀區': 'station-5.html',
-    '期刊區': 'station-6.html',
-    '繪本漫畫區': 'station-7.html',
-    '密集書庫': 'station-8.html',
-    '禪園': 'station-9.html',
-    '魔法森林': 'station-10.html',
+    '空間與中庭植栽':'station-5.html',
+    '活力閱讀區': 'station-6.html',
+    '期刊區': 'station-7.html',
+    '繪本漫畫區': 'station-8.html',
+    '密集書庫': 'station-9.html',
+    '禪園': 'station-10.html',
+    '魔法森林': 'station-11.html',
   };
 
 const areaSelector = document.getElementById('area-selector');
@@ -135,13 +136,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener("DOMContentLoaded", function () {
   const imgEl = document.getElementById("slideshow-image");
-  const imgList = window.slideshowImages;  // 從每頁取圖片清單
+  const imgList = window.slideshowImages;
 
   if (imgEl && Array.isArray(imgList) && imgList.length > 1) {
     let index = 0;
+
     setInterval(() => {
-      index = (index + 1) % imgList.length;
-      imgEl.src = imgList[index];
+      imgEl.classList.add("fade-out");
+
+      setTimeout(() => {
+        index = (index + 1) % imgList.length;
+        imgEl.src = imgList[index];
+        imgEl.classList.remove("fade-out");
+      }, 600); // 換圖 timing 要跟 CSS transition 時間對齊
     }, 3000);
   }
 });

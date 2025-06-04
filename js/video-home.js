@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const floorAreas = {
     'B1': ['密集書庫', '魔法森林', '禪園'],
-    '1F': ['電子書牆入口', '數位學習區', '新書展示區', '入口門禁', '活力閱讀區'],
+    '1F': ['電子書牆入口', '數位學習區', '新書展示區', '入口門禁', '活力閱讀區','空間與中庭植栽'],
     '2F': ['繪本漫畫區', '期刊區'],
   };
 
@@ -25,12 +25,13 @@ document.addEventListener('DOMContentLoaded', () => {
     '入口門禁': 'videofree-zh/video-station2.html',
     '新書展示區': 'videofree-zh/video-station3.html',
     '數位學習區': 'videofree-zh/video-station4.html',
-    '活力閱讀區': 'videofree-zh/video-station5.html',
-    '期刊區': 'videofree-zh/video-station6.html',
-    '繪本漫畫區': 'videofree-zh/video-station7.html',
-    '密集書庫': 'videofree-zh/video-station8.html',
-    '禪園': 'videofree-zh/video-station9.html',
-    '魔法森林': 'videofree-zh/video-station10.html',
+    '空間與中庭植栽':'videofree-zh/video-station5.html',
+    '活力閱讀區': 'videofree-zh/video-station6.html',
+    '期刊區': 'videofree-zh/video-station7.html',
+    '繪本漫畫區': 'videofree-zh/video-station8.html',
+    '密集書庫': 'videofree-zh/video-station9.html',
+    '禪園': 'videofree-zh/video-station10.html',
+    '魔法森林': 'videofree-zh/video-station11.html',
   };
 
 

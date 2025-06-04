@@ -1,20 +1,21 @@
-const floorAreas = {
-  'B1': ['密集書庫', '魔法森林', '禪園'],
-  '1F': ['電子書牆入口', '數位學習區', '新書展示區', '入口門禁', '活力閱讀區'],
-  '2F': ['繪本漫畫區', '期刊區'],
-};
+  const floorAreas = {
+    'B1': ['密集書庫', '魔法森林', '禪園'],
+    '1F': ['電子書牆入口', '數位學習區', '新書展示區', '入口門禁', '活力閱讀區','空間與中庭植栽'],
+    '2F': ['繪本漫畫區', '期刊區'],
+  };
 
 const areaToStationPage = {
   '電子書牆入口': 'video-station1.html',
   '入口門禁': 'video-station2.html',
   '新書展示區': 'video-station3.html',
   '數位學習區': 'video-station4.html',
-  '活力閱讀區': 'video-station5.html',
-  '期刊區': 'video-station6.html',
-  '繪本漫畫區': 'video-station7.html',
-  '密集書庫': 'video-station8.html',
-  '禪園': 'video-station9.html',
-  '魔法森林': 'video-station10.html',
+  '空間與中庭植栽':'video-station5.html',
+  '活力閱讀區': 'video-station6.html',
+  '期刊區': 'video-station7.html',
+  '繪本漫畫區': 'video-station8.html',
+  '密集書庫': 'video-station9.html',
+  '禪園': 'video-station10.html',
+  '魔法森林': 'video-station11.html',
 };
 
 // DOM 元素

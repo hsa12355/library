@@ -36,10 +36,23 @@
   </div>
 
 
+
   <!-- 介紹照片 -->
-  <div class="intro-photo">
-    <img src="book-wall.jpg" alt="第三站：新書展示區．24小時還書箱" />
+  <div id="slideshow-wrapper">
+  <div id="slideshow-container">
+    <h2 class="station-title">第三站：新書展示區．24小時還書箱</h2>
+    <img id="slideshow-image" src="../images/3新書展示區/3-新書展示區01.jpg" alt="輪播圖片">
   </div>
+</div>
+<script>
+  // 每頁定義自己的圖片清單（注意這是在 HTML 裡面定義的）
+  window.slideshowImages = [
+  '../images/3新書展示區/3-新書展示區01.jpg',
+  '../images/3新書展示區/3-新書展示區02.jpg',
+  '../images/3新書展示區/3-新書展示區03.jpg',
+  '../images/3新書展示區/3-新書展示區05.jpg'
+  ];
+</script>
 
   <!-- 介紹文字 -->
   <div class="intro-text">
