@@ -17,7 +17,6 @@ const areaToStationPage = {
     '魔法森林': 'station-10.html',
   };
 
-
 const areaSelector = document.getElementById('area-selector');
 const floorButtons = document.querySelectorAll('.floor-btn');
 const floorMapBtn = document.getElementById('floor-map-btn');
@@ -132,3 +131,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }, i * 700);
   });
 });
+
+
+const imagePaths = [
+  '../images/1電子書牆/1-電子書牆01_吳志揚校長.png',
+  '../images/1電子書牆/1-電子書牆03.jpg',
+  '../images/1電子書牆/1-電子書牆09.jpg',
+  '../images/1電子書牆/1-電子書牆10.jpg'
+];
+
+let currentIndex = 0;
+const imgElement = document.getElementById('slideshow-image');
+
+setInterval(() => {
+  currentIndex = (currentIndex + 1) % imagePaths.length;
+  imgElement.style.opacity = 0;
+
+  setTimeout(() => {
+    imgElement.src = imagePaths[currentIndex];
+    imgElement.style.opacity = 1;
+  }, 300); // 配合 CSS 過渡
+}, 3000); // 每 3 秒切換
