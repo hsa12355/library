@@ -35,7 +35,7 @@ function createAreaButton(area) {
   btn.addEventListener('click', () => {
     const targetPage = areaToStationPage[area];
     if (targetPage) {
-      window.location.href = targetPage;
+      window.location.href = `/library/free-station-zh/${targetPage}`;
     } else {
       alert('此區域尚未對應到頁面');
     }
