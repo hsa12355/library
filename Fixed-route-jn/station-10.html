@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>第10ステーション：魔法の森・知恵の栄養</title>
+  <title>第10ステーション：日本庭園・枯山水</title>
   <link rel="stylesheet" href="../css/style-fixe.css" />
 </head>
 <body id="fixed-route">
@@ -28,21 +28,37 @@
 
 
   <!-- 紹介画像 -->
-  <div class="intro-photo">
-    <img src="../images/book-wall.jpg" alt="第10ステーション：魔法の森・知恵の栄養" />
+  <div id="slideshow-wrapper">
+  <div id="slideshow-container">
+    <h2 class="station-title">第10ステーション：日本庭園・枯山水</h2>
+    <img id="slideshow-image" src="../images/10枯山水禪園/10-枯山水禪園01.jpg" alt="輪播圖片">
   </div>
+</div>
+<script>
+  // 每頁定義自己的圖片清單（注意這是在 HTML 裡面定義的）
+  window.slideshowImages = [
+  '../images/10枯山水禪園/10-枯山水禪園01.jpg',
+  '../images/10枯山水禪園/10-枯山水禪園02.jpg',
+  '../images/10枯山水禪園/10-枯山水禪園03.jpg',
+  '../images/10枯山水禪園/10-枯山水禪園04_廖校長.jpg',
+  '../images/10枯山水禪園/10-枯山水禪園05_廖校長.jpg',
+  '../images/10枯山水禪園/10-枯山水禪園07.jpg',
+  '../images/10枯山水禪園/10-枯山水禪園08.jpg',
+  '../images/10枯山水禪園/10-枯山水禪園09.jpg'
+  ];
+</script>
 
   <!-- 紹介文 -->
   <div class="intro-text">
-    <p class="intro-line">図書館の中庭には、夢のような「魔法の森」が広がっており、知恵の根源と知識の継承を象徴しています。</p>
-    <p class="intro-line">木材は紙の原材料であり、この森は私たちに「源を思う心」を思い出させ、一冊一冊の本の誕生を大切にする気持ちを教えてくれます。</p>
-    <p class="intro-line">さらに深い意味として、この場所は元智大学生の2つの卒業要件「TOEICコーナー」と「クラシック50コーナー」をつなぐ場でもあります。学生の人文的素養、独立思考力、語学力を育むため、関連書籍がこのエリアに集められています。</p>
-    <p class="intro-line">また、ここは学生が美的創造力を発揮する舞台でもあり、芸術と書籍が融合することで、読書が単なる知識の吸収にとどまらず、日常の中の美的体験となります。</p>
+    <p class="intro-line">静寂な一角にあるのは、細かな砂と岩で構成された日本の枯山水庭園です。</p>
+    <p class="intro-line">「山」は石で象徴され、「水」は砂利で表現されており、砂の模様がまるで水の流れのように見えます。</p>
+    <p class="intro-line">この禅庭は、不動の要素によって静けさと落ち着きを伝えています。設計の意図は、図書館を訪れるすべての人が煩わしさを忘れ、心を落ち着け、読書に集中できるようにすることです。</p>
   </div>
 
-  <!-- ナビゲーションボタン（左：前） -->
+  <!-- ナビゲーションボタン（左：前、右：次） -->
   <nav class="station-nav">
     <a href="station-9.html" class="next-station-btn">前のステーション</a>
+    <a href="station-11.html" class="next-station-btn" style="left: auto; right: 120px;">次のステーション</a>
   </nav>
 
   <!-- ガイド終了ボタン -->
