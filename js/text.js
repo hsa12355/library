@@ -39,8 +39,8 @@ function createAreaButton(area) {
     // 防止重複點擊
     document.querySelectorAll('.area-btn').forEach(b => b.disabled = true);
     const page = areaToStationPage[area];
-    if (page) {
-      window.location.href = page;
+    if (targetPage) {
+      window.location.href = targetPage;
     }
   });
 
