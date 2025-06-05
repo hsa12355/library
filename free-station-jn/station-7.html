@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>第6ステーション：最新号・人気雑誌コーナー</title>
+<title>第7ステーション：最新号・人気雑誌コーナー</title>
 <link rel="stylesheet" href="../css/style.css" />
 </head>
 <body id="option-mode-page">
@@ -36,9 +36,20 @@
   </div>
 
   <!-- 紹介写真 -->
-  <div class="intro-photo">
-    <img src="book-wall.jpg" alt="第6ステーション：最新号・人気雑誌コーナー" />
+  <div id="slideshow-wrapper">
+  <div id="slideshow-container">
+    <h2 class="station-title">第7ステーション：最新雑誌エリア・人気雑誌エリア</h2>
+    <img id="slideshow-image" src="../images/7期刊區/7-期刊區01.jpg" alt="輪播圖片">
   </div>
+</div>
+<script>
+  // 每頁定義自己的圖片清單（注意這是在 HTML 裡面定義的）
+  window.slideshowImages = [
+  '../images/7期刊區/7-期刊區01.jpg',
+  '../images/7期刊區/7-期刊區02.jpg',
+  '../images/7期刊區/7-期刊區03.jpg'
+  ];
+</script>
 
   <!-- 紹介テキスト -->
   <div class="intro-text">

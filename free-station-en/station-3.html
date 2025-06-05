@@ -37,9 +37,21 @@
 
 
   <!-- Intro Photo -->
-  <div class="intro-photo">
-    <img src="book-wall.jpg" alt="Station 3: New Book Display & 24-Hour Book Return" />
+  <div id="slideshow-wrapper">
+  <div id="slideshow-container">
+    <h2 class="station-title">Station 3: New Titles & 24-Hour Book Drop</h2>
+    <img id="slideshow-image" src="../images/3新書展示區/3-新書展示區01.jpg" alt="輪播圖片">
   </div>
+</div>
+<script>
+  // 每頁定義自己的圖片清單（注意這是在 HTML 裡面定義的）
+  window.slideshowImages = [
+  '../images/3新書展示區/3-新書展示區01.jpg',
+  '../images/3新書展示區/3-新書展示區02.jpg',
+  '../images/3新書展示區/3-新書展示區03.jpg',
+  '../images/3新書展示區/3-新書展示區05.jpg'
+  ];
+</script>
 
   <!-- Intro Text -->
   <div class="intro-text">
