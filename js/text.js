@@ -26,22 +26,26 @@ const closeMapBtn = document.getElementById('close-map');
 const endTourBtn = document.getElementById('end-tour-btn');
 
 // 先顯示「請先選擇樓層」
+// 初始顯示提示
 areaSelector.textContent = '請先選擇樓層';
+areaSelector.classList.add('fade-in', 'show');
 
+// 建立區域按鈕
 function createAreaButton(area) {
   const btn = document.createElement('button');
-  btn.className = 'area-btn';
+  btn.classList.add('area-btn', 'show');
   btn.textContent = area;
+
   btn.addEventListener('click', () => {
-    const targetPage = areaToStationPage[area];
-    if (targetPage) {
-      window.location.href = `/library/free-station-zh/${targetPage}`;
-    } else {
-      alert('此區域尚未對應到頁面');
+    // 防止重複點擊
+    document.querySelectorAll('.area-btn').forEach(b => b.disabled = true);
+    const page = areaToStationPage[area];
+    if (page) {
+      window.location.href = page;
     }
   });
+
   return btn;
-}
 
 function showAreasForFloor(floor) {
   const areas = floorAreas[floor];
