@@ -216,7 +216,7 @@ body#fixed-route .floor-map-popup {
   width: 100%;
   max-width: 800px;     /* 寬度 */
   height: 450px;        /* 固定高度 */
-  margin: 150px auto 0;  /*上方空間 */
+  margin: 50px auto 0;  /*上方空間 */
   overflow: hidden;
   position: relative;
 }
