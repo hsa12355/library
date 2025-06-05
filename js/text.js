@@ -26,7 +26,6 @@ const closeMapBtn = document.getElementById('close-map');
 const endTourBtn = document.getElementById('end-tour-btn');
 
 // 先顯示「請先選擇樓層」
-// 初始顯示提示
 areaSelector.textContent = '請先選擇樓層';
 areaSelector.classList.add('fade-in', 'show');
 
@@ -46,6 +45,7 @@ function createAreaButton(area) {
   });
 
   return btn;
+}
 
 function showAreasForFloor(floor) {
   const areas = floorAreas[floor];
