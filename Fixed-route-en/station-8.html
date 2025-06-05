@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Station 8: Compact Shelve</title>
+  <title>Station 8: Illustrated and Comic Books / Sustainable Picture Book Zone</title>
   <link rel="stylesheet" href="../css/style-fixe.css" />
 </head>
 <body id="fixed-route">
@@ -26,16 +26,30 @@
   <button id="close-map" class="close-map">Close Map</button>
 </div>
 
-  <!-- Intro Image -->
-  <div class="intro-photo">
-    <img src="../images/book-wall.jpg" alt="Station 8: Compact Stacks Area" />
-  </div>
 
-  <!-- Intro Text -->
+  <!-- Intro Image -->
+  <div id="slideshow-wrapper">
+  <div id="slideshow-container">
+    <h2 class="station-title">Station 8: Illustrated and Comic Books / Sustainable Picture Book Zone</h2>
+    <img id="slideshow-image" src="../images/8-繪本漫畫專區/8-永續繪本01.jpg" alt="輪播圖片">
+  </div>
+</div>
+<script>
+  // 每頁定義自己的圖片清單（注意這是在 HTML 裡面定義的）
+  window.slideshowImages = [
+  '../images/8-繪本漫畫專區/8-永續繪本01.jpg',
+  '../images/8-繪本漫畫專區/8-永續繪本02.jpg',
+  '../images/8-繪本漫畫專區/8-繪本漫畫專區-永續04.jpg',
+  '../images/8-繪本漫畫專區/8-繪本漫畫專區-永續05.jpg',
+  '../images/8-繪本漫畫專區/8-繪本漫畫專區-永續06.jpg'
+  ];
+</script>
+
+  <!-- Intro Text (Animated) -->
   <div class="intro-text">
-    <p class="intro-line">This area is the hidden treasure trove behind the library's collection.</p>
-    <p class="intro-line">To address the issue of limited shelving space and expand the book collection, the library has a compact stacks area that stores lesser-used but highly valuable books.</p>
-    <p class="intro-line">Unlike standard fixed bookshelves, this area uses movable shelving. By simply turning the wheel on the side, shelves slide open, allowing readers to easily locate their desired books—an experience akin to “turning the shelves to unlock the door to knowledge.”</p>
+    <p class="intro-line">This area is where dreams and stories meet. The collection features both popular and classic picture books and comics, allowing readers to immerse themselves in the works of masters.</p>
+    <p class="intro-line">There is also a dedicated section for foreign-language picture books and comics, as well as the SDGs Sustainable Picture Book Zone.</p>
+    <p class="intro-line">Through playful yet thought-provoking content, these books guide readers to reflect on environmental sustainability and the future of our planet—using reading to inspire action and stories to convey values.</p>
   </div>
 
   <!-- Navigation Buttons -->
