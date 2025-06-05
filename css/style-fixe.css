@@ -241,7 +241,7 @@ body#fixed-route .floor-map-popup {
   margin-bottom: 1rem;  /* 保持文字段落底部距離 */
 }
 .station-title {
-  margin-top: 40px; /* 標題與上方距離 */
+  margin-top: 100px; /* 標題與上方距離 */
   text-align: center;
   font-size: 1.8rem;
   color: #333;
