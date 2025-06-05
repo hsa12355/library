@@ -40,7 +40,7 @@ function createAreaButton(area) {
     document.querySelectorAll('.area-btn').forEach(b => b.disabled = true);
     const page = areaToStationPage[area];
     if (page) {
-      window.location.href = `./library/free-station-zh/${page}`;
+      window.location.href = page;
     }
   });
 
