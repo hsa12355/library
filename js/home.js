@@ -23,17 +23,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 🔽 區域對應導覽頁面（自由探索模式）
   const areaToStationPage = {
-    '電子書牆入口': 'free-station-en/station-1.html',
-    '入口門禁': 'free-station-en/station-2.html',
-    '新書展示': 'free-station-en/station-3.html',
-    '數位宇宙': 'free-station-en/station-4.html',
-    '宇宙與中庭植物': 'free-station-en/station-5.html',
-    '腳踏車閱讀區': 'free-station-en/station-6.html',
-    '期刊區': 'free-station-en/station-7.html',
-    '圖像與漫畫書區': 'free-station-en/station-8.html',
-    '密集書庫': 'free-station-en/station-9.html',
-    '靜心庭園': 'free-station-en/station-10.html',
-    '魔法森林': 'free-station-en/station-11.html',
+    '電子書牆入口': 'free-station-zh/station-1.html',
+    '入口門禁': 'free-station-zh/station-2.html',
+    '新書展示': 'free-station-zh/station-3.html',
+    '數位宇宙': 'free-station-zh/station-4.html',
+    '宇宙與中庭植物': 'free-station-zh/station-5.html',
+    '腳踏車閱讀區': 'free-station-zh/station-6.html',
+    '期刊區': 'free-station-zh/station-7.html',
+    '圖像與漫畫書區': 'free-station-zh/station-8.html',
+    '密集書庫': 'free-station-zh/station-9.html',
+    '靜心庭園': 'free-station-zh/station-10.html',
+    '魔法森林': 'free-station-zh/station-11.html',
   };
 
   const optionMode = document.getElementById('option-mode');
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
       } else if (mode === 'free') {
         window.location.href = 'scan-en.html';
       } else if (mode === 'fixed') {
-        window.location.href = 'Fixed-route-en/station-1.html';
+        window.location.href = 'Fixed-route/station-1.html';
       }
     });
   });
