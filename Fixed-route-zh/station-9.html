@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>第九站：日式禪園．枯山水</title>
+  <title>第九站：密集書庫區</title>
   <link rel="stylesheet" href="../css/style-fixe.css" />
 </head>
 <body id="fixed-route">
@@ -12,7 +12,6 @@
 
   <!-- 樓層地圖按鈕 -->
   <button id="floor-map-btn" class="floor-map-btn">樓層地圖</button>
-
 
   <!-- 樓層地圖彈窗 -->
  <div id="floor-map-popup" class="floor-map-popup hidden">
@@ -29,15 +28,26 @@
 
 
   <!-- 介紹圖片 -->
-  <div class="intro-photo">
-    <img src="../images/book-wall.jpg" alt="第九站：日式禪園．枯山水" />
+  <div id="slideshow-wrapper">
+  <div id="slideshow-container">
+    <h2 class="station-title">第九站：密集書庫區</h2>
+    <img id="slideshow-image" src="../images/9密集書庫區/9-密集書庫01.JPG" alt="輪播圖片">
   </div>
+</div>
+<script>
+  // 每頁定義自己的圖片清單（注意這是在 HTML 裡面定義的）
+  window.slideshowImages = [
+  '../images/9密集書庫區/9-密集書庫01.JPG',
+  '../images/9密集書庫區/9-密集書庫02.jpg',
+  '../images/9密集書庫區/9-密集書庫03.jpeg'
+  ];
+</script>
 
   <!-- 介紹文字 -->
   <div class="intro-text">
-    <p class="intro-line">靜謐的一隅，是由細沙與岩石組成的日式枯山水禪園。</p>
-    <p class="intro-line">「山」以石塊象徵，「水」則以砂石表現，沙面上的紋路彷彿水的流動。</p>
-    <p class="intro-line">這座禪園以其靜止不變的元素，傳遞寧靜與沈穩的氛圍。設計初衷即是希望來到圖書館的每一位讀者，皆能放下煩憂，平靜心靈，專注於書海之中。</p>
+    <p class="intro-line">這裡是館藏背後的寶庫。</p>
+    <p class="intro-line">為解決書架空間不足、增加圖書收藏量，圖書館設有密集書庫，專門存放較少使用但極具價值的書籍。</p>
+    <p class="intro-line">不同於一般固定書架，這裡採用的是可移動式書架，只需轉動書架側邊的舵盤，書架便能移動開啟，讓讀者輕鬆找到想尋的書籍，體驗「轉動書架、開啟知識之門」的樂趣。</p>
   </div>
 
   <!-- 導覽按鈕（左：上一站、右：下一站） -->
