@@ -28,9 +28,21 @@
 
 
   <!-- 紹介画像 -->
-  <div class="intro-photo">
-    <img src="../images/book-wall.jpg" alt="第3ステーション：新刊展示エリア・24時間返却ボックス" />
+  <div id="slideshow-wrapper">
+  <div id="slideshow-container">
+    <h2 class="station-title">第3ステーション：新刊展示エリア・24時間返却ボックス</h2>
+    <img id="slideshow-image" src="../images/3新書展示區/3-新書展示區01.jpg" alt="輪播圖片">
   </div>
+</div>
+<script>
+  // 每頁定義自己的圖片清單（注意這是在 HTML 裡面定義的）
+  window.slideshowImages = [
+  '../images/3新書展示區/3-新書展示區01.jpg',
+  '../images/3新書展示區/3-新書展示區02.jpg',
+  '../images/3新書展示區/3-新書展示區03.jpg',
+  '../images/3新書展示區/3-新書展示區05.jpg'
+  ];
+</script>
 
   <!-- 紹介文（アニメーション） -->
   <div class="intro-text">

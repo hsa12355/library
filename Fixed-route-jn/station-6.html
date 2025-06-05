@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>第6ステーション：最新雑誌エリア・人気雑誌エリア</title>
+  <title>第6ステーション：アクティブリーディングエリア</title>
   <link rel="stylesheet" href="../css/style-fixe.css" />
 </head>
 <body id="fixed-route">
@@ -28,15 +28,30 @@
 
 
   <!-- 紹介画像 -->
-  <div class="intro-photo">
-    <img src="../images/book-wall.jpg" alt="第6ステーション：最新雑誌エリア・人気雑誌エリア" />
+  <div id="slideshow-wrapper">
+  <div id="slideshow-container">
+    <h2 class="station-title">第6ステーション：アクティブリーディングエリア</h2>
+    <img id="slideshow-image" src="../images/6活力閱讀區/6-活力閱讀區01-2.jpg" alt="輪播圖片">
   </div>
+</div>
+<script>
+  // 每頁定義自己的圖片清單（注意這是在 HTML 裡面定義的）
+  window.slideshowImages = [
+  '../images/6活力閱讀區/6-活力閱讀區01-2.jpg',
+  '../images/6活力閱讀區/6-活力閱讀區01.jpg',
+  '../images/6活力閱讀區/6-活力閱讀區02.jpg',
+  '../images/6活力閱讀區/6-活力閱讀區03.jpg',
+  '../images/6活力閱讀區/6-活力閱讀區05.jpg',
+  '../images/6活力閱讀區/6-活力閱讀區06.jpg',
+  '../images/6活力閱讀區/6-活力閱讀區09.jpg'
+  ];
+</script>
 
   <!-- 紹介文（アニメーション） -->
   <div class="intro-text">
-    <p class="intro-line">2階にある最新雑誌および人気雑誌エリアには、数百種類の中国語・外国語の最新雑誌が所蔵されており、さまざまな分野を網羅しており、異なる学問や興味のニーズに応えています。</p>
-    <p class="intro-line">図書館では毎年「雑誌放出イベント」も開催しており、学生が気に入った過去の雑誌を無料で持ち帰ることができ、本が棚に眠るのではなく、生活の中に溶け込むことを目指しています。</p>
-    <p class="intro-line">なお、2階の雑誌は館内閲覧専用で、貸し出しはできませんのでご注意ください。</p>
+    <p class="intro-line">読書スタイルがますます多様化する今日、読書は動きと楽しさに満ちたものにもなります。ここには静音フィットネスバイクが設置されており、運動しながら読書が楽しめます。</p>
+    <p class="intro-line">ユニークな形のジャイロチェアは、アート作品であると同時に心を解きほぐす大型おもちゃでもあります。カラフルなラウンジチェアは、学生たちに快適で自由な休憩スペースを提供します。</p>
+    <p class="intro-line">このエリアはまた、映像上映やオープン形式のディスカッション活動の主要なスペースでもあり、読書と生活が巧みに融合した場所です。</p>
   </div>
 
   <!-- ナビゲーションボタン（左：前、右：次） -->
