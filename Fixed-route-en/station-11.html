@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Station 11: Magic Forest & Wisdom Nourishment</title>
+  <link rel="stylesheet" href="../css/style-fixe.css" />
+</head>
+<body id="fixed-route">
+
+<div class="container">
+
+  <!-- Floor Map Button -->
+  <button id="floor-map-btn" class="floor-map-btn">Floor Map</button>
+
+  <!-- Floor Map Popup -->
+<div id="floor-map-popup" class="floor-map-popup hidden">
+  <div class="floor-map-tabs">
+    <button class="map-tab-btn active" data-target="map-b1">B1</button>
+    <button class="map-tab-btn" data-target="map-1f">1F</button>
+    <button class="map-tab-btn" data-target="map-2f">2F</button>
+  </div>
+  <img id="map-b1" class="floor-map-image" src="../images/Floor-B1s_-_.jpg" alt="Floor Map B1">
+  <img id="map-1f" class="floor-map-image hidden" src="../images/Floor-1Fs_-_.jpg" alt="Floor Map 1F">
+  <img id="map-2f" class="floor-map-image hidden" src="../images/Floor-2Fs_-_.jpg" alt="Floor Map 2F">
+  <button id="close-map" class="close-map">Close Map</button>
+</div>
+
+
+  <!-- Intro Photo -->
+  <div id="slideshow-wrapper">
+  <div id="slideshow-container">
+    <h2 class="station-title">Station 11: Magic Forest & Wisdom Nourishment</h2>
+    <img id="slideshow-image" src="../images/11魔法森林/11-魔法森林01.jpg" alt="輪播圖片">
+  </div>
+</div>
+<script>
+  // 每頁定義自己的圖片清單（注意這是在 HTML 裡面定義的）
+  window.slideshowImages = [
+  '../images/11魔法森林/11-魔法森林01.jpg',
+  '../images/11魔法森林/11-魔法森林02.jpg',
+  '../images/11魔法森林/11-魔法森林03.jpg',
+  '../images/11魔法森林/11-魔法森林04.jpg',
+  '../images/11魔法森林/11-魔法森林05.jpg',
+  '../images/11魔法森林/11-魔法森林06.jpg',
+  '../images/11魔法森林/11-魔法森林07.jpg',
+  '../images/11魔法森林/11-魔法森林08.jpg'
+  ];
+</script>
+
+  <!-- Intro Text -->
+  <div class="intro-text">
+    <p class="intro-line">The library's central courtyard features a dreamy "Magic Forest," symbolizing the roots of wisdom and the continuation of knowledge.</p>
+    <p class="intro-line">Wood is the raw material for paper, and this forest reminds us to "remember the source," cherishing the origin of every book.</p>
+    <p class="intro-line">More deeply, it connects two graduation requirements for Yuan Ze students: the TOEIC area and the Classic Fifty collection. These books are centralized here to cultivate humanities literacy, independent thinking, and foreign language skills.</p>
+    <p class="intro-line">Additionally, this area serves as a stage for students to showcase aesthetic creativity. Through the fusion of art and books, reading becomes not only knowledge absorption but also an experience of beauty in daily life.</p>
+  </div>
+
+  <!-- Navigation Buttons (Left: Previous Station) -->
+  <nav class="station-nav">
+    <a href="station-10.html" class="next-station-btn">Previous Station</a>
+  </nav>
+
+  <!-- End Tour Button -->
+  <button id="end-tour-btn" class="end-tour-btn">End Tour</button>
+
+</div>
+
+<script src="../js/fixed.js"></script>
+</body>
+</html>
