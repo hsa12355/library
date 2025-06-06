@@ -4,8 +4,8 @@ body, html {
   font-family: 'Noto Sans TC', sans-serif;
   background: url('../images/未來書庫中的智慧指引-2.png') no-repeat center center fixed;
   background-size: cover;
-  min-height: 100vh;
-  height: auto; /* 確保能自然撐高 */
+  min-height: none;
+  height: auto; /* 自然撐高 */
   overflow-y: auto;
   padding-bottom: 5rem; /* ← 新增這行：底部預留空間，避免按鈕擋住內容 */
 }
@@ -18,10 +18,12 @@ body, html {
   padding: 1rem;
   border-radius: 20px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-  margin: 0 auto;  /* 讓容器上下留白與水平置中 */
+  margin: 0 auto;  /* ← 讓容器上下留白與水平置中 */
   max-height: none;        /* 防止過高溢出畫面 */
   min-height: 100vh;
-  overflow-y: visible;        /* 內容太多可滾動 */
+  overflow-y: hidden;        /* 內容太多可滾動 */
+  height: auto;
+  object-fit: contain;  /* 或換成 scale-down 看需求 */
 }
 
 .intro-photo img , #slideshow-image {
@@ -266,80 +268,130 @@ button.show {
   transform: translateY(0);
 }
 
+/* 響應式設計：平板、手機支援 */
 @media (max-width: 1024px) {
   .container {
     max-width: 90vw;
     padding: 3rem 2rem;
   }
-}
 
-@media (max-width: 768px) {
-  .container {
-    max-width: 95vw;
-    padding: 2rem 1.5rem;
+  #choice-prompt p {
+    font-size: 1.15rem;
   }
 
-  .floor-btn, .area-btn {
+  button {
     font-size: 0.95rem;
     padding: 0.6rem 1.2rem;
   }
 
-  .end-tour-btn, .next-station-btn {
+  #end-tour-btn {
+    font-size: 0.95rem;
     padding: 0.6rem 1.2rem;
-    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .end-tour-btn,
+  .next-station-btn,
+  .floor-map-btn {
+    font-size: 0.85rem;
+    padding: 0.6rem 1rem;
+    border-radius: 16px;
+  }
+
+  .end-tour-btn {
+    right: 15px;
+    bottom: 15px;
+  }
+
+  .next-station-btn {
+    left: 15px;
+    bottom: 15px;
   }
 
   .floor-map-btn {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.85rem;
+    top: 15px;
+    right: 15px;
   }
 
-  .close-map {
-    font-size: 0.9rem;
-    padding: 0.4rem 1.2rem;
+  .floor-map-popup {
+    max-width: 90vw;
+    max-height: 60vh;
+    right: 5%;
+    top: 60px;
+  }
+
+  .container {
+    padding: 2rem 1.2rem;
+  }
+
+  .intro-photo {
+    max-height: 40vh; /* 減少容器高度，避免卡住其他元素 */
+  }
+
+  .intro-photo img, #slideshow-image {
+    max-height: 40vh;
+    object-fit: contain; /* 改為 contain，避免裁切圖片內容 */
+    width: 100%;
+    height: auto;
   }
 }
 
 @media (max-width: 480px) {
-  .container {
-    padding: 1.5rem 1rem;
+  .end-tour-btn,
+  .next-station-btn,
+  .floor-map-btn {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.9rem;
   }
 
-  .intro-text p {
+  .end-tour-btn {
+    right: 10px;
+    bottom: 10px;
+  }
+
+  .next-station-btn {
+    left: 10px;
+    bottom: 10px;
+  }
+
+  .floor-map-btn {
+    top: 10px;
+    right: 10px;
+  }
+
+  .intro-photo {
+    max-height: 35vh;
+  }
+
+  .intro-photo img, #slideshow-image {
+    max-height: 35vh;
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+  }
+
+  .station-title {
+    font-size: 1.4rem;
+  }
+
+  .intro-line {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .container {
+    padding: 1rem 0.8rem;
+  }
+
+
+  .intro-line {
     font-size: 0.95rem;
   }
 
-  .floor-btn, .area-btn {
-    font-size: 0.85rem;
-    padding: 0.5rem 1rem;
-  }
-
-  .end-tour-btn, .next-station-btn {
-    font-size: 0.85rem;
-    padding: 0.5rem 1rem;
-  }
-
-  .floor-map-popup {
-    width: 90vw;
-    max-height: 60vh;
-    right: 5%;
+  #choice-prompt p {
+    font-size: 0.95rem;
   }
 }
 
-@media (max-width: 360px) {
-  .container {
-    padding: 1rem 0.75rem;
-  }
-
-  .floor-btn, .area-btn, .end-tour-btn, .next-station-btn {
-    font-size: 0.8rem;
-    padding: 0.4rem 0.8rem;
-    border-radius: 16px;
-  }
-
-  .floor-map-popup {
-    max-height: 50vh;
-    font-size: 0.85rem;
-  }
-}
 
