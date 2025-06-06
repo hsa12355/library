@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
       } else if (mode === 'free') {
         window.location.href = 'scan-en.html';
       } else if (mode === 'fixed') {
-        window.location.href = 'Fixed-route/station-1.html';
+        window.location.href = 'Fixed-route-zh/station-1.html';
       }
     });
   });
