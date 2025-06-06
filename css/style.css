@@ -7,6 +7,7 @@ body, html {
   min-height: 100vh;
   height: auto; /* 確保能自然撐高 */
   overflow-y: auto;
+  padding-bottom: 5rem; /* ← 新增這行：底部預留空間，避免按鈕擋住內容 */
 }
 
 .container {
