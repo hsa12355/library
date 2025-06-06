@@ -26,10 +26,20 @@ body, html {
   object-fit: contain;  /* 或換成 scale-down 看需求 */
 }
 
+.intro-photo {
+  width: 100%;
+  max-height: 90vh; /* 根據需要可調整，例如 60vh 表示畫面高度的 60% */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible; /* 避免超出容器 */
+  margin-bottom: 0.5rem;
+}
+
 .intro-photo img , #slideshow-image {
   width: 100%;
-  max-height: 300px;    /* 可選擇設上限 */
-  object-fit: cover;    /* 改為 cover 讓圖片填滿容器，避免上下留白 */
+  max-height: auto;    /* 可選擇設上限 */
+  object-fit: contain;    /* 改為 cover 讓圖片填滿容器，避免上下留白 */
   display: block;
   margin: 0 auto;
   transition: opacity 0.6s ease-in-out;
