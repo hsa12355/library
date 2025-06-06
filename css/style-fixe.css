@@ -6,7 +6,8 @@ body#fixed-route, html#fixed-route {
   background: url('../images/未來書庫中的智慧指引-2.png') no-repeat center center fixed;
   background-size: cover;
   min-height: 100vh;
-  /* 刪除下面這兩行 */
+  height: auto; /* 自然撐高 */
+  overflow-y: auto;
   /* display: flex;
   justify-content: center;
   align-items: center; */
@@ -21,9 +22,10 @@ body#fixed-route .container {
   padding: 1rem;
   border-radius: 20px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-  margin: 50px auto;  /* ← 加入這行讓容器上下留白與水平置中 */
-  max-height: 90vh;        /* 防止過高溢出畫面 */
-  overflow-y: auto;        /* 若內容太多可滾動 */
+  margin: 0 auto;  /* ← 讓容器上下留白與水平置中 */
+  max-height: none;        /* 防止過高溢出畫面 */
+  min-height: 100vh;
+  overflow-y: visible;        /* 內容太多可滾動 */
 }
 
 
@@ -41,7 +43,7 @@ body#fixed-route .intro-photo {
 
 body#fixed-route .intro-photo img, #slideshow-image {
   width: 100%;
-  max-height: 300px;    /* 可選擇設上限 */
+  max-height: 300px;    /* 選擇設上限 */
   object-fit: cover;    /* 改為 cover 讓圖片填滿容器，避免上下留白 */
   display: block;
   margin: 0 auto;
