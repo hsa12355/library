@@ -104,3 +104,27 @@ document.addEventListener('DOMContentLoaded', () => {
     window.location.href = '../language.html';
   });
 });
+
+  // 🔄 加入樓層地圖切換邏輯
+  const tabButtons = document.querySelectorAll('.map-tab-btn');
+  const mapImages = document.querySelectorAll('.floor-map-img');
+
+  tabButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // 移除所有按鈕的 active 樣式
+      tabButtons.forEach(b => b.classList.remove('active'));
+
+      // 加上當前按鈕的 active 樣式
+      btn.classList.add('active');
+
+      // 隱藏所有圖片
+      mapImages.forEach(img => img.classList.add('hidden'));
+
+      // 顯示目標圖片
+      const targetId = btn.getAttribute('data-target');
+      const targetMap = document.getElementById(targetId);
+      if (targetMap) {
+        targetMap.classList.remove('hidden');
+      }
+    });
+  });
