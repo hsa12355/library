@@ -17,8 +17,8 @@ body#fixed-route, html#fixed-route {
 /* container 容器保持半透明白底與圓角陰影 */
 body#fixed-route .container {
   position: relative;
-  max-width: 760px;
-  width: 90vw;
+  max-width: 680px;
+  width: 85vw;
   background: rgba(255, 255, 255, 0.75);
   padding: 1rem;
   border-radius: 20px;
@@ -228,9 +228,8 @@ body#fixed-route .floor-map-popup {
 
 #slideshow-container {
   width: 100%;
-  max-width: 90vw;
-  height: auto;
-  aspect-ratio: 16 / 9; /* 或改為 4/3，看你圖片比例 */
+  max-width: 800px;
+  height: 450px;
   margin: 100px auto 0;
   margin-bottom: 1rem;
   overflow: hidden;
@@ -244,19 +243,28 @@ body#fixed-route .floor-map-popup {
 }
 
 .intro-text {
-  margin-top: 0px;  /* 文字區塊上方距離圖片10px，讓距離緊湊 */
+  margin-top: 10px;  /* 文字區塊上方距離圖片10px，讓距離緊湊 */
 }
 
 .intro-text p {
   margin-bottom: 1rem;  /* 保持文字段落底部距離 */
 }
 .station-title {
-  margin-top: 20px; /* 標題與上方距離 */
+  margin-top: 40px; /* 標題與上方距離 */
   text-align: center;
   font-size: 1.8rem;
   color: #333;
 }
 
+.fade-in {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 /* 響應式設計：平板、手機支援 */
 @media (max-width: 1024px) {
@@ -290,12 +298,12 @@ body#fixed-route .floor-map-popup {
   }
 
   .end-tour-btn {
-    right: 10px;
-    bottom: 25px;
+    right: 15px;
+    bottom: 15px;
   }
 
   .next-station-btn {
-    left: 25px;
+    left: 15px;
     bottom: 15px;
   }
 
