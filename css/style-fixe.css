@@ -17,8 +17,8 @@ body#fixed-route, html#fixed-route {
 /* container 容器保持半透明白底與圓角陰影 */
 body#fixed-route .container {
   position: relative;
-  max-width: 680px;
-  width: 85vw;
+  max-width: 760px;
+  width: 90vw;
   background: rgba(255, 255, 255, 0.75);
   padding: 1rem;
   border-radius: 20px;
@@ -36,18 +36,18 @@ body#fixed-route .container {
 /* 新增：intro-photo 容器加強圖片響應處理 */
 body#fixed-route .intro-photo {
   width: 100%;
-  max-height: 60vh; /* 根據需要可調整，例如 60vh 表示畫面高度的 60% */
+  max-height: 90vh; /* 根據需要可調整，例如 60vh 表示畫面高度的 60% */
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden; /* 避免超出容器 */
+  overflow: visible; /* 避免超出容器 */
   margin-bottom: 0.5rem;
 }
 
 body#fixed-route .intro-photo img, #slideshow-image {
   width: 100%;
-  max-height: 300px;    /* 選擇設上限 */
-  object-fit: cover;    /* 改為 cover 讓圖片填滿容器，避免上下留白 */
+  max-height: auto;    /* 選擇設上限 */
+  object-fit: contain;    /* 改為 cover 讓圖片填滿容器，避免上下留白 */
   display: block;
   margin: 0 auto;
   transition: opacity 0.6s ease-in-out;
