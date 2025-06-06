@@ -5,17 +5,17 @@
   };
 
 const areaToStationPage = {
-  '電子書牆入口': 'station1.html',
-  '入口門禁': 'station2.html',
-  '新書展示區': 'station3.html',
-  '數位學習區': 'station4.html',
-  '空間與中庭植栽':'station5.html',
-  '活力閱讀區': 'station6.html',
-  '期刊區': 'station7.html',
-  '繪本漫畫區': 'station8.html',
-  '密集書庫': 'station9.html',
-  '禪園': 'station10.html',
-  '魔法森林': 'station11.html',
+  '電子書牆入口': 'station-1.html',
+  '入口門禁': 'station-2.html',
+  '新書展示區': 'station-3.html',
+  '數位學習區': 'station-4.html',
+  '空間與中庭植栽':'station-5.html',
+  '活力閱讀區': 'station-6.html',
+  '期刊區': 'station-7.html',
+  '繪本漫畫區': 'station-8.html',
+  '密集書庫': 'station-9.html',
+  '禪園': 'station-10.html',
+  '魔法森林': 'station-11.html',
 };
 
 const areaSelector = document.getElementById('area-selector');
