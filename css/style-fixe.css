@@ -60,7 +60,7 @@ body#fixed-route .intro-photo img, #slideshow-image {
 .end-tour-btn {
   position: fixed;
   bottom: 20px;
-  right: 20px;
+  right: 10px;
   background: #e53935;
   color: white;
   border: none;
@@ -161,7 +161,7 @@ body#fixed-route .intro-photo img, #slideshow-image {
 .next-station-btn {
   position: fixed;
   bottom: 20px;
-  left: 20px;
+  left: 10px;
   background: #43a047;
   color: white;
   border: none;
@@ -290,12 +290,12 @@ body#fixed-route .floor-map-popup {
   }
 
   .end-tour-btn {
-    right: 15px;
-    bottom: 15px;
+    right: 10px;
+    bottom: 25px;
   }
 
   .next-station-btn {
-    left: 15px;
+    left: 25px;
     bottom: 15px;
   }
 

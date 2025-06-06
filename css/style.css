@@ -117,7 +117,7 @@ button.show {
 .end-tour-btn {
   position: fixed;
   bottom: 20px;
-  right: 20px;
+  right: 10px;
   background: #e53935;
   color: white;
   border: none;
@@ -219,7 +219,7 @@ button.show {
 .next-station-btn {
   position: fixed;
   bottom: 20px;
-  left: 20px;
+  left: 10px;
   background: #43a047;
   color: white;
   border: none;
