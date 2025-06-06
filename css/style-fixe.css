@@ -22,6 +22,8 @@ body#fixed-route .container {
   border-radius: 20px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
   margin: 2rem auto;  /* ← 加入這行讓容器上下留白與水平置中 */
+  max-height: 90vh;        /* 防止過高溢出畫面 */
+  overflow-y: auto;        /* 若內容太多可滾動 */
 }
 
 
