@@ -16,25 +16,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 🔽 樓層與對應區域定義
   const floorAreas = {
-    'B1': ['密集書庫', '靜心庭園', '魔法森林'],
-    '1F': ['電子書牆入口', '數位宇宙', '新書展示', '入口門禁', '腳踏車閱讀區','宇宙與中庭植物'],
-    '2F': ['圖像與漫畫書區', '期刊區'],
+    'B1': ['密集書庫', '魔法森林', '禪園'],
+    '1F': ['電子書牆入口', '數位學習區', '新書展示區', '入口門禁', '活力閱讀區','空間與中庭植栽'],
+    '2F': ['繪本漫畫區', '期刊區'],
   };
 
-  // 🔽 區域對應導覽頁面（自由探索模式）
-  const areaToStationPage = {
-    '電子書牆入口': 'free-station-zh/station-1.html',
-    '入口門禁': 'free-station-zh/station-2.html',
-    '新書展示': 'free-station-zh/station-3.html',
-    '數位宇宙': 'free-station-zh/station-4.html',
-    '宇宙與中庭植物': 'free-station-zh/station-5.html',
-    '腳踏車閱讀區': 'free-station-zh/station-6.html',
-    '期刊區': 'free-station-zh/station-7.html',
-    '圖像與漫畫書區': 'free-station-zh/station-8.html',
-    '密集書庫': 'free-station-zh/station-9.html',
-    '靜心庭園': 'free-station-zh/station-10.html',
-    '魔法森林': 'free-station-zh/station-11.html',
-  };
+const areaToStationPage = {
+  '電子書牆入口': 'station-1.html',
+  '入口門禁': 'station-2.html',
+  '新書展示區': 'station-3.html',
+  '數位學習區': 'station-4.html',
+  '空間與中庭植栽':'station-5.html',
+  '活力閱讀區': 'station-6.html',
+  '期刊區': 'station-7.html',
+  '繪本漫畫區': 'station-8.html',
+  '密集書庫': 'station-9.html',
+  '禪園': 'station-10.html',
+  '魔法森林': 'station-11.html',
+};
 
   const optionMode = document.getElementById('option-mode');
   const areaSelector = document.getElementById('area-selector');
