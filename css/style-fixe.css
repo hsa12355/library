@@ -5,10 +5,11 @@ body#fixed-route, html#fixed-route {
   font-family: 'Noto Sans TC', sans-serif;
   background: url('../images/未來書庫中的智慧指引-2.png') no-repeat center center fixed;
   background-size: cover;
-  height: 100vh;
-  display: flex;
+  min-height: 100vh;
+  /* 刪除下面這兩行 */
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 }
 
 /* container 容器保持半透明白底與圓角陰影 */
@@ -20,7 +21,9 @@ body#fixed-route .container {
   padding: 2rem;
   border-radius: 20px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  margin: 2rem auto;  /* ← 加入這行讓容器上下留白與水平置中 */
 }
+
 
 /* 介紹圖片圓角與寬度 */
 /* 新增：intro-photo 容器加強圖片響應處理 */
