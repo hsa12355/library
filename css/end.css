@@ -1,0 +1,328 @@
+/* 固定路線專用背景與基本排版 */
+body#fixed-route, html#fixed-route {
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans TC', sans-serif;
+  background: url('../images/未來書庫中的智慧指引-2.png') no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh; /* 自然撐高 */
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+/* container 容器保持半透明白底與圓角陰影 */
+body#fixed-route .container {
+  position: relative;
+  
+  max-width: 680px;
+  width: 85vw;
+  background: rgba(255, 255, 255, 0.75);
+  padding: 1rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;  /* ← 讓容器上下留白與水平置中 */
+  overflow-y: hidden;        /* 內容太多可滾動 */
+  height: auto;
+  object-fit: contain;  /* 或換成 scale-down 看需求 */
+  text-align: center;
+}
+
+
+/* 介紹圖片圓角與寬度 */
+/* 新增：intro-photo 容器加強圖片響應處理 */
+
+/* 導覽按鈕、結束導覽、樓層地圖按鈕等... */
+.end-tour-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  background: #e53935;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+  transition: background-color 0.3s ease;
+}
+
+.end-tour-btn:hover {
+  background: #b71c1c;
+}
+
+.floor-map-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #8e24aa;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+}
+
+.floor-map-popup {
+  position: fixed;
+  top: 60px;
+  right: 20px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  padding: 1rem;
+  max-width: 400px;
+  max-height: 500px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.floor-map-popup img {
+  width: 100%;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+}
+
+.floor-map-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 16px 0;
+  flex-wrap: wrap;
+}
+
+.map-tab-btn {
+  padding: 10px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  background: linear-gradient(to bottom right, #fefefe, #e0e0e0);
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 2px 4px 8px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.map-tab-btn:hover {
+  background: linear-gradient(to bottom right, #ffffff, #d0d0d0);
+  box-shadow: 2px 6px 12px rgba(0,0,0,0.2);
+  color: #000;
+}
+
+.map-tab-btn.active {
+  background: #4e9dfb;
+  color: #fff;
+  border-color: #4e9dfb;
+  box-shadow: 0 0 0 3px rgba(78,157,251,0.3);
+}
+
+
+.close-map {
+  display: block;
+  margin: 0 auto;
+  padding: 0.5rem 1.5rem;
+  background: #d32f2f;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.next-station-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 10px;
+  background: #43a047;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 20px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+  transition: background-color 0.3s ease;
+}
+
+.next-station-btn:hover {
+  background: #2e7d32;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* 樓層地圖彈窗 */
+body#fixed-route .floor-map-popup {
+  position: fixed;
+  top: 60px;
+  right: 20px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  padding: 1rem;
+  max-width: 300px;
+  max-height: 400px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+/* 動畫、按鈕浮現效果等依原本 style.css 套用即可 */
+/* --- 首頁動畫風格：intro-line 文字淡入 --- */
+.intro-line {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.intro-line.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- 按鈕區出現 --- */
+#choice-prompt {
+  margin-top: 2rem;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+/* --- 導覽按鈕浮現動畫 --- */
+.floor-btn,  .end-tour-btn, .next-station-btn {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.6s ease;
+}
+.floor-btn.show, .end-tour-btn.show, .next-station-btn.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.station-title {
+  margin-top: 40px; /* 標題與上方距離 */
+  text-align: center;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 響應式設計：平板、手機支援 */
+@media (max-width: 1024px) {
+  .container {
+    max-width: 90vw;
+    padding: 3rem 2rem;
+  }
+
+  #choice-prompt p {
+    font-size: 1.15rem;
+  }
+
+  button {
+    font-size: 0.95rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  #end-tour-btn {
+    font-size: 0.95rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .end-tour-btn,
+  .next-station-btn,
+  .floor-map-btn {
+    font-size: 0.85rem;
+    padding: 0.6rem 1rem;
+    border-radius: 16px;
+  }
+
+  .end-tour-btn {
+    right: 15px;
+    bottom: 15px;
+  }
+
+  .next-station-btn {
+    left: 15px;
+    bottom: 15px;
+  }
+
+  .floor-map-btn {
+    top: 15px;
+    right: 15px;
+  }
+
+  .floor-map-popup {
+    max-width: 90vw;
+    max-height: 60vh;
+    right: 5%;
+    top: 60px;
+  }
+
+  .container {
+    padding: 2rem 1.2rem;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .end-tour-btn,
+  .next-station-btn,
+  .floor-map-btn {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.9rem;
+  }
+
+  .end-tour-btn {
+    right: 10px;
+    bottom: 10px;
+  }
+
+  .next-station-btn {
+    left: 10px;
+    bottom: 10px;
+  }
+
+  .floor-map-btn {
+    top: 10px;
+    right: 10px;
+  }
+
+  .station-title {
+    font-size: 1.4rem;
+  }
+
+  .intro-line {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .container {
+    padding: 1rem 0.8rem;
+  }
+
+
+  .intro-line {
+    font-size: 0.95rem;
+  }
+
+  #choice-prompt p {
+    font-size: 0.95rem;
+  }
+}
+
+
