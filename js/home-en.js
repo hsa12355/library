@@ -103,6 +103,6 @@ const floorAreas = {
   });
 
   endTourBtn.addEventListener('click', () => {
-    window.location.href = '../language.html';
+    window.location.href = '/library/language.html';
   });
 });

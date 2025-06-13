@@ -230,7 +230,7 @@ body#fixed-route .floor-map-popup {
   width: 100%;
   max-width: 800px;
   height: 450px;
-  margin: 100px auto 0;
+  margin:  0;
   margin-bottom: 1rem;
   overflow: hidden;
   position: relative;
@@ -243,14 +243,14 @@ body#fixed-route .floor-map-popup {
 }
 
 .intro-text {
-  margin-top: 10px;  /* 文字區塊上方距離圖片10px，讓距離緊湊 */
+  margin-top: auto;  /* 文字區塊上方距離圖片10px，讓距離緊湊 */
 }
 
 .intro-text p {
-  margin-bottom: 1rem;  /* 保持文字段落底部距離 */
+  margin-bottom: 0.5rem;  /* 保持文字段落底部距離 */
 }
 .station-title {
-  margin-top: 40px; /* 標題與上方距離 */
+  margin-top: auto; /* 標題與上方距離 */
   text-align: center;
   font-size: 1.8rem;
   color: #333;
