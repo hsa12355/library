@@ -1,6 +1,6 @@
 const floorAreas = {
   'B1': ['Compact Shelves', 'Zen Garden', 'Magic Forest'],
-  '1F': ['E-Book Wall Entrance', 'Digital Universe', 'New Titles', 'Entrance Access', 'Read and Ride','Space and Courtyard Plants'],
+  '1F': ['E-Book Wall Entrance', 'Digital Universe', 'New Titles', 'Entrance Gate', 'Read and Ride','Space and Courtyard Plants'],
   '2F': ['Illustrated and Comic Books', 'Periodicals'],
 };
 
