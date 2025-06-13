@@ -40,15 +40,15 @@ body{
 }
 
 #choice-prompt {
-  margin-top: 2rem;
+  margin-top: auto;
   opacity: 0;
   transition: opacity 1s ease;
 }
 
 #choice-prompt p {
-  font-size: 1.25rem;
+  font-size: 1.8rem;
   font-weight: 500;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 /* 按鈕群組在手機下更容易點選 */
