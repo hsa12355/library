@@ -78,7 +78,7 @@ if (floorMapBtn && floorMapPopup && closeMapBtn) {
   }
 
 endTourBtn.addEventListener('click', () => {
-  window.location.href = '../language.html';
+  window.location.href = '/library/language.html';
 });
 
   // 🔄 加入樓層地圖切換邏輯
