@@ -43,8 +43,10 @@ h1 {
 .button-group {
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
-  flex-wrap: nowrap;
+  gap: 0.8rem; /* 已在 media query 設定 */
+  flex-wrap: nowrap; /* 保持同一行 */
+  overflow-x: auto; /* 如果超出可水平捲動 */
+  padding-bottom: 0.5rem; /* 避免捲軸吃到內容 */
 }
 
 button {
@@ -52,8 +54,10 @@ button {
   border: 1px solid rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(10px);
   padding: 0.75rem 1.5rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 600;
+  flex: 1 1 0; /* 讓按鈕可以縮小但仍保持可點擊 */
+  white-space: nowrap; /* 不允許文字換行 */
   color: #333;
   border-radius: 12px;
   cursor: pointer;
@@ -61,9 +65,12 @@ button {
   transition: all 0.4s ease;
   opacity: 0;
   transform: translateY(10px);
-  min-width: 140px;
+  min-width: 0;   /* 防止設定的 min-width 卡住 */
+  max-width: 100%; /* 不超過可用寬度 */
   text-align: center;
   will-change: transform, opacity;
+  width: calc((100% - 1.2rem) / 3); /* 兩顆按鈕 + gap 就剛好 */
+  min-width: auto;
 }
 
 button.show {
@@ -80,19 +87,27 @@ button:hover {
 /* 響應式設計 */
 @media (max-width: 480px) {
   .container {
-    padding: 2rem 1.5rem;
-    width: 90vw;
+    padding: 2rem 1rem;
+    width: 95vw;
   }
 
-  h1 {
-    font-size: 1.5rem;
+  .button-group {
+    gap: 0.8rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
   }
 
   button {
-    font-size: 1rem;
-    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+    padding: 0.6rem 1rem;
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 100%;
+    white-space: nowrap;
   }
 }
+
 @media (max-width: 360px) {
   .container {
     padding: 1.5rem 1rem;
@@ -104,9 +119,9 @@ button:hover {
   }
 
   button {
-    font-size: 0.95rem;
-    padding: 0.5rem 1rem;
-    min-width: 120px;
+    font-size: 0.9rem;
+    padding: 0.5rem 0.8rem;
   }
 }
+
 
