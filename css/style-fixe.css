@@ -274,7 +274,7 @@ body#fixed-route .floor-map-popup {
   }
 
   #choice-prompt p {
-    font-size: 1.15rem;
+    font-size: 1rem;
   }
 
   button {
@@ -324,11 +324,11 @@ body#fixed-route .floor-map-popup {
   }
 
   .intro-photo {
-    max-height: 40vh; /* 減少容器高度，避免卡住其他元素 */
+    max-height: 0vh; /* 減少容器高度，避免卡住其他元素 */
   }
 
   .intro-photo img, #slideshow-image {
-    max-height: 40vh;
+    max-height: auto;
     object-fit: contain; /* 改為 contain，避免裁切圖片內容 */
     width: 100%;
     height: auto;

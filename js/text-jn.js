@@ -77,7 +77,7 @@ if (floorMapBtn && floorMapPopup && closeMapBtn) {
 }
 
 endTourBtn.addEventListener('click', () => {
-  window.location.href = '/library/language.html';
+  window.location.href = './language.html';
 });
 
 // フロアマップのタブ切替機能
