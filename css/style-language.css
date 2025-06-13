@@ -7,7 +7,10 @@ body, html {
   background: url('../images/導覽底圖-定案版3.0.jpg') no-repeat center center fixed;
   background-size: cover;
   height: 100vh;
-  display: flex;
+  height: 100dvh; /* Safari 15+ 正確適配 */
+  min-height: -webkit-fill-available; /* Safari 舊版支援 */
+  display: grid;
+  place-items: center;
   justify-content: center;
   align-items: center;
 }
