@@ -104,6 +104,6 @@ const areaToStationPage = {
 
   // 🔽 結束導覽按鈕
   endTourBtn.addEventListener('click', () => {
-    window.location.href = '/library/language.html';
+    window.location.href = './language.html';
   });
 });

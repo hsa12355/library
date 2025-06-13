@@ -98,6 +98,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   endTourBtn.addEventListener('click', () => {
-    window.location.href = '../language.html';
+    window.location.href = './language.html';
   });
 });
