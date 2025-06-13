@@ -40,7 +40,7 @@ body{
 }
 
 #choice-prompt {
-  margin-top: auto;
+  margin-top: 20px;
   opacity: 0;
   transition: opacity 1s ease;
 }

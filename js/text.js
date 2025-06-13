@@ -26,7 +26,12 @@ const closeMapBtn = document.getElementById('close-map');
 const endTourBtn = document.getElementById('end-tour-btn');
 
 // 初始提示文字
-areaSelector.textContent = '請先選擇樓層';
+// 初始提示元素
+const promptElement = document.createElement('p');
+promptElement.className = 'prompt-text'; // 可加上樣式
+promptElement.textContent = '請先選擇樓層';
+areaSelector.appendChild(promptElement);
+
 
 function createAreaButton(area) {
   const btn = document.createElement('button');
@@ -45,19 +50,23 @@ function createAreaButton(area) {
 
 function showAreasForFloor(floor) {
   const areas = floorAreas[floor];
-  areaSelector.innerHTML = ''; // Clear existing buttons
+  areaSelector.innerHTML = ''; // 清除所有子元素
 
   if (!areas || areas.length === 0) {
-    areaSelector.textContent = 'No areas available for this floor';
+    const noAreaMsg = document.createElement('p');
+    noAreaMsg.className = 'prompt-text';
+    noAreaMsg.textContent = '此樓層暫無可導覽區域';
+    areaSelector.appendChild(noAreaMsg);
     return;
   }
 
   areas.forEach(area => {
     const btn = createAreaButton(area);
-    btn.classList.add('show'); // Make button visible
+    btn.classList.add('show');
     areaSelector.appendChild(btn);
   });
 }
+
 
 
 floorButtons.forEach(btn => {
@@ -78,7 +87,7 @@ if (floorMapBtn && floorMapPopup && closeMapBtn) {
   }
 
 endTourBtn.addEventListener('click', () => {
-  window.location.href = './language.html';
+  window.location.href = '../language.html';
 });
 
   // 🔄 加入樓層地圖切換邏輯
