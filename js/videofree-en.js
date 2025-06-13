@@ -93,7 +93,7 @@ if (floorMapBtn && floorMapPopup && closeMapBtn) {
   }
 
 endTourBtn.addEventListener('click', () => {
-  window.location.href = './language.html';
+  window.location.href = '../language.html';
 });
 
 // Text and button animation

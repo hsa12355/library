@@ -85,7 +85,7 @@ closeMapBtn.addEventListener('click', () => {
 
 // ツアー終了ボタンのページ遷移
 endTourBtn.addEventListener('click', () => {
-  window.location.href = './language.html';
+  window.location.href = '../language.html';
 });
 
 // テキストアニメーションとボタン表示
