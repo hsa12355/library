@@ -1,19 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;500;700&display=swap');
 
-body, html {
+html, body {
+  height: 100%;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
   font-family: 'Noto Sans TC', sans-serif;
   background: url('../images/導覽底圖-定案版3.0.jpg') no-repeat center center fixed;
   background-size: cover;
-
-  height: 100dvh; /* Safari 15+ 正確適配 */
-  min-height: -webkit-fill-available; /* Safari 舊版支援 */
-  display: grid;
-  place-items: center;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
+
+
+
 
 .container {
   background: rgba(255, 255, 255, 0.65);
