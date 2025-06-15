@@ -14,54 +14,52 @@
   <button id="floor-map-btn" class="floor-map-btn">Floor Map</button>
 
   <!-- Floor Map Popup -->
-<div id="floor-map-popup" class="floor-map-popup hidden">
-  <div class="floor-map-tabs">
-    <button class="map-tab-btn active" data-target="map-b1">B1</button>
-    <button class="map-tab-btn" data-target="map-1f">1F</button>
-    <button class="map-tab-btn" data-target="map-2f">2F</button>
+  <div id="floor-map-popup" class="floor-map-popup hidden">
+    <div class="floor-map-tabs">
+      <button class="map-tab-btn active" data-target="map-b1">B1</button>
+      <button class="map-tab-btn" data-target="map-1f">1F</button>
+      <button class="map-tab-btn" data-target="map-2f">2F</button>
+    </div>
+    <img id="map-b1" class="floor-map-image" src="../images/Floor-B1s_-_.jpg" alt="Floor Map B1">
+    <img id="map-1f" class="floor-map-image hidden" src="../images/Floor-1Fs_-_.jpg" alt="Floor Map 1F">
+    <img id="map-2f" class="floor-map-image hidden" src="../images/Floor-2Fs_-_.jpg" alt="Floor Map 2F">
+    <button id="close-map" class="close-map">Close Map</button>
   </div>
-  <img id="map-b1" class="floor-map-image" src="../images/Floor-B1s_-_.jpg" alt="Floor Map B1">
-  <img id="map-1f" class="floor-map-image hidden" src="../images/Floor-1Fs_-_.jpg" alt="Floor Map 1F">
-  <img id="map-2f" class="floor-map-image hidden" src="../images/Floor-2Fs_-_.jpg" alt="Floor Map 2F">
-  <button id="close-map" class="close-map">Close Map</button>
-</div>
-
 
   <!-- Intro Image -->
-    <!-- 介紹照片 -->
   <div id="slideshow-wrapper">
-  <div id="slideshow-container">
-    <h2 class="station-title">Station 1: iRead Wall - Guided Tour</h2>
-    <img id="slideshow-image" src="../images/1電子書牆/1-電子書牆01_吳志揚校長.png" alt="輪播圖片">
+    <div id="slideshow-container">
+      <h2 class="station-title">Station 1: iRead Wall - Guided Tour</h2>
+      <img id="slideshow-image" src="../images/1電子書牆/1-電子書牆01_吳志揚校長.png" alt="Slideshow Image">
+    </div>
   </div>
-</div>
 
-<script>
-  // 每頁定義自己的圖片清單（注意這是在 HTML 裡面定義的）
-  window.slideshowImages = [
-  '../images/1電子書牆/1-電子書牆01_吳志揚校長.png',
-  '../images/1電子書牆/1-電子書牆01_徐董事長.png',
-  '../images/1電子書牆/1-電子書牆03.jpg',
-  '../images/1電子書牆/1-電子書牆04.jpg',
-  '../images/1電子書牆/1-電子書牆05_買來西亞中學校長參訪團.jpg',
-  '../images/1電子書牆/1-電子書牆06_中道中學參訪團.jpg',
-  '../images/1電子書牆/1-電子書牆08_淡江高中參訪團.jpg',
-  '../images/1電子書牆/1-電子書牆09.jpg',
-  '../images/1電子書牆/1-電子書牆10.jpg'
-  ];
-</script>
+  <script>
+    window.slideshowImages = [
+      '../images/1電子書牆/1-電子書牆01_吳志揚校長.png',
+      '../images/1電子書牆/1-電子書牆01_徐董事長.png',
+      '../images/1電子書牆/1-電子書牆03.jpg',
+      '../images/1電子書牆/1-電子書牆04.jpg',
+      '../images/1電子書牆/1-電子書牆05_買來西亞中學校長參訪團.jpg',
+      '../images/1電子書牆/1-電子書牆06_中道中學參訪團.jpg',
+      '../images/1電子書牆/1-電子書牆08_淡江高中參訪團.jpg',
+      '../images/1電子書牆/1-電子書牆09.jpg',
+      '../images/1電子書牆/1-電子書牆10.jpg'
+    ];
+  </script>
 
-  <!-- Intro Text (Animated) -->
+  <!-- Intro Text -->
   <div class="intro-text">
-    <p class="intro-line">The AI-powered iRead Wall, launched in December 2018, is an innovative facility designed to promote eBook reading. It’s more than just a book wall—it’s a passionate reading guide powered by technology. It features three major functions: themed eBook promotions, QR code downloads, and interactive face-recognition recommendations.</p>
-    <p class="intro-line">Visitors can browse curated book lists on a touchscreen based on their interests or simply scan a QR code to instantly borrow eBooks.</p>
-    <p class="intro-line">The most engaging feature is the “Photo Book Recommendation,” which uses facial recognition to suggest personalized book selections. On its launch day, then-President Chih-Yang Wu personally tried the feature and picked *Life Is Like a Storybook* as his winter reading choice. This inspired the library to initiate a “One Person, One Book for Winter Break” reading campaign.</p>
-    <p class="intro-line">This digital book wall is not only a gateway to digital reading, but also a popular photo spot loved by students and visitors alike.</p>
+    <p class="intro-line">Launched in December 2018, this AI-powered iRead Wall is an innovative facility created to promote digital reading. It’s more than just a wall—it’s like a passionate reading guide powered by technology, offering three main functions: themed e-book promotions, QR code downloads, and fun facial recognition book recommendations.</p>
+    <p class="intro-line">Visitors can browse online reading lists on the touchscreen based on their interests or scan a QR code to instantly borrow e-books.</p>
+    <p class="intro-line">The most eye-catching feature is the "Photo Book Recommendation," where facial recognition technology suggests personalized books. On the launch day in 2018, then-President Wu Chih-Yang personally tried it and selected *Life Is Like a Storybook* as his winter vacation read, inspiring the library’s “One Book for One Person” reading campaign.</p>
+    <p class="intro-line">During the 2019 school anniversary, Chairman Douglas Hsu and guests visited the wall and experienced the photo book recommendation firsthand. Since then, the wall has become not only a gateway to digital reading but also a popular photo spot for students and visitors alike.</p>
+    <p class="intro-line">It’s not just a wall—it’s a bridge connecting knowledge and your heart.</p>
   </div>
 
   <!-- Navigation Buttons -->
   <nav class="station-nav">
-    <a href="station-2.html" class="next-station-btn" style="left: auto; right: 120px;">Next Station</a>
+    <a href="station-2.html" class="next-station-btn" style="left: auto; right: 120px;">Next Stop</a>
   </nav>
 
   <!-- End Tour Button -->

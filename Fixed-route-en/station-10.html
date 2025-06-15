@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Station 10: Japanese Zen Garden - Karesansui</title>
+  <title>Station 10: Zen Garden - Karesansui</title>
   <link rel="stylesheet" href="../css/style-fixe.css" />
 </head>
 <body id="fixed-route">
@@ -14,51 +14,52 @@
   <button id="floor-map-btn" class="floor-map-btn">Floor Map</button>
 
   <!-- Floor Map Popup -->
-<div id="floor-map-popup" class="floor-map-popup hidden">
-  <div class="floor-map-tabs">
-    <button class="map-tab-btn active" data-target="map-b1">B1</button>
-    <button class="map-tab-btn" data-target="map-1f">1F</button>
-    <button class="map-tab-btn" data-target="map-2f">2F</button>
+  <div id="floor-map-popup" class="floor-map-popup hidden">
+    <div class="floor-map-tabs">
+      <button class="map-tab-btn active" data-target="map-b1">B1</button>
+      <button class="map-tab-btn" data-target="map-1f">1F</button>
+      <button class="map-tab-btn" data-target="map-2f">2F</button>
+    </div>
+    <img id="map-b1" class="floor-map-image" src="../images/Floor-B1s_-_.jpg" alt="Floor Map B1">
+    <img id="map-1f" class="floor-map-image hidden" src="../images/Floor-1Fs_-_.jpg" alt="Floor Map 1F">
+    <img id="map-2f" class="floor-map-image hidden" src="../images/Floor-2Fs_-_.jpg" alt="Floor Map 2F">
+    <button id="close-map" class="close-map">Close Map</button>
   </div>
-  <img id="map-b1" class="floor-map-image" src="../images/Floor-B1s_-_.jpg" alt="Floor Map B1">
-  <img id="map-1f" class="floor-map-image hidden" src="../images/Floor-1Fs_-_.jpg" alt="Floor Map 1F">
-  <img id="map-2f" class="floor-map-image hidden" src="../images/Floor-2Fs_-_.jpg" alt="Floor Map 2F">
-  <button id="close-map" class="close-map">Close Map</button>
-</div>
 
-
-  <!-- Intro Image -->
+  <!-- Slideshow Image -->
   <div id="slideshow-wrapper">
-  <div id="slideshow-container">
-    <h2 class="station-title">Station 10: Japanese Zen Garden - Karesansui</h2>
-    <img id="slideshow-image" src="../images/10枯山水禪園/10-枯山水禪園01.jpg" alt="輪播圖片">
+    <div id="slideshow-container">
+      <h2 class="station-title">Station 10: Zen Garden - Karesansui</h2>
+      <img id="slideshow-image" src="../images/10枯山水禪園/10-枯山水禪園01.jpg" alt="Slideshow Image">
+    </div>
   </div>
-</div>
-<script>
-  // 每頁定義自己的圖片清單（注意這是在 HTML 裡面定義的）
-  window.slideshowImages = [
-  '../images/10枯山水禪園/10-枯山水禪園01.jpg',
-  '../images/10枯山水禪園/10-枯山水禪園02.jpg',
-  '../images/10枯山水禪園/10-枯山水禪園03.jpg',
-  '../images/10枯山水禪園/10-枯山水禪園04_廖校長.jpg',
-  '../images/10枯山水禪園/10-枯山水禪園05_廖校長.jpg',
-  '../images/10枯山水禪園/10-枯山水禪園07.jpg',
-  '../images/10枯山水禪園/10-枯山水禪園08.jpg',
-  '../images/10枯山水禪園/10-枯山水禪園09.jpg'
-  ];
-</script>
+  
+  <script>
+    window.slideshowImages = [
+      '../images/10枯山水禪園/10-枯山水禪園01.jpg',
+      '../images/10枯山水禪園/10-枯山水禪園02.jpg',
+      '../images/10枯山水禪園/10-枯山水禪園03.jpg',
+      '../images/10枯山水禪園/10-枯山水禪園04_廖校長.jpg',
+      '../images/10枯山水禪園/10-枯山水禪園05_廖校長.jpg',
+      '../images/10枯山水禪園/10-枯山水禪園07.jpg',
+      '../images/10枯山水禪園/10-枯山水禪園08.jpg',
+      '../images/10枯山水禪園/10-枯山水禪園09.jpg'
+    ];
+  </script>
 
-  <!-- Intro Text -->
+  <!-- Introductory Text -->
   <div class="intro-text">
-    <p class="intro-line">A tranquil corner featuring a Japanese Karesansui Zen garden made of fine sand and rocks.</p>
-    <p class="intro-line">“Mountains” are symbolized by stones, while “water” is represented by gravel, with the sand’s patterns resembling flowing water.</p>
-    <p class="intro-line">This garden conveys a serene and calm atmosphere through its still elements. The design aims to help every visitor to the library let go of worries, calm their mind, and focus on the sea of books.</p>
+    <p class="intro-line">Tucked away in a tranquil corner lies a Zen garden composed of white gravel and weathered stones—our very own *karesansui*, or dry landscape garden.</p>
+    <p class="intro-line">Here, “mountains” are represented by rocks, while “water” is suggested through meticulously raked sand patterns that mimic the gentle flow of streams.</p>
+    <p class="intro-line">Its static elements offer a profound sense of peace and stillness. The garden was designed with one intention: to invite every library visitor to slow down, quiet their mind, and immerse themselves fully in the world of books.</p>
+    <p class="intro-line">In 2022, President Ching-Jung Liao filmed a video here, reflecting on the value of accumulating energy during one's university journey. He chose this garden as the setting—not only for its serenity, but because it offers a gentle reminder: true strength often comes from the quietest places.</p>
+    <p class="intro-line">So, when you feel overwhelmed or tired, take a seat here. Let your eyes drift away from screens, let your thoughts settle. In this space, the world of books and the world within you quietly meet.</p>
   </div>
 
   <!-- Navigation Buttons -->
   <nav class="station-nav">
-    <a href="station-9.html" class="next-station-btn">Previous Station</a>
-    <a href="station-11.html" class="next-station-btn" style="left: auto; right: 120px;">Next Station</a>
+    <a href="station-9.html" class="next-station-btn">Previous Stop</a>
+    <a href="station-11.html" class="next-station-btn" style="left: auto; right: 120px;">Next Stop</a>
   </nav>
 
   <!-- End Tour Button -->
