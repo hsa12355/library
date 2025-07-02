@@ -1,58 +1,57 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>定点案内</title>
+  <title>定点ガイド</title>
 
-  <!-- QRコードスキャナー -->
+  <!-- QRスキャナー -->
   <script src="https://unpkg.com/html5-qrcode" defer></script>
-  <script src="./js/scan-jn.js" defer></script>
+  <script src="./js/scan.js" defer></script>
   <!-- スタイルとスクリプト -->
   <link rel="stylesheet" href="./css/scan.css" />
-  
 </head>
 <body>
-  <!-- メインコンテナ（中央揃え） -->
+  <!-- メインコンテナ（中央寄せ） -->
   <div class="container">
-    <h1>QRコードをスキャンしてください</h1>
+    <h1>QRコードをスキャン</h1>
 
     <div>
       <label for="camera-select">カメラを選択：</label>
       <select id="camera-select"></select>
     </div>
 
-    <!-- スキャナーをコンテナ内に設置 -->
+    <!-- スキャナーをここに表示 -->
     <div id="qr-reader" style="width: 100%; max-width: 320px; margin: 0 auto;"></div>
 
-    <p>スキャン後に案内が始まります</p>
+    <p>スキャン後に案内を開始します</p>
   </div>
 
-  <!-- 固定機能ボタンと階層マップのポップアップ -->
-  <button id="floor-map-btn" class="floor-map-btn">階層マップ</button>
-  <button id="end-tour-btn" class="end-tour-btn">案内を終了</button>
+  <!-- 固定ボタンとフロアマップポップアップ -->
+  <button id="floor-map-btn" class="floor-map-btn">フロアマップ</button>
+  <button id="end-tour-btn" class="end-tour-btn">ガイドを終了する</button>
 
   <div id="floor-map-popup" class="floor-map-popup hidden">
+    <!-- フロア切り替えボタン -->
+    <div class="floor-map-tabs">
+      <button class="map-tab-btn" data-target="map-b1">B1</button>
+      <button class="map-tab-btn" data-target="map-1f">1F</button>
+      <button class="map-tab-btn" data-target="map-2f">2F</button>
+    </div>
 
-    <!-- 新增樓層切換按鈕 -->
-  <div class="floor-map-tabs">
-    <button class="map-tab-btn" data-target="map-b1">B1階</button>
-    <button class="map-tab-btn" data-target="map-1f">1階</button>
-    <button class="map-tab-btn" data-target="map-2f">2階</button>
-  </div>
+    <!-- 各フロアのマップ -->
+    <div id="map-b1" class="floor-map-img">
+      <img src="./images/Floor-B1s_-_.jpg" alt="フロアマップ B1" />
+    </div>
+    <div id="map-1f" class="floor-map-img hidden">
+      <img src="./images/Floor-1Fs_-_.jpg" alt="フロアマップ 1F" />
+    </div>
+    <div id="map-2f" class="floor-map-img hidden">
+      <img src="./images/Floor-2Fs_-_.jpg" alt="フロアマップ 2F" />
+    </div>
 
-  <!-- 各樓層地圖 -->
-  <div id="map-b1" class="floor-map-img">
-    <img src="./images/Floor-B1s_-_.jpg" alt="B1階の階層マップ" />
-  </div>
-  <div id="map-1f" class="floor-map-img hidden">
-    <img src="./images/Floor-1Fs_-_.jpg" alt="1階の階層マップ" />
-  </div>
-  <div id="map-2f" class="floor-map-img hidden">
-    <img src="./images/Floor-2Fs_-_.jpg" alt="2階の階層マップ" />
-  </div>
-  
     <button id="close-map" class="close-map">マップを閉じる</button>
   </div>
+
 </body>
 </html>
