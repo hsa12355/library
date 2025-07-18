@@ -63,6 +63,22 @@ video {
   min-width: 120px;
   text-align: center;  
 }
+
+.intro-video iframe {
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+
+#video-loading {
+  color: white;
+  text-align: center;
+  padding: 1em;
+  font-size: 1.2em;
+}
+
+
+
 button.show {
   opacity: 1;
   transform: translateY(0);

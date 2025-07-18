@@ -39,6 +39,12 @@ body#fixed-route, html#fixed-route {
   background: black;
 }
 
+.intro-video iframe {
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+
 /* 結束導覽按鈕 */
 .end-tour-btn {
   position: fixed;
@@ -198,6 +204,14 @@ body#fixed-route, html#fixed-route {
   opacity: 1;
   transform: translateY(0);
 }
+
+#video-loading {
+  color: white;
+  text-align: center;
+  padding: 1em;
+  font-size: 1.2em;
+}
+
 
 /* 響應式設計 */
 @media (max-width: 768px) {

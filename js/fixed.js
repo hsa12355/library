@@ -92,3 +92,5 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 3000);
   }
 });
+
+document.addEventListener("contextmenu", e => e.preventDefault());
