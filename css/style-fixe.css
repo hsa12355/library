@@ -41,7 +41,7 @@ body#fixed-route .intro-photo {
   justify-content: center;
   align-items: center;
   overflow: visible; /* 避免超出容器 */
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
 }
 
 body#fixed-route .intro-photo img, #slideshow-image {
@@ -363,8 +363,9 @@ body#fixed-route .floor-map-popup {
   }
 
   .intro-photo img, #slideshow-image {
-    max-height: 35vh;
+    max-height: 25vh;
     object-fit: contain;
+    margin-bottom: 0.25rem; /* ← 圖片與文字距離變小 */
     width: 100%;
     height: auto;
   }
