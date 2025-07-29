@@ -34,25 +34,27 @@ body#fixed-route .container {
 
 /* 介紹圖片圓角與寬度 */
 /* 新增：intro-photo 容器加強圖片響應處理 */
-body#fixed-route .intro-photo {
+.intro-photo {
   width: 100%;
-  max-height: 90vh; /* 根據需要可調整，例如 60vh 表示畫面高度的 60% */
+  height: auto;                 /* 容器不強制限制高度 */
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: visible; /* 避免超出容器 */
+  overflow: hidden;
   margin-bottom: 0.5rem;
 }
 
-body#fixed-route .intro-photo img, #slideshow-image {
+.intro-photo img, #slideshow-image {
   width: 100%;
-  max-height: auto;    /* 選擇設上限 */
-  object-fit: contain;    /* 改為 cover 讓圖片填滿容器，避免上下留白 */
+  height: auto;                 /* ⬅ 重點1：保持圖片等比例縮放 */
+  max-width: 100%;              /* ⬅ 重點2：不超過容器寬度 */
+  max-height: 80vh;             /* ⬅ 避免佔滿整個畫面，但允許縮放 */
+  object-fit: contain;          /* ⬅ 重點3：完整顯示圖片內容（不裁切） */
   display: block;
   margin: 0 auto;
-  transition: opacity 0.6s ease-in-out;
-  opacity: 1;
 }
+
+
 
 
 
@@ -238,9 +240,15 @@ body#fixed-route .floor-map-popup {
 
 
 
+#slideshow-image {
+  opacity: 1;
+  transition: opacity 0.6s ease-in-out;
+}
+
 #slideshow-image.fade-out {
   opacity: 0;
 }
+
 
 .intro-text {
   margin-top: 20px;  /* 文字區塊上方距離圖片10px，讓距離緊湊 */
@@ -327,12 +335,12 @@ body#fixed-route .floor-map-popup {
     max-height: 0vh; /* 減少容器高度，避免卡住其他元素 */
   }
 
+  @media (max-width: 768px) {
   .intro-photo img, #slideshow-image {
-    max-height: auto;
-    object-fit: contain; /* 改為 contain，避免裁切圖片內容 */
-    width: 100%;
-    height: auto;
+    max-height: 30vh;  /* 視窗高度的 30%，可調整 */
   }
+}
+
 }
 
 @media (max-width: 480px) {
