@@ -8,7 +8,7 @@ body#fixed-route, html#fixed-route {
   min-height: none;
   height: auto; /* 自然撐高 */
   overflow-y: auto;
-  padding-bottom: 5rem; /* ← 新增這行：底部預留空間，避免按鈕擋住內容 */
+  padding-bottom: 2rem; /* ← 新增這行：底部預留空間，避免按鈕擋住內容 */
   /* display: flex;
   justify-content: center;
   align-items: center; */
