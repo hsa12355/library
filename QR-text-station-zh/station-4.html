@@ -1,35 +1,15 @@
-
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>第四站：數位學習區．列印！密碼！艙！</title>
-  <link rel="stylesheet" href="../css/style-fixe.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>第四站：數位學習區．列印！密碼！艙！</title>
+<link rel="stylesheet" href="../css/style.css" />
 </head>
-<body id="fixed-route">
+<body id="option-mode-page">
 
 <div class="container">
-
-  <!-- 樓層地圖按鈕 -->
-  <button id="floor-map-btn" class="floor-map-btn">樓層地圖</button>
-
-
-  <!-- 樓層地圖彈窗 -->
- <div id="floor-map-popup" class="floor-map-popup hidden">
-  <div class="floor-map-tabs">
-    <button class="map-tab-btn active" data-target="map-b1">B1</button>
-    <button class="map-tab-btn" data-target="map-1f">1F</button>
-    <button class="map-tab-btn" data-target="map-2f">2F</button>
-  </div>
-  <img id="map-b1" class="floor-map-image" src="../images/Floor-B1s_-_.jpg" alt="樓層地圖B1">
-  <img id="map-1f" class="floor-map-image hidden" src="../images/Floor-1Fs_-_.jpg" alt="樓層地圖1F">
-  <img id="map-2f" class="floor-map-image hidden" src="../images/Floor-2Fs_-_.jpg" alt="樓層地圖2F">
-  <button id="close-map" class="close-map">關閉地圖</button>
-</div>
-
-
-  <!-- 介紹圖片 -->
+  <!-- 介紹照片 -->
   <div id="slideshow-wrapper">
   <div id="slideshow-container">
     <h2 class="station-title">第四站：數位學習區．列印！密碼！艙！</h2>
@@ -51,7 +31,7 @@
   ];
 </script>
 
-  <!-- 介紹文字（動畫） -->
+  <!-- 介紹文字 -->
   <div class="intro-text">
     <p class="intro-line">這裡，是圖書館的科技核心，也是自學者的數位天堂。</p>
     <p class="intro-line">只要你是元智的教職員生，輸入 Portal 帳號密碼，數十台電腦隨你查資料、寫報告、看影片。</p>
@@ -62,18 +42,9 @@
     <p class="intro-line">完成了知識補給，是時候放鬆一下筋骨，走吧，補足知識能量，換個節奏，來點建築與自然的療癒。</p>
   </div>
 
-  <!-- 導覽按鈕（左：上一站、右：下一站） -->
-<nav class="station-nav">
-  <a href="station-3.html" class="next-station-btn">上一站</a>
-  <a href="station-5.html" class="next-station-btn" style="left: auto; right: 120px;">下一站</a>
-</nav>
-
-
-  <!-- 結束導覽按鈕 -->
-  <button id="end-tour-btn" class="end-tour-btn">結束導覽</button>
-
 </div>
 
-<script src="../js/fixed.js"></script>
+<script src="../js/qr-text.js"></script>
+
 </body>
 </html>
